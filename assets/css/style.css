@@ -1,3 +1,22 @@
+/* =======================
+ Custom Properties 
+ ======================= */
+:root {
+    /* Colors */
+
+    --clr-primary: #5f5ae8;
+    --clr-primary-dark: #1a1772;
+
+    --clr-accent-yellow: #ffbd00;
+
+    --clr-black-300: #909090;
+    --clr-black-500: #363636;
+    --clr-black-700: #262626;
+    --clr-black-900: #141414;
+
+    --clr-white-900: #f6f6ff;
+}
+
 /* Box sizing rules */
 *,
 *::before,
