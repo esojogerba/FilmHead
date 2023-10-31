@@ -140,6 +140,7 @@ body {
     background-color: var(--clr-black-900);
     color: var(--clr-white-900);
     font-family: "Inter", sans-serif;
+    font-size: var(--fs-body);
 }
 
 header {
@@ -151,6 +152,24 @@ header {
 
 ul {
     margin: 0;
+}
+
+/* =======================
+  Typography
+ ======================= */
+
+h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
 }
 
 /* =======================
