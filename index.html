@@ -9,79 +9,106 @@
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>FilmHead</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="/assets/css/style.css" />
     </head>
     <body>
         <header>
-            <img
-                src="/assets/images/filmhead-nav-logo.svg"
-                alt="FilmHead logo"
-                class="nav-logo"
-            />
-            <nav>
-                <ul role="list">
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">Shows</a></li>
-                    <li><a href="">Backlog</a></li>
-                    <li>
-                        <a href=""
-                            ><img
-                                src="/assets/images/search-icon.svg"
-                                alt="search"
-                        /></a>
-                    </li>
-                    <li><a href="">Sign Up</a></li>
-                    <li><a href="">Log In</a></li>
-                </ul>
-            </nav>
+            <div class="container">
+                <nav class="main-nav">
+                    <img
+                        src="/assets/images/filmhead-nav-logo.svg"
+                        alt="FilmHead logo"
+                        class="nav-logo"
+                    />
+                    <div class="nav-links">
+                        <ul role="list" class="nav-links-left">
+                            <li><a class="current-page" href="">Movies</a></li>
+                            <li><a href="">Shows</a></li>
+                            <li><a href="">Backlog</a></li>
+                        </ul>
+                        <ul role="list" class="nav-links-right">
+                            <li>
+                                <a href="" id="search-icon">
+                                    <img
+                                        src="/assets/images/search-icon.svg"
+                                        alt="search"
+                                        class="material-icon"
+                                        width="24px"
+                                        height="24px"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" id="nav-link-sign-up">Sign Up</a>
+                            </li>
+                            <li><a href="">Log In</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </header>
         <main>
-            <div class="even-columns">
-                <div class="left-col">
-                    <div class="cta">
-                        <h1 class="cta-heading">Nothing to watch? Not.</h1>
-                        <p class="cta-p">
-                            Keep track of your media backlog so that you always
-                            have something to scratch your entertainment itch.
-                        </p>
-                        <button class="btn">Create An Account</button>
-                    </div>
-                    <div class="features">
-                        <div class="features-row"></div>
-                        <div class="features-text">
-                            <h2 class="feature-title">Movies</h2>
-                            <p class="features-body">
-                                Thousands of movies waiting to be stored in your
-                                collections for future viewing.
+            <div class="container">
+                <div class="even-columns">
+                    <div class="left-col">
+                        <div class="cta">
+                            <h1 class="cta-heading">Nothing to watch?</h1>
+                            <h1 class="cta-heading">Not Anymore!</h1>
+                            <p class="cta-p">
+                                Keep track of your media backlog so that you
+                                always have something to scratch your
+                                entertainment itch.
                             </p>
+                            <button class="btn">Create An Account</button>
+                        </div>
+                        <div class="features">
+                            <div class="features-row"></div>
+                            <div class="features-text">
+                                <h2 class="feature-title">Movies</h2>
+                                <p class="features-body">
+                                    Thousands of movies waiting to be stored in
+                                    your collections for future viewing.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="right-col">
-                    <img
-                        src="/assets/images/video-store.svg"
-                        alt="Video rental store"
-                    />
+                    <div class="right-col">
+                        <img
+                            src="/assets/images/video-store.svg"
+                            alt="Video rental store"
+                        />
+                    </div>
                 </div>
             </div>
         </main>
         <footer>
-            <div class="footer-logo">
-                <img
-                    src="/assets/images/filmhead-footer-logo.svg"
-                    alt="FilmHead footer logo"
-                />
-            </div>
-            <div class="footer-github">
-                <img src="/assets/images/github-logo.svg" alt="Github logo" />
-                <p>&copy; 2023 FilmHead. All rights reserved.</p>
-            </div>
-            <div class="footer-tmdb-logo">
-                <p>Powered by</p>
-                <img
-                    src="/assets/images/tmdb-logo.svg"
-                    alt="The Movie Database logo"
-                />
+            <div class="container">
+                <div class="footer-logo">
+                    <img
+                        src="/assets/images/filmhead-footer-logo.svg"
+                        alt="FilmHead footer logo"
+                    />
+                </div>
+                <div class="footer-github">
+                    <img
+                        src="/assets/images/github-logo.svg"
+                        alt="Github logo"
+                    />
+                    <p>&copy; 2023 FilmHead. All rights reserved.</p>
+                </div>
+                <div class="footer-tmdb-logo">
+                    <p>Powered by</p>
+                    <img
+                        src="/assets/images/tmdb-logo.svg"
+                        alt="The Movie Database logo"
+                    />
+                </div>
             </div>
         </footer>
     </body>
