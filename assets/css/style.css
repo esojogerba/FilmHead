@@ -31,7 +31,7 @@
     /* Font weights */
     --fw-light: 300;
     --fw-regular: 400;
-    --fw-semi-bold: 500;
+    --fw-semi-bold: 600;
     --fw-bold: 700;
 
     /* Font Sizes */
@@ -45,7 +45,7 @@
     --fs-60: 3.75rem;
 
     --fs-body: var(--fs-24);
-    --fs-nav: var(--fs-20);
+    --fs-nav: var(--fs-16);
     --fs-btn: var(--fs-24);
     --fs-h1: var(--fs-60);
     --fs-h2: var(--fs-52);
@@ -154,6 +154,15 @@ ul {
     margin: 0;
 }
 
+.btn {
+    background-color: var(--clr-primary);
+    color: var(--clr-white-900);
+    font-size: var(--fs-btn);
+    font-weight: var(--fw-bold);
+    padding: 0.8em 1.2em;
+    border-radius: 6px;
+}
+
 /* =======================
   Typography
  ======================= */
@@ -218,10 +227,6 @@ h3 {
     color: var(--clr-primary);
 }
 
-.nav-links-right li:last-child {
-    margin-right: 2em;
-}
-
 .nav-links a.current-page:not(#nav-link-sign-up, #search-icon):before {
     position: absolute;
     content: "";
@@ -248,8 +253,8 @@ h3 {
     background-color: var(--clr-white-900);
     color: var(--clr-black-900);
     border-radius: 6px;
-    padding: 8px 6px;
-    font-weight: var(--fw-bold);
+    padding: 6px 6px;
+    font-weight: var(--fw-semi-bold);
 }
 
 #nav-link-sign-up:hover,
@@ -259,13 +264,33 @@ h3 {
 }
 
 /* =======================
+ Layout
+ ======================= */
+
+footer .container {
+    display: flex;
+}
+
+/* =======================
  Utility
  ======================= */
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0 1em;
+}
+
+.even-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.even-col-left {
+    width: 48%;
+}
+.even-col-right {
+    width: 48%;
 }
 
 .material-icon {
