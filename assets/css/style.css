@@ -276,6 +276,8 @@ footer .container {
  Home
  ======================= */
 
+/* CTA */
+
 .cta {
     margin-bottom: 4rem;
 }
@@ -286,6 +288,30 @@ footer .container {
 
 .cta-p {
     margin-bottom: 2rem;
+}
+
+/* Features */
+
+.features {
+    width: 85%;
+    display: grid;
+    align-items: center;
+    align-content: end;
+}
+
+.features-buttons {
+    display: flex;
+    width: 80%;
+}
+
+.features-icon-btn {
+    background-color: var(--clr-white-900);
+    border-radius: 6px;
+}
+
+.features-active-icon-btn {
+    background-color: var(--clr-primary);
+    border-radius: 6px;
 }
 
 /* =======================
