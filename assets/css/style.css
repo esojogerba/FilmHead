@@ -37,6 +37,7 @@
     /* Font Sizes */
     --fs-14: 0.875rem;
     --fs-16: 1rem;
+    --fs-18: 1.125rem;
     --fs-20: 1.25rem;
     --fs-24: 1.5rem;
     --fs-32: 2rem;
@@ -45,8 +46,8 @@
     --fs-60: 3.75rem;
 
     --fs-body: var(--fs-24);
-    --fs-nav: var(--fs-16);
-    --fs-btn: var(--fs-24);
+    --fs-nav: var(--fs-18);
+    --fs-btn: var(--fs-20);
     --fs-h1: var(--fs-60);
     --fs-h2: var(--fs-52);
     --fs-h3: var(--fs-44);
@@ -275,14 +276,28 @@ footer .container {
  Home
  ======================= */
 
+.cta {
+    margin-bottom: 4rem;
+}
+
+.cta-heading:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.cta-p {
+    margin-bottom: 2rem;
+}
+
 /* =======================
  Utility
  ======================= */
 
+/* Structure */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 1.5rem;
 }
 
 .even-columns {
@@ -296,6 +311,8 @@ footer .container {
 .even-col-right {
     width: 48%;
 }
+
+/* Images */
 
 .material-icon {
     display: inline-block;
