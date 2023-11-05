@@ -50,13 +50,16 @@
                         <ul role="list" class="nav-links-right">
                             <li>
                                 <a href="" id="search-icon">
-                                    <img
-                                        src="/assets/images/search-icon.svg"
-                                        alt="search"
+                                    <svg
                                         class="material-icon"
-                                        width="24px"
-                                        height="24px"
-                                    />
+                                        id="nav-search-icon-svg"
+                                        width="30px"
+                                        height="30px"
+                                    >
+                                        <use
+                                            xlink:href="assets/images/icons.svg#search-icon"
+                                        />
+                                    </svg>
                                 </a>
                             </li>
                             <li>
@@ -167,29 +170,38 @@
         </main>
         <footer>
             <div class="container">
-                <div class="footer-logo">
-                    <img
-                        src="/assets/images/filmhead-footer-logo.svg"
-                        alt="FilmHead footer logo"
-                        height="50px"
-                    />
+                <div class="footer-flex">
+                    <div class="footer-logo">
+                        <img
+                            src="/assets/images/filmhead-footer-logo.svg"
+                            alt="FilmHead footer logo"
+                            height="50px"
+                        />
+                    </div>
+                    <div class="footer-github">
+                        <a href="" id="github-link">
+                            <svg
+                                class="material-icon"
+                                id="github-icon-svg"
+                                height="30px"
+                            >
+                                <use
+                                    xlink:href="assets/images/icons.svg#github-logo"
+                                />
+                            </svg>
+                        </a>
+                        <p>&copy; 2023 FilmHead. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tmdb">
+                        <p>Powered by</p>
+                        <img
+                            src="/assets/images/tmdb-logo.svg"
+                            alt="The Movie Database logo"
+                            height="20px"
+                        />
+                    </div>
                 </div>
-                <div class="footer-github">
-                    <img
-                        src="/assets/images/github-logo.svg"
-                        alt="Github logo"
-                        height="50px"
-                    />
-                    <p>&copy; 2023 FilmHead. All rights reserved.</p>
-                </div>
-                <div class="footer-tmdb-logo">
-                    <p>Powered by</p>
-                    <img
-                        src="/assets/images/tmdb-logo.svg"
-                        alt="The Movie Database logo"
-                        height="20px"
-                    />
-                </div>
+                <div class="footer-bottom"></div>
             </div>
         </footer>
     </body>

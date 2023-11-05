@@ -257,6 +257,15 @@ h3 {
     width: 100%;
 }
 
+#nav-search-icon-svg {
+    fill: var(--clr-white-900);
+}
+
+#nav-search-icon-svg:hover,
+#nav-search-icon-svg:focus {
+    fill: var(--clr-primary);
+}
+
 #nav-link-sign-up {
     background-color: var(--clr-white-900);
     color: var(--clr-black-900);
@@ -275,8 +284,39 @@ h3 {
  Footer
  ======================= */
 
-footer .container {
+.footer-flex {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#github-icon-svg {
+    fill: var(--clr-white-900);
+    margin: 0 auto 0.5rem auto;
+}
+
+#github-icon-svg:hover,
+#github-icon-svg:focus {
+    fill: var(--clr-primary);
+}
+
+.footer-github p {
+    font-size: var(--fs-14);
+    color: var(--clr-black-300);
+    text-align: center;
+}
+
+.footer-tmdb p {
+    font-size: var(--fs-14);
+    color: var(--clr-black-300);
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    height: 4px;
+    background: linear-gradient(0.25turn, #5f5ae8, #1a1772);
 }
 
 /* =======================
@@ -289,7 +329,10 @@ footer .container {
     display: flex;
     flex-direction: column;
     background-image: url(../images/Projector.svg);
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
     width: 100%;
     padding: 3rem;
     margin-bottom: 4rem;
@@ -337,13 +380,14 @@ footer .container {
 }
 
 .features-right-col {
-    width: 60%;
+    width: 65%;
 }
 
 .features-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .features-card-icon {
