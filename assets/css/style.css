@@ -6,17 +6,17 @@
     Colors 
     */
 
-    --clr-primary: #5f5ae8;
-    --clr-primary-dark: #1a1772;
+    --clr-primary: hsl(242, 76%, 63%);
+    --clr-primary-dark: hsl(242, 66%, 27%);
 
-    --clr-accent-yellow: #ffbd00;
+    --clr-accent-yellow: hsl(44, 100%, 50%);
 
-    --clr-black-300: #909090;
-    --clr-black-500: #363636;
-    --clr-black-700: #262626;
-    --clr-black-900: #141414;
+    --clr-black-300: hsl(0, 0%, 56%);
+    --clr-black-500: hsl(0, 0%, 21%);
+    --clr-black-700: hsl(0, 0%, 15%);
+    --clr-black-900: hsl(0, 0%, 8%);
 
-    --clr-white-900: #f6f6ff;
+    --clr-white-900: hsl(240, 100%, 98%);
 
     /* 
     Typography 
@@ -142,6 +142,7 @@ body {
     color: var(--clr-white-900);
     font-family: "Inter", sans-serif;
     font-size: var(--fs-body);
+    overflow-x: hidden;
 }
 
 header {
@@ -202,6 +203,10 @@ h3 {
 
 .main-nav {
     align-items: center;
+}
+
+.mobile-nav-toggle {
+    display: none;
 }
 
 .nav-links {
@@ -316,7 +321,11 @@ h3 {
 
 .footer-bottom {
     height: 4px;
-    background: linear-gradient(0.25turn, #5f5ae8, #1a1772);
+    background: linear-gradient(
+        0.25turn,
+        var(--clr-primary),
+        var(--clr-primary-dark)
+    );
 }
 
 /* =======================
@@ -335,14 +344,14 @@ h3 {
     background-position-y: bottom;
     width: 100%;
     padding: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 5em;
 }
 
 .cta-heading {
     text-align: center;
 }
 
-.cta-heading:last-of-type {
+.cta-heading:nth-child(2) {
     margin-bottom: 2rem;
 }
 
@@ -358,7 +367,7 @@ h3 {
 /* Features */
 
 .features {
-    background-color: rgba(26, 23, 114, 0.4);
+    background-color: hsl(242, 66%, 27%, 0.4);
     backdrop-filter: blur(6px);
     border-radius: 6px;
     padding: 2rem;
@@ -431,6 +440,18 @@ h3 {
 }
 .even-col-right {
     width: 48%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
 }
 
 /* Images */
