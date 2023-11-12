@@ -203,6 +203,7 @@ h3 {
 
 .main-nav {
     align-items: center;
+    background-color: hsl(0, 0%, 8%, 0.9);
 }
 
 .mobile-nav-toggle {
@@ -283,6 +284,24 @@ h3 {
 #nav-link-sign-up:focus {
     color: var(--clr-white-900);
     background-color: var(--clr-primary);
+}
+
+@media (max-width: 50rem) {
+    .main-nav {
+        position: fixed;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links-left {
+        flex-direction: column;
+    }
+
+    .nav-links-right {
+        flex-direction: column;
+    }
 }
 
 /* =======================
