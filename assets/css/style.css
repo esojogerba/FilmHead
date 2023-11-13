@@ -146,10 +146,8 @@ body {
 }
 
 header {
-    background-color: var(--clr-black-900);
     color: var(--clr-white-900);
     font-size: var(--fs-nav);
-    margin-bottom: 3em;
 }
 
 ul {
@@ -194,16 +192,18 @@ h3 {
   Navbar
  ======================= */
 
-.main-nav,
+.primary-header,
 .nav-links,
 .nav-links-left,
 .nav-links-right {
     display: flex;
 }
 
-.main-nav {
-    align-items: center;
+.primary-header {
+    width: 100%;
     background-color: hsl(0, 0%, 8%, 0.9);
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .mobile-nav-toggle {
@@ -219,23 +219,15 @@ h3 {
     position: relative;
 }
 
-.nav-links-left li a {
-    text-decoration: none;
-    color: var(--clr-white-900);
-    margin-left: 2em;
-}
-
-.nav-links-left li a:hover,
-.nav-links-left li a:focus {
-    color: var(--clr-primary);
-}
-
+.nav-links-left li a,
 .nav-links-right li a {
     text-decoration: none;
     color: var(--clr-white-900);
     margin-left: 2em;
 }
 
+.nav-links-left li a:hover,
+.nav-links-left li a:focus,
 .nav-links-right li a:hover,
 .nav-links-right li a:focus {
     color: var(--clr-primary);
@@ -286,21 +278,54 @@ h3 {
     background-color: var(--clr-primary);
 }
 
-@media (max-width: 50rem) {
-    .main-nav {
+@media (max-width: 52rem) {
+    header {
+        --fs-nav: var(--fs-32);
+    }
+
+    .primary-header {
         position: fixed;
+        justify-content: space-between;
+        z-index: 1000;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        z-index: 9999;
+        background-color: transparent;
+        background-image: url(/assets/images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+    }
+
+    .nav-links,
+    .nav-links-left,
+    .nav-links-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
     }
 
     .nav-links {
-        flex-direction: column;
+        position: fixed;
+        width: 70%;
+        background-color: hsl(0, 0%, 8%, 0.9);
+        justify-content: flex-start;
+        inset: 0 0 0 30%;
+        padding: min(30vh, 4rem) 2rem;
+        margin-top: 4rem;
     }
 
-    .nav-links-left {
-        flex-direction: column;
-    }
-
+    .nav-links-left,
     .nav-links-right {
-        flex-direction: column;
+        padding: 0;
+    }
+    .nav-links-left li a,
+    .nav-links-right li a {
+        margin-left: 0;
     }
 }
 
@@ -445,7 +470,8 @@ h3 {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1.5rem;
 }
 
