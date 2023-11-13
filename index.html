@@ -36,13 +36,27 @@
     <body>
         <header class="container primary-header">
             <div>
-                <a href="" class="nav-logo">
+                <a href="" class="desktop-nav-logo">
                     <img
                         src="/assets/images/filmhead-nav-logo.svg"
                         alt="FilmHead logo"
                         id="nav-logo-img"
                     />
                 </a>
+            </div>
+
+            <div>
+                <a href="" class="mobile-nav-logo">
+                    <img
+                        src="/assets/images/FilmHead-logo.png"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div class="search-box-mobile">
+                <input class="search-field" type="text" placeholder="Search" />
             </div>
 
             <button
@@ -60,20 +74,12 @@
                     <li><a href="">Backlog</a></li>
                 </ul>
                 <ul role="list" class="nav-links-right">
-                    <li>
-                        <a href="" id="search-icon">
-                            <svg
-                                class="material-icon"
-                                id="nav-search-icon-svg"
-                                width="30px"
-                                height="30px"
-                            >
-                                <use
-                                    xlink:href="assets/images/icons.svg#search-icon"
-                                />
-                            </svg>
-                            <span> Search </span>
-                        </a>
+                    <li class="search-box-desktop">
+                        <input
+                            class="search-field"
+                            type="text"
+                            placeholder="Search"
+                        />
                     </li>
                     <li>
                         <a href="" id="nav-link-sign-up">Sign Up</a>
