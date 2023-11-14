@@ -41,6 +41,7 @@
     --fs-20: 1.25rem;
     --fs-24: 1.5rem;
     --fs-32: 2rem;
+    --fs-36: 2.25rem;
     --fs-44: 2.75rem;
     --fs-52: 3.25rem;
     --fs-60: 3.75rem;
@@ -51,6 +52,7 @@
     --fs-h1: var(--fs-60);
     --fs-h2: var(--fs-52);
     --fs-h3: var(--fs-44);
+    --fs-footer: var(--fs-14);
 }
 
 /* =======================
@@ -433,13 +435,13 @@ h3 {
 }
 
 .footer-github p {
-    font-size: var(--fs-14);
+    font-size: var(--fs-footer);
     color: var(--clr-black-300);
     text-align: center;
 }
 
 .footer-tmdb p {
-    font-size: var(--fs-14);
+    font-size: var(--fs-footer);
     color: var(--clr-black-300);
     margin-bottom: 0.5rem;
 }
