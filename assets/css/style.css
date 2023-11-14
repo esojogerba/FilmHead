@@ -456,6 +456,21 @@ h3 {
     );
 }
 
+@media (max-width: 40rem) {
+    .footer-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-github {
+        order: 3;
+    }
+
+    .footer-tmbd {
+        order: 2;
+    }
+}
+
 /* =======================
  Home
  ======================= */
