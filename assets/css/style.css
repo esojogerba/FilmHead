@@ -317,7 +317,7 @@ h3 {
 
     .primary-header {
         position: fixed;
-        box-sizing: b;
+        top: 0;
         justify-content: space-between;
         z-index: 1000;
     }
@@ -491,6 +491,12 @@ h3 {
     margin: 0 auto;
 }
 
+@media (max-width: 60rem) {
+    .cta {
+        margin-top: 6rem;
+    }
+}
+
 /* Features */
 
 .features {
@@ -540,9 +546,28 @@ h3 {
 }
 
 .features-card-title {
-    font-size: 2rem;
+    font-size: var(--fs-32);
     line-height: 1;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 60rem) {
+    .features-columns {
+        flex-direction: column;
+    }
+
+    .features-left-col {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .features-title {
+        text-align: center;
+    }
+
+    .features-right-col {
+        width: 100%;
+    }
 }
 
 /* =======================
