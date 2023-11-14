@@ -471,7 +471,10 @@ h3 {
     background-repeat: no-repeat;
     background-position-y: bottom;
     width: 100%;
+    max-width: 1200px;
     padding: 3rem;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 5em;
 }
 
