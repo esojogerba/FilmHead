@@ -498,6 +498,20 @@ h3 {
     }
 }
 
+@media (max-width: 35rem) {
+    .cta-heading {
+        font-size: var(--fs-40);
+    }
+
+    .cta-p {
+        font-size: var(--fs-16);
+    }
+
+    .cta-btn {
+        font-size: var(--fs-16);
+    }
+}
+
 /* Features */
 
 .features {
