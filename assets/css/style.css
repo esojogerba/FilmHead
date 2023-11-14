@@ -472,14 +472,11 @@ h3 {
     background-position-y: bottom;
     width: 100%;
     max-width: 1200px;
+    text-align: center;
     padding: 3rem;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5em;
-}
-
-.cta-heading {
-    text-align: center;
 }
 
 .cta-heading:nth-child(2) {
@@ -487,8 +484,9 @@ h3 {
 }
 
 .cta-p {
-    text-align: center;
+    margin-inline: auto;
     margin-bottom: 2rem;
+    max-width: 50ch;
 }
 
 .cta-btn {
