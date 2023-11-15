@@ -34,42 +34,65 @@
         <script src="assets/js/nav.js" defer></script>
     </head>
     <body>
-        <header>
-            <div class="container">
-                <nav class="main-nav">
-                    <a href="" class="nav-logo">
-                        <img
-                            src="/assets/images/filmhead-nav-logo.svg"
-                            alt="FilmHead logo"
-                            id="nav-logo-img"
-                        />
-                    </a>
-                    <div class="nav-links">
-                        <ul role="list" class="nav-links-left">
-                            <li><a href="">Movies</a></li>
-                            <li><a href="">Shows</a></li>
-                            <li><a href="">Backlog</a></li>
-                        </ul>
-                        <ul role="list" class="nav-links-right">
-                            <li>
-                                <a href="" id="search-icon">
-                                    <img
-                                        src="/assets/images/search-icon.svg"
-                                        alt="search"
-                                        class="material-icon"
-                                        width="24px"
-                                        height="24px"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" id="nav-link-sign-up">Sign Up</a>
-                            </li>
-                            <li><a href="">Log In</a></li>
-                        </ul>
-                    </div>
-                </nav>
+        <header class="container primary-header">
+            <div>
+                <a href="" class="desktop-nav-logo">
+                    <img
+                        src="/assets/images/filmhead-nav-logo.svg"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
             </div>
+
+            <div>
+                <a href="" class="mobile-nav-logo">
+                    <img
+                        src="/assets/images/FilmHead-logo.png"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div class="search-box-mobile">
+                <input
+                    class="search-field"
+                    type="text"
+                    placeholder="Search..."
+                />
+            </div>
+
+            <button
+                class="mobile-nav-toggle"
+                aria-controls="primary-navigation"
+                aria-expanded="false"
+            >
+                <span class="sr-only">Menu</span>
+            </button>
+
+            <nav class="nav-links" id="nav-links" data-visible="false">
+                <ul role="list" class="nav-links-left">
+                    <li><a class="current-page" href="">Movies</a></li>
+                    <li><a href="">Shows</a></li>
+                    <li><a href="">Backlog</a></li>
+                </ul>
+                <ul role="list" class="nav-links-right">
+                    <li class="search-box-desktop">
+                        <input
+                            class="search-field"
+                            type="text"
+                            placeholder="Search..."
+                        />
+                    </li>
+                    <li>
+                        <a href="html/sign-up.html" id="nav-link-sign-up"
+                            >Sign Up</a
+                        >
+                    </li>
+                    <li><a href="">Log In</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             <div class="container">
