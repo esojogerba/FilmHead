@@ -668,9 +668,6 @@ h3 {
     justify-content: center;
 }
 
-.account-form-header {
-}
-
 .sign-up-form {
     width: 80%;
     display: flex;
@@ -759,6 +756,30 @@ h3 {
         display: none;
     }
 }
+
+@media (max-width: 35rem) {
+    .account-form-header {
+        font-size: var(--fs-40);
+    }
+
+    .sign-up-form {
+        margin-top: 2rem;
+    }
+
+    .input-group {
+        font-size: var(--fs-16);
+    }
+
+    .input-group label {
+        top: 45%;
+        left: 1rem;
+    }
+
+    .account-form-btn {
+        font-size: var(--fs-16);
+    }
+}
+
 /* =======================
  Utility
  ======================= */
