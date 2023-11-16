@@ -153,6 +153,10 @@ header {
     font-size: var(--fs-nav);
 }
 
+footer {
+    background-color: var(--clr-black-900);
+}
+
 ul {
     margin: 0;
 }
@@ -797,6 +801,37 @@ h3 {
         text-align: center;
     }
 }
+
+/* Spacing */
+.margin-top-500 {
+    margin-top: 4rem;
+}
+
+.margin-bottom-500 {
+    margin-bottom: 4rem;
+}
+
+.margin-bottom-900 {
+    margin-bottom: 6rem;
+}
+
+@media (max-width: 60em) {
+    .margin-bottom-900-mobile {
+        margin-bottom: 6rem;
+    }
+}
+
+.padding-bottom-900 {
+    padding-bottom: 6rem;
+}
+
+@media (max-width: 60em) {
+    .padding-bottom-900-mobile {
+        padding-bottom: 6rem;
+    }
+}
+
+/* Hidden */
 
 .sr-only {
     position: absolute;
