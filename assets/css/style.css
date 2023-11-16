@@ -371,7 +371,7 @@ h3 {
         justify-content: flex-start;
         inset: 0 0 0 30%;
         padding: min(30vh, 2rem) 2rem;
-        margin-top: 4.5rem;
+        margin-top: 4.4rem;
         transform: translateX(100%);
         transition: transform 350ms ease-out;
     }
