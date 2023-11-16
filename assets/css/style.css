@@ -649,6 +649,21 @@ h3 {
     object-fit: cover;
 }
 
+@media (max-width: 60rem) {
+    .mobile-bg-img {
+        background-image: url(../images/Projector.svg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        width: 100%;
+    }
+
+    .form-image {
+        display: none;
+    }
+}
+
 /* =======================
  Utility
  ======================= */
