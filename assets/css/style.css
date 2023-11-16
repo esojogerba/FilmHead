@@ -140,7 +140,12 @@ select {
  Global
  ======================= */
 
+html {
+    height: 100%;
+}
+
 body {
+    min-height: 100%;
     background-color: var(--clr-black-900);
     color: var(--clr-white-900);
     font-family: "Inter", sans-serif;
@@ -693,7 +698,7 @@ h3 {
 }
 
 .input-group input {
-    height: 60px;
+    height: 70px;
     width: 100%;
     color: var(--clr-white-900);
     background-color: transparent;
@@ -768,6 +773,10 @@ h3 {
 
     .input-group {
         font-size: var(--fs-16);
+    }
+
+    .input-group input {
+        height: 60px;
     }
 
     .input-group label {
