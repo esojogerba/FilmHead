@@ -290,7 +290,7 @@ h3 {
     background-position: left;
     background-position-x: 4px;
     color: var(--clr-white-900);
-    font-size: var(--fs-20);
+    font-size: var(--fs-18);
     border: none;
     border-radius: 6px;
     padding: 4px 8px 4px 34px;
@@ -392,7 +392,6 @@ h3 {
     }
 
     .search-box-mobile {
-        justify-self: end;
         display: flex;
         width: 100%;
         justify-content: center;
@@ -409,7 +408,7 @@ h3 {
         background: var(--clr-black-500)
             url("/assets/images/search-icon-white.svg") no-repeat 10px;
         background-size: 30px;
-        font-size: var(--fs-24);
+        font-size: var(--fs-20);
         margin-block: 1rem;
         padding: 4px 8px 4px 50px;
     }
@@ -639,6 +638,10 @@ h3 {
         font-size: var(--fs-16);
     }
 }
+
+/* =======================
+ Sign Up
+ ======================= */
 
 /* =======================
  Utility
