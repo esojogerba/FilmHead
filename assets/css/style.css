@@ -654,7 +654,7 @@ h3 {
 
 @media (max-width: 60rem) {
     .mobile-bg-img {
-        background-image: url(../images/Projector.svg);
+        background-image: url(../images/VHS.svg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
