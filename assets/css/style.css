@@ -451,12 +451,15 @@ h3 {
 }
 
 .footer-bottom {
+    max-width: 1200px;
     height: 4px;
     background: linear-gradient(
         0.25turn,
         var(--clr-primary),
         var(--clr-primary-dark)
     );
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 40rem) {
