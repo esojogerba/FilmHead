@@ -95,29 +95,63 @@
             </nav>
         </header>
         <main>
-            <div class="container">
-                <div class="even-columns">
-                    <div class="even-col-left">
-                        <div class="cta">
-                            <h1 class="cta-heading">Nothing to watch?</h1>
-                            <h1 class="cta-heading">Not Anymore!</h1>
-                            <p class="cta-p">
-                                Keep track of your media backlog so that you
-                                always have something to scratch your
-                                entertainment itch.
-                            </p>
-                            <button class="btn">Create An Account</button>
+            <section class="text-center-sm-only">
+                <div class="container">
+                    <div class="account-form-columns">
+                        <div class="account-form-col-left">
+                            <div class="account-form div-center-sm-only">
+                                <h1 class="account-form-header">Sign Up</h1>
+                                <form
+                                    action=""
+                                    class="sign-up-form div-center-sm-only"
+                                >
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            id="username"
+                                            name="username"
+                                            autocomplete="off"
+                                            required
+                                        />
+                                        <label for="username">Username</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input
+                                            type="password"
+                                            id="pw"
+                                            name="pw"
+                                            autocomplete="off"
+                                            required
+                                        />
+                                        <label for="pw">Password</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input
+                                            type="password"
+                                            id="confirm-pw"
+                                            name="confirm-pw"
+                                            autocomplete="off"
+                                            required
+                                        />
+                                        <label for="confirm-pw"
+                                            >Confirm Password</label
+                                        >
+                                    </div>
+                                </form>
+                                <button class="btn">Let's Go</button>
+                            </div>
+                        </div>
+                        <div class="account-form-col-right">
+                            <img
+                                src="/assets/images/VHS.svg"
+                                alt="projector"
+                                class="form-image"
+                                loading="eager"
+                            />
                         </div>
                     </div>
-                    <div class="even-col-right">
-                        <img
-                            src="/assets/images/VHS.svg"
-                            alt="projector"
-                            class="form-image"
-                        />
-                    </div>
                 </div>
-            </div>
+            </section>
         </main>
         <footer>
             <div class="container">
