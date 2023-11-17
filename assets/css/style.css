@@ -145,6 +145,7 @@ html {
 }
 
 body {
+    position: relative;
     min-height: 100%;
     background-color: var(--clr-black-900);
     color: var(--clr-white-900);
@@ -487,6 +488,46 @@ h3 {
 }
 
 /* =======================
+ Background Circles
+ ======================= */
+
+/* Home Page */
+
+.home-bg-circles {
+    position: relative;
+    overflow: clip;
+    overflow-clip-margin: 0px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.home-bg-circle-top {
+    position: absolute;
+    display: block;
+    max-width: 600px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    top: -15%;
+    left: -10%;
+}
+
+.home-bg-circle-bottom {
+    position: absolute;
+    display: block;
+    max-width: 600px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    bottom: -30%;
+    right: -20%;
+}
+
+/* Sign Up / Log In */
+
+/* =======================
  Home
  ======================= */
 
@@ -506,7 +547,7 @@ h3 {
     padding: 3rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5em;
+    margin-bottom: 2em;
 }
 
 .cta-heading:nth-child(2) {
@@ -550,6 +591,7 @@ h3 {
     backdrop-filter: blur(6px);
     border-radius: 6px;
     padding: 2rem;
+    margin-top: 3rem;
     margin-bottom: 4rem;
 }
 
@@ -799,12 +841,14 @@ h3 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 @media (max-width: 47rem) {
     .container {
-        padding: 0 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
