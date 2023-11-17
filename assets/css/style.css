@@ -525,6 +525,18 @@ h3 {
     right: -20%;
 }
 
+@media (max-width: 47rem) {
+    .home-bg-circle-top {
+        top: -7%;
+        left: -15%;
+    }
+
+    .home-bg-circle-bottom {
+        bottom: -10%;
+        right: -20%;
+    }
+}
+
 /* Sign Up / Log In */
 
 /* =======================
