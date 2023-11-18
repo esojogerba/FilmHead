@@ -539,6 +539,47 @@ h3 {
 
 /* Sign Up / Log In */
 
+.account-form-bg-circles {
+    position: relative;
+    overflow: clip;
+    overflow-clip-margin: 0px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.account-form-bg-circle-top {
+    position: absolute;
+    display: block;
+    max-width: 600px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    top: -10%;
+    left: -10%;
+}
+
+.account-form-bg-circle-bottom {
+    position: absolute;
+    display: block;
+    max-width: 600px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    bottom: -10%;
+    right: 20%;
+}
+
+@media (max-width: 60em) {
+    .account-form-bg-circle-top {
+        display: none;
+    }
+    .account-form-bg-circle-bottom {
+        display: none;
+    }
+}
+
 /* =======================
  Home
  ======================= */
