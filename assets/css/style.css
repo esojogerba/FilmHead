@@ -172,6 +172,7 @@ ul {
     color: var(--clr-white-900);
     font-size: var(--fs-btn);
     font-weight: var(--fw-bold);
+    text-decoration: none;
     padding: 0.8em 1.2em;
     border-radius: 6px;
     border-style: none;
