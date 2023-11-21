@@ -181,6 +181,20 @@ ul {
     object-fit: cover;
 }
 
+.poster-box {
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+    background-color: var(--clr-black-700);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.poster-box {
+    background-image: url(/assets/images/poster-bg-icon.png);
+    aspect-ratio: 2/3;
+}
+
 .meta-list {
     display: flex;
     flex-wrap: wrap;
@@ -1022,6 +1036,12 @@ h3 {
 #add-svg:hover,
 #add-svg:focus {
     fill: var(--clr-white-900);
+}
+
+/* Media List */
+
+.media-card .card-poster {
+    width: 260px;
 }
 
 /* =======================
