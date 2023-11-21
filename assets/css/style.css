@@ -54,6 +54,10 @@
     --fs-h2: var(--fs-52);
     --fs-h3: var(--fs-44);
     --fs-footer: var(--fs-14);
+
+    /* Transitions */
+    --transition-short: 250ms ease;
+    --transition-long: 500ms ease;
 }
 
 /* =======================
@@ -748,7 +752,7 @@ h3 {
 }
 
 /* =======================
- Sign Up
+ Sign Up / Log In
  ======================= */
 
 .account-form-columns {
@@ -884,6 +888,10 @@ h3 {
         font-size: var(--fs-16);
     }
 }
+
+/* =======================
+ Movies
+ ======================= */
 
 /* =======================
  Utility
