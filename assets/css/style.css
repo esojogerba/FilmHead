@@ -1044,6 +1044,13 @@ h3 {
     width: 260px;
 }
 
+.media-slider-list,
+.slider-list-inner {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
 /* =======================
  Utility
  ======================= */
