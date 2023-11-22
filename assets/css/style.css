@@ -1040,15 +1040,28 @@ h3 {
 
 /* Media List */
 
-.media-card .card-poster {
-    width: 260px;
-}
-
 .media-slider-list,
 .slider-list-inner {
     position: relative;
     display: flex;
     gap: 1rem;
+}
+
+.media-card .card-poster {
+    width: 260px;
+}
+
+#card-add-svg {
+    display: inline-block;
+    fill: var(--clr-white-900);
+    width: 50px;
+    height: 50px;
+}
+
+.media-card-add-btn {
+    background-color: var(--clr-primary);
+    padding: 0.5rem;
+    border-radius: 6px;
 }
 
 /* =======================
