@@ -1051,6 +1051,30 @@ h3 {
     width: 260px;
 }
 
+.media-card-title {
+    font-size: var(--fs-20);
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.media-card-meta,
+.media-card-genres {
+    font-size: var(--fs-14);
+    line-height: normal;
+    color: var(--clr-black-300);
+    margin-top: 6px;
+}
+
+.media-card-meta {
+    max-width: 260px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.media-card-meta .card-badge {
+    font-size: var(--fs-14);
+}
+
 #card-add-svg {
     display: inline-block;
     fill: var(--clr-white-900);
