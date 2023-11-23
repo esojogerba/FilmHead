@@ -1040,6 +1040,35 @@ h3 {
 
 /* Media List */
 
+.movies-header {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.media-scroll {
+    max-width: 1200px;
+    width: 100%;
+    border-top: 1px solid hsl(240, 100%, 98%, 0.3);
+    padding-top: 1rem;
+}
+
+.media-scroll-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.media-scroll-title {
+    font-size: var(--fs-44);
+    margin-bottom: 1rem;
+}
+
+.view-more-link {
+    color: var(--clr-primary);
+    font-size: var(--fs-20);
+    font-weight: var(--fw-bold);
+}
+
 .media-slider-list,
 .slider-list-inner {
     position: relative;
