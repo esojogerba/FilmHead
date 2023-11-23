@@ -1115,6 +1115,26 @@ h3 {
     position: relative;
 }
 
+.media-card-add-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+    background-color: hsl(242, 76%, 63%, 0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    line-height: normal;
+    font-size: 0;
+    padding: 0.5rem;
+}
+
+#card-add-svg {
+    fill: var(--clr-white-900);
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1;
+}
+
 .media-card-title {
     font-size: var(--fs-20);
     line-height: normal;
@@ -1137,26 +1157,6 @@ h3 {
 
 .media-card-meta .card-badge {
     font-size: var(--fs-14);
-}
-
-.media-card-add-btn {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    z-index: 3;
-    background-color: hsl(242, 76%, 63%, 0.7);
-    backdrop-filter: blur(6px);
-    border-radius: 6px;
-    line-height: normal;
-    font-size: 0;
-    padding: 0.5rem;
-}
-
-#card-add-svg {
-    fill: var(--clr-white-900);
-    width: 40px;
-    height: 40px;
-    aspect-ratio: 1;
 }
 
 .card-btn {
