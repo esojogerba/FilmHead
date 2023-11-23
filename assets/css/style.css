@@ -11,6 +11,7 @@
 
     --clr-accent-yellow: hsl(44, 100%, 50%);
 
+    --clr-black-200: hsl(0, 0%, 80%);
     --clr-black-300: hsl(0, 0%, 56%);
     --clr-black-500: hsl(0, 0%, 21%);
     --clr-black-700: hsl(0, 0%, 15%);
@@ -1094,6 +1095,11 @@ h3 {
     color: var(--clr-primary);
     font-size: var(--fs-20);
     font-weight: var(--fw-bold);
+}
+
+.view-more-link:hover,
+.view-more-link:focus {
+    color: var(--clr-black-200);
 }
 
 .media-slider-list,
