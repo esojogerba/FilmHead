@@ -1040,8 +1040,63 @@ h3 {
 
 /* Media List */
 
+.media-slider-list,
+.slider-list-inner {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
 .media-card .card-poster {
     width: 260px;
+}
+
+.card-poster {
+    position: relative;
+}
+
+.media-card-title {
+    font-size: var(--fs-20);
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.media-card-meta,
+.media-card-genres {
+    font-size: var(--fs-14);
+    line-height: normal;
+    color: var(--clr-black-300);
+    margin-top: 6px;
+}
+
+.media-card-meta {
+    max-width: 260px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.media-card-meta .card-badge {
+    font-size: var(--fs-14);
+}
+
+.media-card-add-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+    background-color: hsl(242, 76%, 63%, 0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    line-height: normal;
+    font-size: 0;
+    padding: 0.5rem;
+}
+
+#card-add-svg {
+    fill: var(--clr-white-900);
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1;
 }
 
 /* =======================
