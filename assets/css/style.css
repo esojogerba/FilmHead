@@ -1120,12 +1120,18 @@ h3 {
     bottom: 15px;
     right: 15px;
     z-index: 3;
-    background-color: hsl(242, 76%, 63%, 0.7);
+    background-color: hsl(242, 76%, 63%, 0.6);
     backdrop-filter: blur(6px);
     border-radius: 6px;
     line-height: normal;
     font-size: 0;
     padding: 0.5rem;
+}
+
+.media-card-add-btn:hover,
+.media-card-add-btn:focus {
+    background-color: hsl(242, 76%, 63%, 1);
+    backdrop-filter: blur(6px);
 }
 
 #card-add-svg {
