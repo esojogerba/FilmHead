@@ -32,6 +32,7 @@
 
         <!-- Javascript Links -->
         <script src="/assets/js/nav.js" defer></script>
+        <script src="/assets/js/global.js" defer></script>
     </head>
     <body>
         <header class="container primary-header">
@@ -95,6 +96,7 @@
             </nav>
         </header>
         <main>
+            <!-- TODO: Slider Control -->
             <section class="banner">
                 <div class="banner-slider-row">
                     <div class="banner-slider-item active">
@@ -235,13 +237,32 @@
             </section>
             <article class="container">
                 <div class="movies-header">
-                    <h1>Movies</h1>
+                    <h1 class="movies-page-title">Movies</h1>
+
+                    <div class="genre-dropdown">
+                        <button onclick="toggleDropdown()" class="dropdown-btn">
+                            <span>Genres</span>
+                            <img src="/assets/images/dropdown-arrow.png" />
+                        </button>
+
+                        <div id="movies-dropdown" class="dropdown-menu">
+                            <a href="#">Science Fiction</a>
+                            <a href="#">Genre 2</a>
+                            <a href="#">Genre 3</a>
+                            <a href="#">Genre 3</a>
+                            <a href="#">Genre 3</a>
+                            <a href="#">Genre 3</a>
+                            <a href="#">Genre 3</a>
+                        </div>
+                    </div>
                 </div>
                 <section class="media-scroll">
                     <div class="media-scroll-title-wrapper">
                         <h3 class="media-scroll-title">Trending</h3>
+
                         <a href="" class="view-more-link">View More</a>
                     </div>
+
                     <div class="media-slider-list">
                         <div class="slider-list-inner">
                             <div class="media-card">
@@ -281,6 +302,7 @@
                                     onclick=""
                                 ></a>
                             </div>
+
                             <div class="media-card">
                                 <figure class="poster-box card-poster">
                                     <img
@@ -318,6 +340,7 @@
                                     onclick=""
                                 ></a>
                             </div>
+
                             <div class="media-card">
                                 <figure class="poster-box card-poster">
                                     <img
@@ -355,6 +378,7 @@
                                     onclick=""
                                 ></a>
                             </div>
+
                             <div class="media-card">
                                 <figure class="poster-box card-poster">
                                     <img
@@ -392,6 +416,7 @@
                                     onclick=""
                                 ></a>
                             </div>
+
                             <div class="media-card">
                                 <figure class="poster-box card-poster">
                                     <img
@@ -429,6 +454,7 @@
                                     onclick=""
                                 ></a>
                             </div>
+
                             <div class="media-card">
                                 <figure class="poster-box card-poster">
                                     <img
@@ -466,6 +492,7 @@
                                     onclick=""
                                 ></a>
                             </div>
+
                             <div class="media-card">
                                 <figure class="poster-box card-poster">
                                     <img
