@@ -1051,6 +1051,10 @@ h3 {
     width: 260px;
 }
 
+.card-poster {
+    position: relative;
+}
+
 .media-card-title {
     font-size: var(--fs-20);
     line-height: normal;
@@ -1075,17 +1079,24 @@ h3 {
     font-size: var(--fs-14);
 }
 
-#card-add-svg {
-    display: inline-block;
-    fill: var(--clr-white-900);
-    width: 50px;
-    height: 50px;
+.media-card-add-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+    background-color: hsl(242, 76%, 63%, 0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    line-height: normal;
+    font-size: 0;
+    padding: 0.5rem;
 }
 
-.media-card-add-btn {
-    background-color: var(--clr-primary);
-    padding: 0.5rem;
-    border-radius: 6px;
+#card-add-svg {
+    fill: var(--clr-white-900);
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1;
 }
 
 /* =======================
