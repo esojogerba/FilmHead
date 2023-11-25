@@ -1049,12 +1049,13 @@ h3 {
     fill: var(--clr-white-900);
 }
 
-/* Banner Control Slider */
+/* Banner Control */
 
 .banner-control-row {
     position: absolute;
     bottom: 20px;
-    right: -10%;
+    left: calc(100% - 300px);
+    right: 0;
     border-radius: 6px 0 0 6px;
     user-select: none;
     padding: 4px 0 4px 4px;
