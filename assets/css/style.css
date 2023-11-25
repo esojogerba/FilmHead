@@ -193,17 +193,17 @@ ul {
 }
 
 .poster-box {
+    background-image: url(/assets/images/poster-bg-icon.png);
+    aspect-ratio: 2/3;
+}
+
+.poster-box {
     background-repeat: no-repeat;
     background-size: 50px;
     background-position: center;
     background-color: var(--clr-black-700);
     border-radius: 6px;
     overflow: hidden;
-}
-
-.poster-box {
-    background-image: url(/assets/images/poster-bg-icon.png);
-    aspect-ratio: 2/3;
 }
 
 .meta-list {
@@ -1047,6 +1047,48 @@ h3 {
 #add-svg:hover,
 #add-svg:focus {
     fill: var(--clr-white-900);
+}
+
+/* Banner Control */
+
+.banner-control-row {
+    position: absolute;
+    bottom: 20px;
+    left: calc(100% - 300px);
+    right: 0;
+    border-radius: 6px 0 0 6px;
+    user-select: none;
+    padding: 4px 0 4px 4px;
+    overflow-x: auto;
+}
+
+.banner-control-row::-webkit-scrollbar {
+    display: none;
+}
+
+.banner-control-inner {
+    display: flex;
+    gap: 12px;
+}
+
+.banner-control-inner::after {
+    content: "";
+    min-width: 12px;
+}
+
+.banner-control-item {
+    background: none;
+    text-align: left;
+    border: none;
+    width: 100px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    filter: brightness(0.4);
+}
+
+.banner-control-row .active {
+    filter: brightness(1);
+    box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.75);
 }
 
 /* Media List */
