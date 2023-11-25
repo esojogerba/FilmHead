@@ -1308,6 +1308,21 @@ h3 {
     }
 }
 
+.app-container {
+    max-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 47rem) {
+    .app-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 .even-columns {
     display: flex;
     justify-content: space-between;
