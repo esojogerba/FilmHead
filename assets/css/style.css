@@ -1117,7 +1117,7 @@ h3 {
 
 /* Media List */
 
-.movies-header {
+.media-page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1125,7 +1125,7 @@ h3 {
     margin-bottom: 2rem;
 }
 
-.movies-page-title {
+.media-page-title {
     font-size: var(--fs-60);
 }
 
@@ -1192,13 +1192,13 @@ h3 {
 }
 
 @media (max-width: 35rem) {
-    .movies-header {
+    .media-page-header {
         flex-direction: column;
         gap: 1rem;
         margin-bottom: 3rem;
     }
 
-    .movies-page-title {
+    .media-page-title {
         font-size: var(--fs-44);
     }
 }
