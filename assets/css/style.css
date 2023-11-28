@@ -1032,11 +1032,9 @@ h3 {
     margin-top: 0.75rem;
 }
 
-#add-svg {
-    fill: var(--clr-primary);
-    width: 40px;
-    height: 40px;
-    aspect-ratio: 1;
+#banner-add-btn {
+    background-color: transparent;
+    outline: 2px solid var(--clr-white-900);
 }
 
 #banner-add-btn:hover,
@@ -1044,9 +1042,11 @@ h3 {
     background-color: var(--clr-primary);
 }
 
-#add-svg:hover,
-#add-svg:focus {
+#add-svg {
     fill: var(--clr-white-900);
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1;
 }
 
 @media (max-width: 35rem) {
