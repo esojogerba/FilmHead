@@ -1071,6 +1071,11 @@ h3 {
     .banner-buttons a {
         font-size: var(--fs-16);
     }
+
+    #add-svg {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 /* Banner Control */
