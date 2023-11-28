@@ -1049,6 +1049,30 @@ h3 {
     fill: var(--clr-white-900);
 }
 
+@media (max-width: 35rem) {
+    .banner {
+        height: 600px;
+        margin-top: 3rem;
+    }
+
+    .banner-content {
+        bottom: 32%;
+        gap: 1rem;
+    }
+
+    .banner-heading {
+        font-size: var(--fs-36);
+    }
+
+    .banner-text,
+    .banner-genre,
+    .banner-content .meta-list,
+    .banner-content .meta-list .card-badge,
+    .banner-buttons a {
+        font-size: var(--fs-16);
+    }
+}
+
 /* Banner Control */
 
 .banner-control-row {
@@ -1104,6 +1128,8 @@ h3 {
 .movie-page-title {
     font-size: var(--fs-60);
 }
+
+/* Dropdown */
 
 .genre-dropdown {
     position: relative;
