@@ -229,7 +229,7 @@ ul {
 }
 
 .card-badge {
-    background-color: var(--clr-black-700);
+    background-color: var(--clr-black-500);
     color: var(--clr-white-900);
     font-size: var(--fs-24);
     font-weight: var(--fw-bold);
