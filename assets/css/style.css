@@ -1326,6 +1326,10 @@ h3 {
 }
 
 .media-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
     font-size: var(--fs-20);
     line-height: normal;
     margin-top: 10px;
@@ -1369,14 +1373,6 @@ h3 {
         width: 30px;
         height: 30px;
         aspect-ratio: 1;
-    }
-
-    .media-card-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        -webkit-line-clamp: 1;
-        font-size: var(--fs-20);
     }
 
     .media-card-meta,
