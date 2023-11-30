@@ -1209,7 +1209,8 @@ h3 {
 @media (max-width: 35rem) {
     .media-page-header {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
+        margin-top: 3rem;
         margin-bottom: 3rem;
     }
 
@@ -1265,6 +1266,20 @@ h3 {
     color: var(--clr-black-200);
 }
 
+@media (max-width: 35rem) {
+    .media-scroll-title-wrapper {
+        justify-content: space-between;
+    }
+
+    .media-scroll-title {
+        font-size: var(--fs-32);
+    }
+
+    .view-more-link {
+        font-size: var(--fs-16);
+    }
+}
+
 .media-slider-list,
 .slider-list-inner {
     position: relative;
@@ -1311,6 +1326,10 @@ h3 {
 }
 
 .media-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
     font-size: var(--fs-20);
     line-height: normal;
     margin-top: 10px;
@@ -1338,6 +1357,28 @@ h3 {
     position: absolute;
     inset: 0;
     z-index: 2;
+}
+
+@media (max-width: 35rem) {
+    .media-card .card-poster {
+        width: 170px;
+    }
+
+    .media-card-add-btn {
+        bottom: 8px;
+        right: 8px;
+    }
+
+    #card-add-svg {
+        width: 30px;
+        height: 30px;
+        aspect-ratio: 1;
+    }
+
+    .media-card-meta,
+    .media-card-genres {
+        display: none;
+    }
 }
 
 /* =======================
