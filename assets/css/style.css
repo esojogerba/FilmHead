@@ -1355,6 +1355,23 @@ h3 {
     z-index: 2;
 }
 
+@media (max-width: 35rem) {
+    .media-card .card-poster {
+        width: 170px;
+    }
+
+    .media-card-add-btn {
+        bottom: 8px;
+        right: 8px;
+    }
+
+    #card-add-svg {
+        width: 30px;
+        height: 30px;
+        aspect-ratio: 1;
+    }
+}
+
 /* =======================
  Utility
  ======================= */
