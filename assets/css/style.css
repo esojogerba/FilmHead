@@ -1338,6 +1338,10 @@ h3 {
 
 .media-card-meta,
 .media-card-genres {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
     font-size: var(--fs-14);
     line-height: normal;
     color: var(--clr-black-300);
