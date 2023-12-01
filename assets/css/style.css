@@ -40,6 +40,7 @@
     --fw-bold: 700;
 
     /* Font Sizes */
+    --fs-12: 0.75rem;
     --fs-14: 0.875rem;
     --fs-16: 1rem;
     --fs-18: 1.125rem;
@@ -1376,8 +1377,9 @@ h3 {
     }
 
     .media-card-meta,
+    .media-card-meta .card-badge,
     .media-card-genres {
-        display: none;
+        font-size: var(--fs-12);
     }
 }
 
