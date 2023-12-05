@@ -1381,9 +1381,12 @@ h3 {
     }
 
     .media-card-meta,
-    .media-card-meta .card-badge,
-    .media-card-genres {
+    .media-card-meta .card-badge {
         font-size: var(--fs-12);
+    }
+
+    .media-card-genres {
+        display: none;
     }
 }
 
