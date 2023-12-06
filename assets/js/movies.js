@@ -81,6 +81,7 @@ const heroBanner = function ({ results: getMovieList }) {
         // Creates a new slider item <div>.
         const sliderItem = document.createElement("div");
         sliderItem.classList.add("banner-slider-item");
+        sliderItem.classList.add("active");
         sliderItem.setAttribute("banner-slider-item", "");
 
         // Sets inner HTML for sliderItem.
@@ -131,5 +132,11 @@ const heroBanner = function ({ results: getMovieList }) {
             </div>
 
         `;
+
+        // Adds the new slider-item into .banner-slider.
+        banner.querySelector(".banner-slider-row").appendChild(sliderItem);
+
+        // Adds banner into pageContent.
+        pageContent.appendChild(banner);
     }
 };
