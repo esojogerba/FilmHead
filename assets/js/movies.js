@@ -19,7 +19,7 @@ const genreList = {
             // this == genreList
             this[genreId] && newGenreList.push(this[genreId]);
         }
-        return newGenreList.join(", ");
+        return newGenreList.join("· ");
     },
 };
 
@@ -81,11 +81,15 @@ const heroBanner = function ({ results: getMovieList }) {
         // Creates a new slider item <div>.
         const sliderItem = document.createElement("div");
         sliderItem.classList.add("banner-slider-item");
+        // TODO : remove this once slider control is implemented
         sliderItem.classList.add("active");
         sliderItem.setAttribute("banner-slider-item", "");
 
         // Sets inner HTML for sliderItem.
         // Uses template literals to inject movie data retrieved from API into the HTML.
+        // TODO : add rating and runtime info
+        // TODO : add getMediaDetails link
+        // TODO : add Add To Folder link
         sliderItem.innerHTML = `
 
             <img src="${imageBaseURL}w1280${backdrop_path}"
