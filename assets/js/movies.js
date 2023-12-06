@@ -25,7 +25,7 @@ const genreList = {
 
 // Retrieves all genres from API.
 fetchDataFromAPI(
-    `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`,
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`,
 
     function ({ genres }) {
         for (const { id, name } of genres) {
