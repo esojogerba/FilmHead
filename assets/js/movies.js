@@ -6,10 +6,38 @@ import { API_KEY, imageBaseURL, fetchDataFromAPI } from "./api.js";
 // Retrieves page-content <article> from movies page.
 const pageContent = document.querySelector("[page-content]");
 
-// Retrieves popular movie data and passes it in JSON format to heroBanner().
+// Fetch all genres. Example: [ { "id": "123", "name": "Action" } ]
+// Then change genre format to {123: "Action"}
+const genreList = {
+    // Assign correct genre string to each genre_id provided. Example: [23 , 43] = "Action, Romance".
+    asString(genreIdList) {
+        // Will hold list of genre strings.
+        let newGenreList = [];
+
+        for (const genreId of genreIdList) {
+            // If current genreId exists in genreList, push it to newGenreList.
+            // this == genreList
+            this[genreId] && newGenreList.push(this[genreId]);
+        }
+        return newGenreList.join(", ");
+    },
+};
+
+// Retrieves all genres from API.
 fetchDataFromAPI(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`,
-    heroBanner
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`,
+
+    function ({ genres }) {
+        for (const { id, name } of genres) {
+            genreList[id] = name;
+        }
+
+        // Retrieves popular movie data and passes it in JSON format to heroBanner().
+        fetchDataFromAPI(
+            `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=1`,
+            heroBanner
+        );
+    }
 );
 
 // Builds the hero banner.
@@ -59,51 +87,48 @@ const heroBanner = function ({ results: getMovieList }) {
         // Uses template literals to inject movie data retrieved from API into the HTML.
         sliderItem.innerHTML = `
 
-        <img src="${imageBaseURL}w1280${backdrop_path}"
-        alt="${title}" class="img-cover" title="${title}"
-        loading="${index === 0 ? "eager" : "lazy"}"/>
+            <img src="${imageBaseURL}w1280${backdrop_path}"
+            alt="${title}" class="img-cover" title="${title}"
+            loading="${index === 0 ? "eager" : "lazy"}"/>
 
-        <div class="banner-content">
-            <h2 class="banner-heading">${title}</h2>
+            <div class="banner-content">
+                <h2 class="banner-heading">${title}</h2>
 
-            <p class="banner-text">${overview}</p>
+                <p class="banner-text">${overview}</p>
 
-            <div class="meta-list">
-                <div class="meta-item">${release_date.split("-")[0]}</div>
-                <div class="meta-item">1hr 58min</div>
-                <div class="meta-item card-badge">R</div>
+                <div class="meta-list">
+                    <div class="meta-item">${release_date.split("-")[0]}</div>
+                    <div class="meta-item">1hr 58min</div>
+                    <div class="meta-item card-badge">R</div>
+                </div>
+
+                <p class="banner-genre">
+                    ${genreList.asString(genre_ids)}
+                </p>
+
+                <div class="banner-buttons">
+                    <a
+                        class="btn"
+                        href="movie-details.html"
+                        onclick=""
+                    >
+                        Details
+                    </a>
+
+                    <a
+                        class="btn-icon"
+                        href=""
+                        onclick=""
+                        id="banner-add-btn"
+                    >
+                        <svg class="material-icon" id="add-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#add-icon"
+                            />
+                        </svg>
+                    </a>
+                </div>
             </div>
-
-            <p class="banner-genre">
-                Science Fiction · Drama · Thriller
-            </p>
-
-            <div class="banner-buttons">
-                <a
-                    class="btn"
-                    href="movie-details.html"
-                    onclick=""
-                >
-                    Details
-                </a>
-
-                <a
-                    class="btn-icon"
-                    href=""
-                    onclick=""
-                    id="banner-add-btn"
-                >
-                    <svg class="material-icon" id="add-svg">
-                        <use
-                            xlink:href="/assets/images/icons.svg#add-icon"
-                        />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-
-
 
         `;
     }
