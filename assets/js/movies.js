@@ -88,8 +88,8 @@ const heroBanner = function ({ results: getMovieList }) {
         // Sets inner HTML for sliderItem.
         // Uses template literals to inject movie data retrieved from API into the HTML.
         // TODO : add rating and runtime info
-        // TODO : add getMediaDetails link
-        // TODO : add Add To Folder link
+        // TODO : button add getMediaDetails link
+        // TODO : button add "Add To Folder" link
         sliderItem.innerHTML = `
 
             <img src="${imageBaseURL}w1280${backdrop_path}"
@@ -137,10 +137,28 @@ const heroBanner = function ({ results: getMovieList }) {
 
         `;
 
-        // Adds the new slider-item into .banner-slider.
+        // Adds the new sliderItem into .banner-slider-row.
         banner.querySelector(".banner-slider-row").appendChild(sliderItem);
 
-        // Adds banner into pageContent.
-        pageContent.appendChild(banner);
+        // Creates a new banner control item.
+        const controlItem = document.createElement("button");
+        controlItem.classList.add("poster-box", "banner-control-item");
+        controlItem.setAttribute("banner-control", `${controlItemIndex}`);
+
+        // Increments index for next banner control item.
+        controlItemIndex++;
+
+        // Sets banner control item's HTML.
+        // Uses template literals to inject movie data retrieved from API into the HTML.
+        controlItem.innerHTML = `
+        <img src="${imageBaseURL}w154${poster_path}" alt="${title}" 
+        loading="lazy" draggable="false" class="img-cover">
+        `;
+
+        // Appends new banner control item into banner-control-inner.
+        banner.querySelector(".banner-control-inner").appendChild(controlItem);
     }
+
+    // Adds banner into pageContent.
+    pageContent.appendChild(banner);
 };
