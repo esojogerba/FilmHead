@@ -183,6 +183,7 @@ const addBannerSlide = function () {
     const sliderStart = function () {
         // Removes the active class from the previously active slider item.
         currentSliderItem.classList.remove("active");
+        // Removes the active class from the previously active slider control item.
         currentSliderControl.classList.remove("active");
 
         // Adds the ".active" class to the slider item that was clicked.
@@ -192,9 +193,10 @@ const addBannerSlide = function () {
         ].classList.add("active");
         this.classList.add("active");
 
-        // Sets the selected slider item as the variable.
+        // Sets the selected slider item as the current one.
         currentSliderItem =
             sliderItems[Number(this.getAttribute("banner-control-item"))];
+        // Sets the selected slider control item as the current one.
         currentSliderControl = this;
     };
 
