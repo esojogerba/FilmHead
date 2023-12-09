@@ -143,7 +143,7 @@ const heroBanner = function ({ results: getMovieList }) {
         // Creates a new banner control item.
         const controlItem = document.createElement("button");
         controlItem.classList.add("poster-box", "banner-control-item");
-        controlItem.setAttribute("banner-control", `${controlItemIndex}`);
+        controlItem.setAttribute("banner-control-item", `${controlItemIndex}`);
 
         // Increments index for next banner control item.
         controlItemIndex++;
@@ -161,4 +161,7 @@ const heroBanner = function ({ results: getMovieList }) {
 
     // Adds banner into pageContent.
     pageContent.appendChild(banner);
+
+    // Adds banner slide functionality.
+    addBannerSlide();
 };
