@@ -19,7 +19,7 @@ const genreList = {
             // this == genreList
             this[genreId] && newGenreList.push(this[genreId]);
         }
-        return newGenreList.join("· ");
+        return newGenreList.join(" · ");
     },
 };
 
