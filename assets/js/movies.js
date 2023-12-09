@@ -171,4 +171,13 @@ const addBannerSlide = function () {
     // Retrieves all slider items and slider controls.
     const sliderItems = document.querySelectorAll("[banner-slider-item]");
     const sliderControls = document.querySelectorAll("[banner-control-item]");
+
+    // Sets the variables below as the first slider item and slider control.
+    // Will hold the current active slider item / slider control.
+    let currentSliderItem = sliderItems[0];
+    let currentSliderControl = sliderControls[0];
+
+    // Sets the current slider item and control as active.
+    currentSliderItem.classList.add("active");
+    currentSliderControl.classList.add("active");
 };
