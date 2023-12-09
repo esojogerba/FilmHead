@@ -81,8 +81,6 @@ const heroBanner = function ({ results: getMovieList }) {
         // Creates a new slider item <div>.
         const sliderItem = document.createElement("div");
         sliderItem.classList.add("banner-slider-item");
-        // TODO : remove this once slider control is implemented
-        sliderItem.classList.add("active");
         sliderItem.setAttribute("banner-slider-item", "");
 
         // Sets inner HTML for sliderItem.
@@ -172,7 +170,7 @@ const addBannerSlide = function () {
     const sliderItems = document.querySelectorAll("[banner-slider-item]");
     const sliderControls = document.querySelectorAll("[banner-control-item]");
 
-    // Sets the variables below as the first slider item and slider control.
+    // Initially hold the first slider item and slider control.
     // Will hold the current active slider item / slider control.
     let currentSliderItem = sliderItems[0];
     let currentSliderControl = sliderControls[0];
@@ -180,4 +178,26 @@ const addBannerSlide = function () {
     // Sets the current slider item and control as active.
     currentSliderItem.classList.add("active");
     currentSliderControl.classList.add("active");
+
+    // After a slider item is clicked, it becomes the active one.
+    const sliderStart = function () {
+        // Removes the active class from the previously active slider item.
+        currentSliderItem.classList.remove("active");
+        currentSliderControl.classList.remove("active");
+
+        // Adds the ".active" class to the slider item that was clicked.
+        // this == slider-control
+        sliderItems[
+            Number(this.getAttribute("banner-control-item"))
+        ].classList.add("active");
+        this.classList.add("active");
+
+        // Sets the selected slider item as the variable.
+        currentSliderItem =
+            sliderItems[Number(this.getAttribute("banner-control-item"))];
+        currentSliderControl = this;
+    };
+
+    // When a slider item is clicked, runs sliderStart().
+    addEventOnElements(sliderControls, "click", sliderStart);
 };
