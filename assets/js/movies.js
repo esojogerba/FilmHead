@@ -162,6 +162,13 @@ const heroBanner = function ({ results: getMovieList }) {
     // Adds banner into pageContent.
     pageContent.appendChild(banner);
 
-    // Adds banner slide functionality.
+    // Adds banner slider functionality.
     addBannerSlide();
+};
+
+// Banner slider functionality.
+const addBannerSlide = function () {
+    // Retrieves all slider items and slider controls.
+    const sliderItems = document.querySelectorAll("[banner-slider-item]");
+    const sliderControls = document.querySelectorAll("[banner-control-item]");
 };
