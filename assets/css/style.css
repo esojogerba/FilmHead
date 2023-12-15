@@ -76,6 +76,7 @@
 *::after {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 /* Remove default margin */
@@ -1179,10 +1180,9 @@ h3 {
 }
 
 .banner-control-item {
-    background: none;
-    text-align: left;
-    border: none;
     width: 100px;
+    background: none;
+    border: none;
     border-radius: 6px;
     flex-shrink: 0;
     filter: brightness(0.4);
