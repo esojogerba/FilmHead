@@ -64,8 +64,6 @@ const heroBanner = function ({ results: getMovieList }) {
 
     // Iterates through each entry in the getMovieList map.
     for (const [index, movie] of getMovieList.entries()) {
-        // TODO : For each movie in movie list make call to get movie details (runtime, rating).
-
         // Stores data for the current movie into movie.
         const {
             backdrop_path,
@@ -85,7 +83,6 @@ const heroBanner = function ({ results: getMovieList }) {
 
         // Sets inner HTML for sliderItem.
         // Uses template literals to inject movie data retrieved from API into the HTML.
-        // TODO : add rating and runtime info
         // TODO : button add getMediaDetails link
         // TODO : button add "Add To Folder" link
         sliderItem.innerHTML = `
@@ -101,8 +98,6 @@ const heroBanner = function ({ results: getMovieList }) {
 
                 <div class="meta-list">
                     <div class="meta-item">${release_date.split("-")[0]}</div>
-                    <div class="meta-item">1hr 58min</div>
-                    <div class="meta-item card-badge">R</div>
                 </div>
 
                 <p class="banner-genre">
