@@ -198,3 +198,8 @@ const addBannerSlide = function () {
     // When a slider item is clicked, runs sliderStart().
     addEventOnElements(sliderControls, "click", sliderStart);
 };
+
+// Creates scrollable media lists.
+const buildMediaScroll = function ({ results: movieList }, title) {
+    // Creates media-scroll <section>
+};
