@@ -202,4 +202,7 @@ const addBannerSlide = function () {
 // Creates scrollable media lists.
 const buildMediaScroll = function ({ results: movieList }, title) {
     // Creates media-scroll <section>
+    const mediaScrollElem = document.createElement("section");
+    mediaScrollElem.classList.add("media-scroll");
+    mediaScrollElem.ariaLabel = `${title}`;
 };
