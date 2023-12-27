@@ -1092,7 +1092,7 @@ h3 {
 
 .banner-heading {
     color: var(--clr-white-900);
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
 }
 
 .banner-text {
@@ -1136,6 +1136,7 @@ h3 {
 
     .banner-heading {
         font-size: var(--fs-36);
+        -webkit-line-clamp: 1;
     }
 
     .banner-text,
