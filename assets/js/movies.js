@@ -174,6 +174,15 @@ const heroBanner = function ({ results: getMovieList }) {
 
     // Adds banner slider functionality.
     addBannerSlide();
+
+    // Fetch data for movie lists.
+    for (const { title, path } of moviePageSections) {
+        fetchDataFromAPI(
+            `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&page=1`,
+            buildMediaScroll,
+            title
+        );
+    }
 };
 
 // Banner slider functionality.
