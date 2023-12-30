@@ -225,7 +225,10 @@ const addBannerSlide = function () {
     addEventOnElements(sliderControls, "click", sliderStart);
 };
 
+// TODO: add media page header with genre drop-down functionality.
+
 // Creates scrollable media lists.
+// TODO: add media lists into container with media-page-header.
 const buildMediaScroll = function ({ results: movieList }, title) {
     // Creates media-scroll <section>
     const mediaScrollElem = document.createElement("section");
