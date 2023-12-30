@@ -61,5 +61,7 @@ export function createMediaCard(type, mediaData) {
                 onclick=""
             ></a>
         `;
+
+        return card;
     }
 }
