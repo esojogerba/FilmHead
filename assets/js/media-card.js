@@ -12,7 +12,7 @@ export function createMediaCard(type, mediaData) {
 
         // Creates media card <div>.
         const card = document.createElement("div");
-        card.classList.add("movie-card");
+        card.classList.add("media-card");
 
         // Sets movie-card <div> HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
