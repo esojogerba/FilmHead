@@ -4,4 +4,7 @@
 import { imageBaseURL } from "./api";
 
 // Creates a media card using the data collected from the API.
-export function createMediaCard(type, mediaData) {}
+export function createMediaCard(type, mediaData) {
+    if (type == "movie") {
+    }
+}
