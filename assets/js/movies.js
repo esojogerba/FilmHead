@@ -225,4 +225,15 @@ const buildMediaScroll = function ({ results: movieList }, title) {
 
         </div>
     `;
+
+    // Creates a media card for each movie in movieList.
+    for (const movie of movieList) {
+        // Imported from media-card.js
+        const movieCard = createMediaCard("movie", movie);
+
+        // Adds the new media card into the media slider list.
+        mediaScrollElem
+            .querySelector(".slider-list-inner")
+            .appendChild(movieCard);
+    }
 };
