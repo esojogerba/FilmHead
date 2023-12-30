@@ -236,4 +236,7 @@ const buildMediaScroll = function ({ results: movieList }, title) {
             .querySelector(".slider-list-inner")
             .appendChild(movieCard);
     }
+
+    // Adds media scroll to the page.
+    pageContent.appendChild(mediaScrollElem);
 };
