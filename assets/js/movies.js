@@ -175,6 +175,9 @@ const heroBanner = function ({ results: getMovieList }) {
     // Adds banner slider functionality.
     addBannerSlide();
 
+    // Adds media page header.
+    buildPageHeader();
+
     // Fetch data for movie lists.
     for (const { title, path } of moviePageSections) {
         fetchDataFromAPI(
@@ -230,6 +233,7 @@ const buildPageHeader = function () {
     // Creates media-page-header section.
     const pageHeaderElem = document.createElement("section");
     pageHeaderElem.classList.add("media-page-header");
+    pageHeaderElem.classList.add("container");
 
     // Set media-scroll <section> HTML.
     // Uses template literals to inject movie data retrieved from API into the HTML.
@@ -246,10 +250,53 @@ const buildPageHeader = function () {
                 <img src="/assets/images/dropdown-arrow.png" />
             </button>
             <div id="movies-dropdown" class="dropdown-menu">
-                <a href="#">Science Fiction</a>
             </div>
         </div>
     `;
+
+    // Holds all the genres and their ID's.
+    const genreList = {};
+
+    // Retrieve all movie genres from API.
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`,
+
+        // Callback function to store genres in genreList map.
+        function ({ genres }) {
+            // Iterates through each genre in the JSON file.
+            for (const { id, name } of genres) {
+                // Make a key value pair and store in the genreList map.
+                genreList[id] = name;
+            }
+
+            // Creates a link <a> for each genre in the genreList map.
+            genreLink();
+        }
+    );
+
+    // Creates a link <a> for each genre in the genreList map.
+    const genreLink = function () {
+        // Iterates through each entry in genreList.
+        for (const [genreId, genreName] of Object.entries(genreList)) {
+            // Creates the <a> link.
+            const link = document.createElement("a");
+            link.setAttribute("href", "./media-list.html");
+            // OnClick attribute used to create a media list when a genre link is clicked.
+            link.setAttribute(
+                "onClick",
+                `getMovieList("with_genres=${genreId}", "${genreName}")`
+            );
+
+            // Gives resulting media list page the title of the genre selected.
+            link.textContent = genreName;
+
+            // Adds the new genre <a> link to dropdown menu.
+            pageHeaderElem.querySelector("#movies-dropdown").appendChild(link);
+        }
+    };
+
+    // Adds media page header to the page.
+    pageContent.appendChild(pageHeaderElem);
 };
 
 // Creates scrollable media lists.
