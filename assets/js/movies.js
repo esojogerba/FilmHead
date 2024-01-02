@@ -226,7 +226,10 @@ const addBannerSlide = function () {
 };
 
 // TODO: add media page header with genre drop-down functionality.
-const buildPageHeader = function () {};
+const buildPageHeader = function () {
+    const pageHeaderElem = document.createElement("section");
+    pageHeaderElem.classList.add("media-page-header");
+};
 
 // Creates scrollable media lists.
 // TODO: add media lists into container with media-page-header.
