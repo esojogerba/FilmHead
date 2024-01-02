@@ -305,6 +305,7 @@ const buildMediaScroll = function ({ results: movieList }, title) {
     // Creates media-scroll <section>
     const mediaScrollElem = document.createElement("section");
     mediaScrollElem.classList.add("media-scroll");
+    mediaScrollElem.classList.add("container");
     mediaScrollElem.ariaLabel = `${title}`;
 
     // Set media-scroll <section> HTML.
