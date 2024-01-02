@@ -227,8 +227,29 @@ const addBannerSlide = function () {
 
 // TODO: add media page header with genre drop-down functionality.
 const buildPageHeader = function () {
+    // Creates media-page-header section.
     const pageHeaderElem = document.createElement("section");
     pageHeaderElem.classList.add("media-page-header");
+
+    // Set media-scroll <section> HTML.
+    // Uses template literals to inject movie data retrieved from API into the HTML.
+    // TODO: add links to each genre in the dropdown.
+    pageHeaderElem.innerHTML = `
+        <h1 class="media-page-title">Movies</h1>
+
+        <div class="genre-dropdown">
+            <button
+                onclick="toggleDropdown()"
+                class="dropdown-btn"
+            >
+                <span>Genres</span>
+                <img src="/assets/images/dropdown-arrow.png" />
+            </button>
+            <div id="movies-dropdown" class="dropdown-menu">
+                <a href="#">Science Fiction</a>
+            </div>
+        </div>
+    `;
 };
 
 // Creates scrollable media lists.
