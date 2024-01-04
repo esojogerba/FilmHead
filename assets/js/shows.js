@@ -40,3 +40,7 @@ fetchDataFromAPI(
         );
     }
 );
+
+// Builds the hero banner.
+// Uses data retrieved from fetchDataFromServer() as a parameter.
+const heroBanner = function ({ results: getShowList }) {};
