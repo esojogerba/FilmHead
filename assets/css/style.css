@@ -1274,13 +1274,18 @@ h3 {
     color: var(--clr-black-200);
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 38rem) {
     .media-scroll-title-wrapper {
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .media-scroll-title {
         font-size: var(--fs-32);
+        margin-bottom: 0;
     }
 
     .view-more-link {
