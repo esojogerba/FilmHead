@@ -43,4 +43,23 @@ fetchDataFromAPI(
 
 // Builds the hero banner.
 // Uses data retrieved from fetchDataFromServer() as a parameter.
-const heroBanner = function ({ results: getShowList }) {};
+const heroBanner = function ({ results: getShowList }) {
+    // Creates banner <section>.
+    const banner = document.createElement("section");
+    banner.classList.add("banner");
+    banner.ariaLabel = "Popular Shows";
+
+    // Sets up inner banner HTML boilerplate.
+    banner.innerHTML = `
+        <div class="banner-slider-row"></div>
+
+        <div class="banner-control-row">
+
+            <div class="banner-control-inner"></div>
+            
+        </div>
+    `;
+
+    // Holds index of the current banner item.
+    let controlItemIndex = 0;
+};
