@@ -1123,6 +1123,12 @@ h3 {
     aspect-ratio: 1;
 }
 
+@media (max-width: 60em) {
+    .banner {
+        margin-top: 4.375rem;
+    }
+}
+
 @media (max-width: 35rem) {
     .banner {
         height: 600px;
