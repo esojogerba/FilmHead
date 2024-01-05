@@ -81,5 +81,54 @@ const heroBanner = function ({ results: getShowList }) {
         const sliderItem = document.createElement("div");
         sliderItem.classList.add("banner-slider-item");
         sliderItem.setAttribute("banner-slider-item", "");
+
+        // Sets inner HTML for sliderItem.
+        // Uses template literals to inject movie data retrieved from API into the HTML.
+        // TODO : button add getMediaDetails link
+        // TODO : button add "Add To Folder" link
+        sliderItem.innerHTML = `
+
+            <img src="${imageBaseURL}w1280${backdrop_path}"
+            alt="${name}" class="img-cover" title="${name}"
+            loading="${index === 0 ? "eager" : "lazy"}"/>
+
+            <div class="banner-content">
+                <h2 class="banner-heading">${name}</h2>
+
+                <p class="banner-text">${overview}</p>
+
+                <div class="meta-list">
+                    <div class="meta-item">${first_air_date.split("-")[0]}</div>
+                </div>
+
+                <p class="banner-genre">
+                    ${genreList.asString(genre_ids)}
+                </p>
+
+                <div class="banner-buttons">
+                    <a
+                        class="btn"
+                        href="movie-details.html"
+                        onclick=""
+                    >
+                        Details
+                    </a>
+
+                    <a
+                        class="btn-icon"
+                        href=""
+                        onclick=""
+                        id="banner-add-btn"
+                    >
+                        <svg class="material-icon" id="add-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#add-icon"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        `;
     }
 };
