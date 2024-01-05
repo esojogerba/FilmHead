@@ -152,4 +152,10 @@ const heroBanner = function ({ results: getShowList }) {
         // Appends new slider control item into ".control-inner"
         banner.querySelector(".control-inner").appendChild(controlItem);
     }
+
+    // Adds banner into pageContent.
+    pageContent.appendChild(banner);
+
+    // Adds banner slider functionality.
+    addBannerSlide();
 };
