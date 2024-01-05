@@ -148,5 +148,8 @@ const heroBanner = function ({ results: getShowList }) {
         <img src="${imageBaseURL}w154${poster_path}" alt="${title}" 
         loading="lazy" draggable="false" class="img-cover">
         `;
+
+        // Appends new slider control item into ".control-inner"
+        banner.querySelector(".control-inner").appendChild(controlItem);
     }
 };
