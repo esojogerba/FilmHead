@@ -24,7 +24,7 @@ const genreList = {
     },
 };
 
-// Retrieves all genres from API.
+// Retrieves all TV genres from API.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/genre/tv/list?api_key=${API_KEY}`,
 
@@ -33,9 +33,9 @@ fetchDataFromAPI(
             genreList[id] = name;
         }
 
-        // Retrieves popular movie data and passes it in JSON format to heroBanner().
+        // Retrieves trending show data and passes it in JSON format to heroBanner().
         fetchDataFromAPI(
-            `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&page=1`,
+            `https://api.themoviedb.org/3//trending/tv/day?api_key=${API_KEY}`,
             heroBanner
         );
     }
@@ -47,7 +47,7 @@ const heroBanner = function ({ results: getShowList }) {
     // Creates banner <section>.
     const banner = document.createElement("section");
     banner.classList.add("banner");
-    banner.ariaLabel = "Popular Shows";
+    banner.ariaLabel = "Shows Trending Today";
 
     // Sets up inner banner HTML boilerplate.
     banner.innerHTML = `
@@ -145,12 +145,12 @@ const heroBanner = function ({ results: getShowList }) {
         // Sets banner control item's HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
         controlItem.innerHTML = `
-        <img src="${imageBaseURL}w154${poster_path}" alt="${title}" 
+        <img src="${imageBaseURL}w154${poster_path}" alt="${name}" 
         loading="lazy" draggable="false" class="img-cover">
         `;
 
-        // Appends new slider control item into ".control-inner"
-        banner.querySelector(".control-inner").appendChild(controlItem);
+        // Appends new banner control item into banner-control-inner.
+        banner.querySelector(".banner-control-inner").appendChild(controlItem);
     }
 
     // Adds banner into pageContent.
