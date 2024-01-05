@@ -130,5 +130,13 @@ const heroBanner = function ({ results: getShowList }) {
             </div>
 
         `;
+
+        // Adds the new sliderItem into .banner-slider-row.
+        banner.querySelector(".banner-slider-row").appendChild(sliderItem);
+
+        // Creates a new banner control item.
+        const controlItem = document.createElement("button");
+        controlItem.classList.add("poster-box", "banner-control-item");
+        controlItem.setAttribute("banner-control-item", `${controlItemIndex}`);
     }
 };
