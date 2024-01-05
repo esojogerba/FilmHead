@@ -159,3 +159,43 @@ const heroBanner = function ({ results: getShowList }) {
     // Adds banner slider functionality.
     addBannerSlide();
 };
+
+// Banner slider functionality.
+const addBannerSlide = function () {
+    // Retrieves all slider items and slider controls.
+    const sliderItems = document.querySelectorAll("[banner-slider-item]");
+    const sliderControls = document.querySelectorAll("[banner-control-item]");
+
+    // Initially hold the first slider item and slider control.
+    // Will hold the current active slider item / slider control.
+    let currentSliderItem = sliderItems[0];
+    let currentSliderControl = sliderControls[0];
+
+    // Sets the current slider item and control as active.
+    currentSliderItem.classList.add("active");
+    currentSliderControl.classList.add("active");
+
+    // After a slider item is clicked, it becomes the active one.
+    const sliderStart = function () {
+        // Removes the active class from the previously active slider item.
+        currentSliderItem.classList.remove("active");
+        // Removes the active class from the previously active slider control item.
+        currentSliderControl.classList.remove("active");
+
+        // Adds the ".active" class to the slider item that was clicked.
+        // this == slider-control
+        sliderItems[
+            Number(this.getAttribute("banner-control-item"))
+        ].classList.add("active");
+        this.classList.add("active");
+
+        // Sets the selected slider item as the current one.
+        currentSliderItem =
+            sliderItems[Number(this.getAttribute("banner-control-item"))];
+        // Sets the selected slider control item as the current one.
+        currentSliderControl = this;
+    };
+
+    // When a slider item is clicked, runs sliderStart().
+    addEventOnElements(sliderControls, "click", sliderStart);
+};
