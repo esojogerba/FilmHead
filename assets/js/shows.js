@@ -138,5 +138,15 @@ const heroBanner = function ({ results: getShowList }) {
         const controlItem = document.createElement("button");
         controlItem.classList.add("poster-box", "banner-control-item");
         controlItem.setAttribute("banner-control-item", `${controlItemIndex}`);
+
+        // Increments index for next banner control item.
+        controlItemIndex++;
+
+        // Sets banner control item's HTML.
+        // Uses template literals to inject movie data retrieved from API into the HTML.
+        controlItem.innerHTML = `
+        <img src="${imageBaseURL}w154${poster_path}" alt="${title}" 
+        loading="lazy" draggable="false" class="img-cover">
+        `;
     }
 };
