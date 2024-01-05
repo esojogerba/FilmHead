@@ -228,7 +228,6 @@ const addBannerSlide = function () {
     addEventOnElements(sliderControls, "click", sliderStart);
 };
 
-// TODO: add media page header with genre drop-down functionality.
 const buildPageHeader = function () {
     // Creates media-page-header section.
     const pageHeaderElem = document.createElement("section");
