@@ -228,6 +228,7 @@ const addBannerSlide = function () {
     addEventOnElements(sliderControls, "click", sliderStart);
 };
 
+// Builds the page header.
 const buildPageHeader = function () {
     // Creates media-page-header section.
     const pageHeaderElem = document.createElement("section");
