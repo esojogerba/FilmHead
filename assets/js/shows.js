@@ -62,4 +62,24 @@ const heroBanner = function ({ results: getShowList }) {
 
     // Holds index of the current banner item.
     let controlItemIndex = 0;
+
+    // Iterates through each entry in getShowList map.
+    for (const [index, show] of getShowList.entries()) {
+        // Stores data for the current show into show.
+        const {
+            backdrop_path,
+            name,
+            first_air_date,
+            genre_ids,
+            overview,
+            poster_path,
+            vote_average,
+            id,
+        } = show;
+
+        // Creates a new slider item <div>.
+        const sliderItem = document.createElement("div");
+        sliderItem.classList.add("banner-slider-item");
+        sliderItem.setAttribute("banner-slider-item", "");
+    }
 };
