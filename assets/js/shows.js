@@ -177,6 +177,15 @@ const heroBanner = function ({ results: getShowList }) {
 
     // Adds media page header.
     buildPageHeader();
+
+    // Fetch data for show lists.
+    for (const { title, path } of showPageSections) {
+        fetchDataFromAPI(
+            `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&page=1`,
+            buildMediaScroll,
+            title
+        );
+    }
 };
 
 // Banner slider functionality.
