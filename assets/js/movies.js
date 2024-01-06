@@ -329,7 +329,7 @@ const buildMediaScroll = function ({ results: movieList }, title) {
     // Creates a media card for each movie in movieList.
     for (const movie of movieList) {
         // Imported from media-card.js
-        const movieCard = createMediaCard("movie", movie);
+        const movieCard = createMediaCard("movie", movie, genreList);
 
         // Adds the new media card into the media slider list.
         mediaScrollElem
