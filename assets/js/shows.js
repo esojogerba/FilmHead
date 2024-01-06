@@ -288,3 +288,45 @@ const buildPageHeader = function () {
     // Adds media page header to the page.
     pageContent.appendChild(pageHeaderElem);
 };
+
+// Creates scrollable media lists.
+const buildMediaScroll = function ({ results: showList }, title) {
+    // Creates media-scroll <section>
+    const mediaScrollElem = document.createElement("section");
+    mediaScrollElem.classList.add("media-scroll");
+    mediaScrollElem.classList.add("container");
+    mediaScrollElem.ariaLabel = `${title}`;
+
+    // Set media-scroll <section> HTML.
+    // Uses template literals to inject movie data retrieved from API into the HTML.
+    // TODO: Add link to view more button.
+    mediaScrollElem.innerHTML = `
+        <div class="media-scroll-title-wrapper">
+
+            <h3 class="media-scroll-title">${title}</h3>
+            <a href="" class="view-more-link">View More</a>
+
+        </div>
+
+        <div class="media-slider-list">
+
+            <div class="slider-list-inner">
+            </div>
+
+        </div>
+    `;
+
+    // Creates a media card for each movie in movieList.
+    for (const show of showList) {
+        // Imported from media-card.js
+        const showCard = createMediaCard("show", show);
+
+        // Adds the new media card into the media slider list.
+        mediaScrollElem
+            .querySelector(".slider-list-inner")
+            .appendChild(showCard);
+    }
+
+    // Adds media scroll to the page.
+    pageContent.appendChild(mediaScrollElem);
+};
