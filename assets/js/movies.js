@@ -300,7 +300,6 @@ const buildPageHeader = function () {
 };
 
 // Creates scrollable media lists.
-// TODO: add media lists into container with media-page-header.
 const buildMediaScroll = function ({ results: movieList }, title) {
     // Creates media-scroll <section>
     const mediaScrollElem = document.createElement("section");
