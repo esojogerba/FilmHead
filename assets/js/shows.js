@@ -10,12 +10,12 @@ const pageContent = document.querySelector("[page-content]");
 // Home page tv show list sections (Airing Today, Trending This Week, Top Rated).
 const showPageSections = [
     {
-        title: "Airing Today",
-        path: "/tv/airing_today",
-    },
-    {
         title: "Trending This Week",
         path: "/trending/tv/week",
+    },
+    {
+        title: "Airing Today",
+        path: "/tv/airing_today",
     },
     {
         title: "Top Rated",
