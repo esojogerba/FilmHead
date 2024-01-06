@@ -5,7 +5,7 @@ import { imageBaseURL } from "./api";
 
 // Creates a media card using the data collected from the API.
 // TODO: add show path.
-export function createMediaCard(type, mediaData) {
+export function createMediaCard(type, mediaData, genreList) {
     if (type == "movie") {
         // Stores data for the current movie
         const { poster_path, title, vote_average, release_date, id } =
@@ -74,7 +74,6 @@ export function createMediaCard(type, mediaData) {
 
         // Sets media-card <div> HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
-        // TODO: Add genres to card.
         // TODO: Add button link and functionality.
         // TODO: Add movie details link functionality.
         card.innerHTML = `
@@ -109,7 +108,7 @@ export function createMediaCard(type, mediaData) {
             </div>
 
             <p class="media-card-genres">
-                Science Fiction · Drama · Thriller
+                ${genreList.asString(genre_ids)}
             </p>
 
             <a
