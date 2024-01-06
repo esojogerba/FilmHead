@@ -7,6 +7,22 @@ import { createMediaCard } from "./media-card.js";
 // Retrieves page-content <article> from movies page.
 const pageContent = document.querySelector("[page-content]");
 
+// Home page tv show list sections (Airing Today, Trending This Week, Top Rated).
+const showPageSections = [
+    {
+        title: "Airing Today",
+        path: "/tv/airing_today",
+    },
+    {
+        title: "Trending This Week",
+        path: "/trending/tv/week",
+    },
+    {
+        title: "Top Rated",
+        path: "/tv/top_rated",
+    },
+];
+
 // Fetch all genres. Example: [ { "id": "123", "name": "Action" } ]
 // Then change genre format to {123: "Action"}
 const genreList = {
