@@ -1412,8 +1412,16 @@ h3 {
 /* =======================
  Details
  ======================= */
+.details-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .banner-columns {
     display: flex;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 /* TODO: Remove the background image URL once API is implemented */
