@@ -1445,6 +1445,19 @@ h3 {
     background-image: linear-gradient(var(--details-overlay));
 }
 
+.banner-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#details-add-svg {
+    fill: var(--clr-white-900);
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+}
+
 /* =======================
  Utility
  ======================= */
