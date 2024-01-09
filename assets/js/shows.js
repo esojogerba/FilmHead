@@ -124,7 +124,7 @@ const heroBanner = function ({ results: getShowList }) {
                 <div class="banner-buttons">
                     <a
                         class="btn"
-                        href="movie-details.html"
+                        href="show-details.html"
                         onclick=""
                     >
                         Details
