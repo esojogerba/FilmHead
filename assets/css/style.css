@@ -266,6 +266,12 @@ ul {
     padding: 0.5rem;
 }
 
+.btn-text-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Dropdown */
 
 .genre-dropdown {
