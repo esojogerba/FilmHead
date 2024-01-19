@@ -256,6 +256,10 @@ ul {
 .btn:focus {
     background-color: var(--clr-white-900);
     color: var(--clr-primary);
+
+    #details-add-svg {
+        fill: var(--clr-primary);
+    }
 }
 
 .btn-icon {
@@ -1475,11 +1479,19 @@ h3 {
     gap: 2rem;
 }
 
+.details-poster {
+    width: 300px;
+}
+
 #details-add-svg {
     fill: var(--clr-white-900);
     width: 30px;
     height: 30px;
     aspect-ratio: 1;
+}
+
+#details-add-svg:hover {
+    fill: var(--clr-primary);
 }
 
 /* =======================
