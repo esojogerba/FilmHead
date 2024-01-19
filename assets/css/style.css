@@ -1448,8 +1448,8 @@ h3 {
 
 .banner-columns {
     display: flex;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 2.5rem;
+    padding: 1.5rem;
 }
 
 /* TODO: Remove the background image URL once API is implemented */
@@ -1492,6 +1492,44 @@ h3 {
 
 #details-add-svg:hover {
     fill: var(--clr-primary);
+}
+
+.banner-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.details-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--clr-black-300);
+}
+
+.details-text,
+.cast-body {
+    max-width: 80ch;
+}
+
+.details-cast {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cast-title {
+    color: var(--clr-black-300);
+}
+
+.details-director {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.director-title {
+    color: var(--clr-black-300);
 }
 
 /* =======================
