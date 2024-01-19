@@ -1125,6 +1125,7 @@ h3 {
 }
 
 .banner-text {
+    max-width: 80ch;
     -webkit-line-clamp: 3;
 }
 
