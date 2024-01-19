@@ -1458,6 +1458,13 @@ h3 {
     gap: 2.5rem;
 }
 
+@media (max-width: 60em) {
+    .banner-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* TODO: Remove the background image URL once API is implemented */
 .backdrop-image {
     position: absolute;
