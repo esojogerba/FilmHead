@@ -1550,6 +1550,10 @@ h3 {
 }
 
 @media (max-width: 35em) {
+    .details-poster {
+        width: 260px;
+    }
+
     .banner-right-column {
         font-size: var(--fs-16);
         gap: 1rem;
