@@ -1513,6 +1513,10 @@ h3 {
     gap: 2rem;
 }
 
+.details-heading {
+    -webkit-line-clamp: 6;
+}
+
 .details-meta {
     display: flex;
     flex-direction: column;
@@ -1543,6 +1547,17 @@ h3 {
 
 .director-title {
     color: var(--clr-black-300);
+}
+
+@media (max-width: 35em) {
+    .banner-right-column {
+        font-size: var(--fs-16);
+        gap: 1rem;
+    }
+
+    .details-heading {
+        -webkit-line-clamp: 6;
+    }
 }
 
 /* =======================
