@@ -1361,17 +1361,21 @@ h3 {
     padding: 0.5rem;
 }
 
-.media-card-add-btn:hover,
-.media-card-add-btn:focus {
-    background-color: hsl(242, 76%, 63%, 1);
-    backdrop-filter: blur(6px);
-}
-
 #card-add-svg {
     fill: var(--clr-white-900);
     width: 40px;
     height: 40px;
     aspect-ratio: 1;
+}
+
+.media-card-add-btn:hover,
+.media-card-add-btn:focus {
+    background-color: hsl(240, 100%, 98%, 0.6);
+    backdrop-filter: blur(6px);
+
+    #card-add-svg {
+        fill: var(--clr-primary);
+    }
 }
 
 .media-card-title {
