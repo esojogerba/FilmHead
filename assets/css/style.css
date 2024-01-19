@@ -1448,13 +1448,14 @@ h3 {
 .details-banner {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%;
+    padding: 3rem 1.5rem;
 }
 
 .banner-columns {
     display: flex;
+    align-items: flex-start;
     gap: 2.5rem;
-    padding: 1.5rem;
 }
 
 /* TODO: Remove the background image URL once API is implemented */
@@ -1463,7 +1464,7 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 800px;
+    height: 100%;
     background-image: url(/assets/images/Blade\ Runner\ Banner.png);
     background-repeat: no-repeat;
     background-size: cover;
