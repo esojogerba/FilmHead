@@ -1554,8 +1554,12 @@ h3 {
         width: 260px;
     }
 
-    .banner-right-column {
+    .banner-right-column,
+    .details-meta .meta-list .card-badge {
         font-size: var(--fs-16);
+    }
+
+    .banner-right-column {
         gap: 1rem;
     }
 
