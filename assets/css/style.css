@@ -1458,6 +1458,13 @@ h3 {
     gap: 2.5rem;
 }
 
+@media (min-width: 87em) {
+    .banner-columns {
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
 @media (max-width: 60em) {
     .banner-columns {
         flex-direction: column;
