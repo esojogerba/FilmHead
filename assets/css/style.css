@@ -202,11 +202,13 @@ ul {
 
 .poster-box {
     background-image: url(/assets/images/poster-bg-icon.png);
+    background-size: 50px;
     aspect-ratio: 2/3;
 }
 
 .video-card {
-    background-image: url("../images/video-bg-icon.png");
+    background-image: url("../images/video-icon.svg");
+    background-size: 100px;
     aspect-ratio: 16 / 9;
     flex-shrink: 0;
     max-width: 500px;
@@ -216,9 +218,8 @@ ul {
 .poster-box,
 .video-card {
     background-repeat: no-repeat;
-    background-size: 50px;
     background-position: center;
-    background-color: var(--clr-black-700);
+    background-color: var(--clr-primary);
     border-radius: 6px;
     overflow: hidden;
 }
