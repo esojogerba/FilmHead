@@ -1236,7 +1236,7 @@ h3 {
     box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.75);
 }
 
-/* Media List */
+/* Media Page Header */
 
 .media-page-header {
     display: flex;
@@ -1263,8 +1263,9 @@ h3 {
     }
 }
 
+/* Media Scroll List */
+
 .media-scroll {
-    max-width: 1200px;
     width: 100%;
     margin-inline: auto;
     border-top: 1px solid hsl(240, 100%, 98%, 0.3);
