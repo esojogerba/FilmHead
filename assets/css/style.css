@@ -205,7 +205,16 @@ ul {
     aspect-ratio: 2/3;
 }
 
-.poster-box {
+.video-card {
+    background-image: url("../images/video-bg-icon.png");
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+    max-width: 500px;
+    width: calc(100% - 40px);
+}
+
+.poster-box,
+.video-card {
     background-repeat: no-repeat;
     background-size: 50px;
     background-position: center;
