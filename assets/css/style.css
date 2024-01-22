@@ -1346,6 +1346,10 @@ h3 {
     gap: 1rem;
 }
 
+.slider-list-inner {
+    width: 100%;
+}
+
 .media-card .card-poster {
     width: 260px;
 }
