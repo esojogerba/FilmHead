@@ -1613,6 +1613,11 @@ h4 {
     gap: 1rem;
 }
 
+.watch-logo {
+    border-radius: 6px;
+    height: 80px;
+}
+
 /* =======================
  Utility
  ======================= */
