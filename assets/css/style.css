@@ -1597,6 +1597,22 @@ h4 {
     }
 }
 
+.watch-col {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.watch-stream-col h4,
+.watch-rent-col h4,
+.watch-buy-col h4 {
+    margin-block: 1.5rem;
+}
+
+.watch-platforms-row {
+    display: flex;
+    gap: 1rem;
+}
+
 /* =======================
  Utility
  ======================= */
