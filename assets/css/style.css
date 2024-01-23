@@ -367,6 +367,12 @@ h3 {
     font-size: var(--fs-h3);
 }
 
+h4 {
+    font-size: var(--fs-32);
+    font-weight: var(--fw-light);
+    color: var(--clr-black-200);
+}
+
 /* =======================
   Navbar
  ======================= */
