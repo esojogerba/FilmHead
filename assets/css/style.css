@@ -826,7 +826,7 @@ h4 {
     padding: 2rem;
     margin-top: 3rem;
     margin-bottom: 4rem;
-    margin-inline: 3rem;
+    margin-inline: 1rem;
 }
 
 .features-columns {
@@ -873,9 +873,19 @@ h4 {
     margin-bottom: 1rem;
 }
 
-@media (max-width: 87rem) {
+@media (min-width: 87rem) {
     .features {
         margin-inline: 1rem;
+        padding: 5rem;
+    }
+
+    .features-row {
+        gap: 5rem;
+        margin-bottom: 8rem;
+    }
+
+    .features-card-body {
+        max-width: 30ch;
     }
 }
 
