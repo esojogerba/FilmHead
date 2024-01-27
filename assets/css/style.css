@@ -907,7 +907,7 @@ h4 {
     }
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 72rem) {
     .features {
         margin-inline: 0;
     }
@@ -930,7 +930,7 @@ h4 {
     }
 }
 
-@media (max-width: 47rem) {
+@media (max-width: 50rem) {
     .features-right-col {
         text-align: center;
     }
