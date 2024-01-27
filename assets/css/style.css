@@ -709,7 +709,7 @@ h4 {
     }
 }
 
-@media (max-width: 47rem) {
+@media (max-width: 50rem) {
     .home-bg-circle-top {
         top: -7%;
         left: -15%;
