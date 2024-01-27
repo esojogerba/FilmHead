@@ -697,6 +697,18 @@ h4 {
     right: -20%;
 }
 
+@media (min-width: 87em) {
+    .home-bg-circle-top {
+        top: -5%;
+        left: -10%;
+    }
+
+    .home-bg-circle-bottom {
+        bottom: -20%;
+        right: -10%;
+    }
+}
+
 @media (max-width: 47rem) {
     .home-bg-circle-top {
         top: -7%;
