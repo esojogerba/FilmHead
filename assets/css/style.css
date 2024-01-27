@@ -1019,7 +1019,15 @@ h4 {
 .form-image {
     height: 100%;
     width: 100%;
+    max-height: 1000px;
     object-fit: cover;
+    object-position: top;
+}
+
+@media (min-width: 87em) {
+    .account-form-col-left {
+        margin-top: 2rem;
+    }
 }
 
 @media (max-width: 60em) {
