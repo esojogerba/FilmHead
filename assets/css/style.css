@@ -743,6 +743,12 @@ h4 {
     right: 20%;
 }
 
+@media (min-width: 87em) {
+    .account-form-bg-circle-bottom {
+        right: 35%;
+    }
+}
+
 @media (max-width: 60em) {
     .account-form-bg-circle-top {
         display: none;
