@@ -54,7 +54,7 @@ export function createMediaCard(type, mediaData, genreList) {
             </p>
 
             <a
-                href=""
+                href="movie-details.html"
                 class="card-btn"
                 title="${title}"
                 onclick="getMovieDetails(${id})"
