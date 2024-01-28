@@ -1,17 +1,12 @@
-// Toggle dropdown menu when button is clicked.
-function toggleDropdown() {
-    document.querySelector(".dropdown-menu").classList.toggle("show-dropdown");
-}
-
 // Adds event on multiple elements.
 const addEventOnElements = function (elements, eventType, callback) {
     for (const elem of elements) elem.addEventListener(eventType, callback);
 };
 
-// Stores the movieId of the movie that was clicked in local storage for later use.
-const getMovieDetails = function (movieId) {
-    window.localStorage.setItem("movieId", String(movieId));
-};
+// Toggle dropdown menu when button is clicked.
+function toggleDropdown() {
+    document.querySelector(".dropdown-menu").classList.toggle("show-dropdown");
+}
 
 // Closes dropdown menu when user clicks outside of it.
 window.onclick = function (event) {
@@ -25,4 +20,9 @@ window.onclick = function (event) {
             }
         }
     }
+};
+
+// Stores the movieId of the movie that was clicked in local storage for later use.
+const getMovieDetails = function (movieId) {
+    window.localStorage.setItem("movieId", String(movieId));
 };
