@@ -8,6 +8,11 @@ const addEventOnElements = function (elements, eventType, callback) {
     for (const elem of elements) elem.addEventListener(eventType, callback);
 };
 
+// Stores the movieId of the movie that was clicked in local storage for later use.
+const getMovieDetails = function (movieId) {
+    window.localStorage.setItem("movieId", String(movieId));
+};
+
 // Closes dropdown menu when user clicks outside of it.
 window.onclick = function (event) {
     if (!event.target.matches(".dropdown-btn")) {
