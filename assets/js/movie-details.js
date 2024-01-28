@@ -8,3 +8,6 @@ import { createMediaCard } from "./media-card.js";
 const movieId = window.localStorage.getItem("movieId");
 
 console.log(movieId);
+
+// Retrieves the page's content.
+const pageContent = document.querySelector("[page-content]");
