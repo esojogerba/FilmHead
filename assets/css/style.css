@@ -183,7 +183,6 @@ ul {
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-    width: 8px;
     height: 8px;
 }
 
@@ -1326,6 +1325,7 @@ h4 {
     margin-inline: auto;
     border-top: 1px solid hsl(240, 100%, 98%, 0.3);
     padding-top: 1rem;
+    padding-top: 1rem;
     margin-bottom: 3rem;
 }
 
@@ -1338,11 +1338,11 @@ h4 {
 }
 
 .media-slider-list:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
-    background-color: var(--clr-black-900);
+    background-color: var(--clr-black-500);
 }
 
 .media-slider-list::-webkit-scrollbar-button {
-    width: 20px;
+    width: 1px;
 }
 
 .media-scroll-title-wrapper {
@@ -1403,6 +1403,7 @@ h4 {
 
 .media-card {
     position: relative;
+    margin-bottom: 1.5rem;
 }
 
 .card-poster {
