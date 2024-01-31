@@ -32,5 +32,8 @@ fetchDataFromAPI(
             casts: { cast, crew },
             videos: { results: videos },
         } = movie;
+
+        // Sets document title to movie title.
+        document.title = `${title} - FilmHead`;
     }
 );
