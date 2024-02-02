@@ -44,8 +44,7 @@ fetchDataFromAPI(
         // Uses template literals to inject movie data retrieved from API into the HTML.
         // TODO : Add link to Add To Folder button.
         detailsBanner.innerHTML = `
-            <div class="backdrop-image" style="background-image: url('${imageBaseURL}
-            ${"w1280" || "original"}${backdrop_path || poster_path}');"></div>
+            <div class="backdrop-image" style="background-image: url('${imageBaseURL}w1280${backdrop_path}');"></div>
 
             <div class="banner-columns">
                 <div class="banner-left-column">
@@ -99,17 +98,13 @@ fetchDataFromAPI(
                             </div>
                         </div>
 
-                        <p class="detials-genre">
+                        <p class="details-genre">
                             Science Fiction · Drama · Thriller
                         </p>
                     </div>
 
                     <p class="details-text">
-                        In the smog-choked dystopian Los Angeles of
-                        2019, blade runner Rick Deckard is called out of
-                        retirement to terminate a quartet of replicants
-                        who have escaped to Earth seeking their creator
-                        for a way to extend their short life spans.
+                        ${overview}
                     </p>
 
                     <div class="details-cast">
@@ -131,5 +126,8 @@ fetchDataFromAPI(
                 </div>
             </div>
         `;
+
+        // Pushes the completed details section into the page.
+        pageContent.appendChild(detailsBanner);
     }
 );
