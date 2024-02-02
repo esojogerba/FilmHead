@@ -12,6 +12,24 @@ console.log(movieId);
 // Retrieves the page's content.
 const pageContent = document.querySelector("[page-content]");
 
+// Calculates hours in runtime.
+const calcRuntimeHours = function (runtime) {
+    const hours = Math.floor(parseInt(runtime) / 60);
+
+    if (hours == 0) {
+        return "";
+    } else {
+        return hours.toString() + "h";
+    }
+};
+
+// Calculates remaining minutes in runtime.
+const calcRuntimeMinutes = function (runtime) {
+    const minutes = parseInt(runtime) % 60;
+
+    return " " + minutes.toString() + "m";
+};
+
 // Returns the movie's genres separated by a ','.
 const getGenres = function (genreList) {
     const newGenreList = [];
@@ -95,7 +113,10 @@ fetchDataFromAPI(
                                 release_date.split("-")[0]
                             }</div>
 
-                            <div class="meta-item">${runtime}mins</div>
+                            <div class="meta-item">
+                                ${calcRuntimeHours(runtime)}
+                                ${calcRuntimeMinutes(runtime)}
+                            </div>
 
                             <div class="meta-item card-badge">${certification}</div>
 
