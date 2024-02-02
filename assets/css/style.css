@@ -21,7 +21,7 @@
 
     /* Gradients */
     --banner-overlay: 90deg, hsl(0, 0%, 8%, 0.9), hsl(0, 0%, 8%, 0.5);
-    --details-overlay: 180deg, hsl(0, 0%, 8%, 0.6), hsl(0, 0%, 8%, 1);
+    --details-overlay: 180deg, hsl(0, 0%, 8%, 0.75), hsl(0, 0%, 8%, 1);
 
     /* 
     Typography 
@@ -1536,7 +1536,6 @@ h4 {
     }
 }
 
-/* TODO: Remove the background image URL once API is implemented */
 .backdrop-image {
     position: absolute;
     top: 0;
