@@ -35,5 +35,9 @@ fetchDataFromAPI(
 
         // Sets document title to movie title.
         document.title = `${title} - FilmHead`;
+
+        // Create details-banner <section>
+        const detailsBanner = document.createElement("section");
+        detailsBanner.classList.add("banner", "details-banner");
     }
 );
