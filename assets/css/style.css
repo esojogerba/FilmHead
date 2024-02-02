@@ -1013,6 +1013,7 @@ h4 {
 .input-group input {
     height: 70px;
     width: 100%;
+    max-width: 800px;
     color: var(--clr-white-900);
     background-color: transparent;
     border: 2px solid var(--clr-white-900);
