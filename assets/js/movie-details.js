@@ -12,6 +12,16 @@ console.log(movieId);
 // Retrieves the page's content.
 const pageContent = document.querySelector("[page-content]");
 
+// Returns the movie's genres separated by a ','.
+const getGenres = function (genreList) {
+    const newGenreList = [];
+
+    // Pushes the names of the movie's genres into newGenreList.
+    for (const { name } of genreList) newGenreList.push(name);
+
+    return newGenreList.join(" · ");
+};
+
 // Retrieves movie details using the provided movieId.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=casts,videos,images,releases`,
@@ -102,7 +112,7 @@ fetchDataFromAPI(
                         </div>
 
                         <p class="details-genre">
-                            Science Fiction · Drama · Thriller
+                            ${getGenres(genres)}
                         </p>
                     </div>
 
