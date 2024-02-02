@@ -86,7 +86,6 @@ fetchDataFromAPI(
         // Sets details-banner <section> HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
         // TODO : Add link to Add To Folder button.
-        // TODO : Cast
         // TODO : Directors
         detailsBanner.innerHTML = `
             <div class="backdrop-image" style="background-image: url('${imageBaseURL}w1280${backdrop_path}');"></div>
