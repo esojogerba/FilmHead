@@ -30,7 +30,7 @@ const calcRuntimeMinutes = function (runtime) {
     return " " + minutes.toString() + "m";
 };
 
-// Returns the movie's genres separated by a ','.
+// Returns the movie's genres separated by a '·'.
 const getGenres = function (genreList) {
     const newGenreList = [];
 
@@ -38,6 +38,21 @@ const getGenres = function (genreList) {
     for (const { name } of genreList) newGenreList.push(name);
 
     return newGenreList.join(" · ");
+};
+
+// Returns the movie's cast list separated by a ','.
+// Ten cast members is the max length of the list.
+const getCasts = function (castList) {
+    const newCastList = [];
+
+    // Pushes cast names into newCastList.
+    // A maximum of 10 names can be pushed.
+    for (let i = 0, len = castList.length; i < len && i < 10; i++) {
+        const { name } = castList[i];
+        newCastList.push(name);
+    }
+
+    return newCastList.join(", ");
 };
 
 // Retrieves movie details using the provided movieId.
@@ -71,7 +86,6 @@ fetchDataFromAPI(
         // Sets details-banner <section> HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
         // TODO : Add link to Add To Folder button.
-        // TODO : Genres
         // TODO : Cast
         // TODO : Directors
         detailsBanner.innerHTML = `
@@ -145,10 +159,7 @@ fetchDataFromAPI(
                         <p class="cast-title">Starring</p>
 
                         <p class="cast-body">
-                            Harrison Ford, Rutger Hauer, Sean Young,
-                            Edward James Olmos, M. Emmet Walsh, Daryl
-                            Hannah, William Sanderson, Brion James, Joe
-                            Turkel, Joanna Cassidy
+                            ${getCasts(cast)}
                         </p>
                     </div>
 
