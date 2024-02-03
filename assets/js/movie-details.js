@@ -186,5 +186,82 @@ fetchDataFromAPI(
 
         // Pushes the completed details section into the page.
         pageContent.appendChild(detailsBanner);
+
+        watchPlatforms(movieId);
     }
 );
+
+const watchPlatforms = function (id) {
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${API_KEY}&region=US`,
+        function (watchData) {
+            // Creates the Available On <section>.
+            const availableOn = document.createElement("section");
+            availableOn.classList.add("media-scroll", "container");
+
+            // Sets Available On <section> HTML.
+            availableOn.innerHTML = `
+                <div class="media-scroll-title-wrapper">
+                    <h3 class="media-scroll-title">Available On (US)</h3>
+                </div>
+
+                <div class="media-slider-list">
+                    <div class="slider-list-inner watch-col">
+                    </div>
+                </div>
+            `;
+
+            // Get US results for watch providers.
+            if ("US" in watchData.results) {
+                // Store the US results.
+                const watchResults = watchData.results.US;
+
+                // Slider-list-inner
+                const sliderListInner =
+                    availableOn.querySelector(".slider-list-inner");
+
+                // Check if US watchResults have a "flatrate" section.
+                if ("flatrate" in watchResults) {
+                    // Store flatrate results
+                    const streamingResults = watchResults.flatrate;
+
+                    // Create watch-stream-col <div>
+                    const streamingCol = document.createElement("div");
+                    streamingCol.classList.add("watch-stream-col");
+
+                    // Set streamingCol HTML.
+                    streamingCol.innerHTML = `
+                        <h4>Stream</h4>
+                        <div class="watch-platforms-row">
+                        </div>
+                    `;
+
+                    // Select watch-platforms-row <div> to insert logos into.
+                    const watchRow = streamingCol.querySelector(
+                        ".watch-platforms-row"
+                    );
+
+                    // Iterate through each entry in flatrate.
+                    for (let entry of streamingResults) {
+                        // Create watch-logo <img>
+                        const watchLogo = document.createElement("img");
+                        watchLogo.classList.add("watch-logo");
+                        // Set watch-logo <img> src using the provided logo path of the current entry.
+                        watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
+
+                        // Append the new watch-logo <img> to watchRow
+                        watchRow.appendChild(watchLogo);
+                    }
+
+                    // Append watch-stream-col <div> into sliderListInner.
+                    sliderListInner.appendChild(streamingCol);
+                }
+            } else {
+                console.log("Unavailable in US");
+            }
+
+            // Append Available On <section> into the page content.
+            pageContent.appendChild(availableOn);
+        }
+    );
+};
