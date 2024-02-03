@@ -100,7 +100,7 @@ fetchDataFromAPI(
         // TODO : Add link to Add To Folder button.
         // TODO : Directors
         detailsBanner.innerHTML = `
-            <div class="backdrop-image" style="background-image: url('${imageBaseURL}w1280${backdrop_path}');"></div>
+            <div class="backdrop-image" style="background-image: linear-gradient(var(--details-overlay)), url('${imageBaseURL}w1280${backdrop_path}');"></div>
 
             <div class="banner-columns">
                 <div class="banner-left-column">
