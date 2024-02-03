@@ -1554,6 +1554,12 @@ h4 {
     }
 }
 
+@media (max-width: 35em) {
+    .backdrop-image {
+        max-height: 600px;
+    }
+}
+
 .banner-left-column {
     display: flex;
     flex-direction: column;
