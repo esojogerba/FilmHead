@@ -55,6 +55,18 @@ const getCasts = function (castList) {
     return newCastList.join(", ");
 };
 
+const getDirectors = function (crewList) {
+    //  Gets the directors from the crewList
+    const directors = crewList.filter(({ job }) => job === "Director");
+
+    const directorList = [];
+
+    // Pushes all the names of the directors into directorList.
+    for (const { name } of directors) directorList.push(name);
+
+    return directorList.join(", ");
+};
+
 // Retrieves movie details using the provided movieId.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=casts,videos,images,releases`,
@@ -165,7 +177,9 @@ fetchDataFromAPI(
                     <div class="details-director">
                         <p class="director-title">Directed By</p>
 
-                        <p class="director-body">Ridley Scott</p>
+                        <p class="director-body">
+                            ${getDirectors(crew)}
+                        </p>
                     </div>
                 </div>
             </div>
