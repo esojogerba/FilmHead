@@ -256,6 +256,43 @@ const watchPlatforms = function (id) {
                     // Append watch-stream-col <div> into sliderListInner.
                     sliderListInner.appendChild(streamingCol);
                 }
+
+                // Check if US watchResults have a "rent" section.
+                if ("rent" in watchResults) {
+                    // Store flatrate results
+                    const rentResults = watchResults.rent;
+
+                    // Create watch-stream-col <div>
+                    const rentCol = document.createElement("div");
+                    rentCol.classList.add("watch-rent-col");
+
+                    // Set rentCol HTML.
+                    rentCol.innerHTML = `
+                        <h4>Rent</h4>
+                        <div class="watch-platforms-row">
+                        </div>
+                    `;
+
+                    // Select watch-platforms-row <div> to insert logos into.
+                    const watchRow = rentCol.querySelector(
+                        ".watch-platforms-row"
+                    );
+
+                    // Iterate through each entry in rent.
+                    for (let entry of rentResults) {
+                        // Create watch-logo <img>
+                        const watchLogo = document.createElement("img");
+                        watchLogo.classList.add("watch-logo");
+                        // Set watch-logo <img> src using the provided logo path of the current entry.
+                        watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
+
+                        // Append the new watch-logo <img> to watchRow
+                        watchRow.appendChild(watchLogo);
+                    }
+
+                    // Append watch-stream-col <div> into sliderListInner.
+                    sliderListInner.appendChild(rentCol);
+                }
             } else {
                 console.log("Unavailable in US");
             }
