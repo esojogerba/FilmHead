@@ -26,3 +26,8 @@ window.onclick = function (event) {
 const getMovieDetails = function (movieId) {
     window.localStorage.setItem("movieId", String(movieId));
 };
+
+// Stores the showId of the show that was clicked in local storage for later use.
+const getShowDetails = function (showId) {
+    window.localStorage.setItem("showId", String(showId));
+};
