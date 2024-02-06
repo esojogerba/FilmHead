@@ -17,7 +17,6 @@ export function createMediaCard(type, mediaData, genreList) {
         // Sets media-card <div> HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
         // TODO: Add button link and functionality.
-        // TODO: Add movie details link functionality.
         card.innerHTML = `
             <figure class="poster-box card-poster">
                 <img
@@ -71,9 +70,8 @@ export function createMediaCard(type, mediaData, genreList) {
         card.classList.add("media-card");
 
         // Sets media-card <div> HTML.
-        // Uses template literals to inject movie data retrieved from API into the HTML.
+        // Uses template literals to inject show data retrieved from API into the HTML.
         // TODO: Add button link and functionality.
-        // TODO: Add movie details link functionality.
         card.innerHTML = `
             <figure class="poster-box card-poster">
                 <img
@@ -110,10 +108,10 @@ export function createMediaCard(type, mediaData, genreList) {
             </p>
 
             <a
-                href=""
+                href="show-details.html"
                 class="card-btn"
                 title="${name}"
-                onclick=""
+                onclick="getShowDetails(${id})"
             ></a>
         `;
 
