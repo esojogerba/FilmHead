@@ -12,6 +12,34 @@ console.log(movieId);
 // Retrieves the page's content.
 const pageContent = document.querySelector("[page-content]");
 
+// Fetch all genres. Example: [ { "id": "123", "name": "Action" } ]
+// Then change genre format to {123: "Action"}
+const genreList = {
+    // Assign correct genre string to each genre_id provided. Example: [23 , 43] = "Action, Romance".
+    asString(genreIdList) {
+        // Will hold list of genre strings.
+        let newGenreList = [];
+
+        for (const genreId of genreIdList) {
+            // If current genreId exists in genreList, push it to newGenreList.
+            // this == genreList
+            this[genreId] && newGenreList.push(this[genreId]);
+        }
+        return newGenreList.join(" · ");
+    },
+};
+
+// Retrieves all genres from API.
+fetchDataFromAPI(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`,
+
+    function ({ genres }) {
+        for (const { id, name } of genres) {
+            genreList[id] = name;
+        }
+    }
+);
+
 // Calculates hours in runtime.
 const calcRuntimeHours = function (runtime) {
     const hours = Math.floor(parseInt(runtime) / 60);
@@ -74,6 +102,192 @@ const filterVideos = function (videoList) {
         ({ type, site }) =>
             (type === "Trailer" || type === "Teaser") && site === "YouTube"
     );
+};
+
+const watchPlatforms = function (watchData) {
+    // Creates the Available On <section>.
+    const availableOn = document.createElement("section");
+    availableOn.classList.add("media-scroll", "container");
+
+    // Sets Available On <section> HTML.
+    availableOn.innerHTML = `
+                <div class="media-scroll-title-wrapper">
+                    <h3 class="media-scroll-title">Available On (US)</h3>
+                </div>
+
+                <div class="media-slider-list">
+                    <div class="slider-list-inner watch-col">
+                    </div>
+                </div>
+            `;
+
+    // Get US results for watch providers.
+    if ("US" in watchData.results) {
+        // Store the US results.
+        const watchResults = watchData.results.US;
+
+        // Slider-list-inner
+        const sliderListInner = availableOn.querySelector(".slider-list-inner");
+
+        // Check if US watchResults have a "flatrate" section.
+        if ("flatrate" in watchResults) {
+            // Store flatrate results
+            const streamingResults = watchResults.flatrate;
+
+            // Create watch-stream-col <div>
+            const streamingCol = document.createElement("div");
+            streamingCol.classList.add("watch-stream-col");
+
+            // Set streamingCol HTML.
+            streamingCol.innerHTML = `
+                        <h4 class="watch-header">Stream</h4>
+                        <div class="watch-platforms-row">
+                        </div>
+                    `;
+
+            // Select watch-platforms-row <div> to insert logos into.
+            const watchRow = streamingCol.querySelector(".watch-platforms-row");
+
+            // Iterate through each entry in flatrate.
+            for (let entry of streamingResults) {
+                // Create watch-logo <img>
+                const watchLogo = document.createElement("img");
+                watchLogo.classList.add("watch-logo");
+                // Set watch-logo <img> src using the provided logo path of the current entry.
+                watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
+
+                // Append the new watch-logo <img> to watchRow
+                watchRow.appendChild(watchLogo);
+            }
+
+            // Append watch-stream-col <div> into sliderListInner.
+            sliderListInner.appendChild(streamingCol);
+        }
+
+        // Check if US watchResults have a "rent" section.
+        if ("rent" in watchResults) {
+            // Store rent results
+            const rentResults = watchResults.rent;
+
+            // Create watch-rent-col <div>
+            const rentCol = document.createElement("div");
+            rentCol.classList.add("watch-rent-col");
+
+            // Set rentCol HTML.
+            rentCol.innerHTML = `
+                        <h4 class="watch-header">Rent</h4>
+                        <div class="watch-platforms-row">
+                        </div>
+                    `;
+
+            // Select watch-platforms-row <div> to insert logos into.
+            const watchRow = rentCol.querySelector(".watch-platforms-row");
+
+            // Iterate through each entry in rent.
+            for (let entry of rentResults) {
+                // Create watch-logo <img>
+                const watchLogo = document.createElement("img");
+                watchLogo.classList.add("watch-logo");
+                // Set watch-logo <img> src using the provided logo path of the current entry.
+                watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
+
+                // Append the new watch-logo <img> to watchRow
+                watchRow.appendChild(watchLogo);
+            }
+
+            // Append watch-rent-col <div> into sliderListInner.
+            sliderListInner.appendChild(rentCol);
+        }
+
+        // Check if US watchResults have a "buy" section.
+        if ("buy" in watchResults) {
+            // Store buy results
+            const buyResults = watchResults.buy;
+
+            // Create watch-buy-col <div>
+            const buyCol = document.createElement("div");
+            buyCol.classList.add("watch-buy-col");
+
+            // Set buyCol HTML.
+            buyCol.innerHTML = `
+                        <h4 class="watch-header">Buy</h4>
+                        <div class="watch-platforms-row">
+                        </div>
+                    `;
+
+            // Select watch-platforms-row <div> to insert logos into.
+            const watchRow = buyCol.querySelector(".watch-platforms-row");
+
+            // Iterate through each entry in buy.
+            for (let entry of buyResults) {
+                // Create watch-logo <img>
+                const watchLogo = document.createElement("img");
+                watchLogo.classList.add("watch-logo");
+                // Set watch-logo <img> src using the provided logo path of the current entry.
+                watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
+
+                // Append the new watch-logo <img> to watchRow
+                watchRow.appendChild(watchLogo);
+            }
+
+            // Append watch-buy-col <div> into sliderListInner.
+            sliderListInner.appendChild(buyCol);
+        }
+    } else {
+        // Slider-list-inner
+        const sliderListInner = availableOn.querySelector(".slider-list-inner");
+
+        sliderListInner.innerHTML = `
+                    <h4 class="watch-header">Not Available Online in US</h4>
+                `;
+    }
+
+    // Append Available On <section> into the page content.
+    pageContent.appendChild(availableOn);
+
+    // Adds the You May Also Like <section>
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${API_KEY}&page=1`,
+        addSuggestedMovies
+    );
+};
+
+// Creates scrollable movie list for suggested movies.
+const addSuggestedMovies = function ({ results: movieList }) {
+    console.log(movieList.length);
+
+    if (movieList.length != 0) {
+        // Creates You May Also Like <section>
+        const suggestedMovies = document.createElement("section");
+        suggestedMovies.classList.add("media-scroll", "container");
+
+        // TODO: Add View More link.
+        suggestedMovies.innerHTML = `
+        <div class="media-scroll-title-wrapper">
+            <h3 class="media-scroll-title">You May Also Like</h3>
+
+            <a href="" class="view-more-link">View More</a>
+        </div>
+
+        <div class="media-slider-list">
+            <div class="slider-list-inner">
+            </div>
+        </div>
+    `;
+
+        // Creates a media card for each movie in movieList.
+        for (const movie of movieList) {
+            // Imported from media-card.js
+            const movieCard = createMediaCard("movie", movie, genreList);
+
+            // Adds the new media card into the media slider list.
+            suggestedMovies
+                .querySelector(".slider-list-inner")
+                .appendChild(movieCard);
+        }
+
+        pageContent.appendChild(suggestedMovies);
+    }
 };
 
 // Retrieves movie details using the provided movieId.
@@ -196,8 +410,6 @@ fetchDataFromAPI(
         // Pushes the completed details section into the page.
         pageContent.appendChild(detailsBanner);
 
-        watchPlatforms(movieId);
-
         // Create trailers & clips <section>
         const clips = document.createElement("section");
         clips.classList.add("media-scroll", "container");
@@ -236,160 +448,11 @@ fetchDataFromAPI(
 
         // Pushes the completed clips & trailers section into the page.
         pageContent.appendChild(clips);
+
+        // Adds Available On <section>.
+        fetchDataFromAPI(
+            `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${API_KEY}&region=US`,
+            watchPlatforms
+        );
     }
 );
-
-const watchPlatforms = function (id) {
-    fetchDataFromAPI(
-        `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${API_KEY}&region=US`,
-        function (watchData) {
-            // Creates the Available On <section>.
-            const availableOn = document.createElement("section");
-            availableOn.classList.add("media-scroll", "container");
-
-            // Sets Available On <section> HTML.
-            availableOn.innerHTML = `
-                <div class="media-scroll-title-wrapper">
-                    <h3 class="media-scroll-title">Available On (US)</h3>
-                </div>
-
-                <div class="media-slider-list">
-                    <div class="slider-list-inner watch-col">
-                    </div>
-                </div>
-            `;
-
-            // Get US results for watch providers.
-            if ("US" in watchData.results) {
-                // Store the US results.
-                const watchResults = watchData.results.US;
-
-                // Slider-list-inner
-                const sliderListInner =
-                    availableOn.querySelector(".slider-list-inner");
-
-                // Check if US watchResults have a "flatrate" section.
-                if ("flatrate" in watchResults) {
-                    // Store flatrate results
-                    const streamingResults = watchResults.flatrate;
-
-                    // Create watch-stream-col <div>
-                    const streamingCol = document.createElement("div");
-                    streamingCol.classList.add("watch-stream-col");
-
-                    // Set streamingCol HTML.
-                    streamingCol.innerHTML = `
-                        <h4 class="watch-header">Stream</h4>
-                        <div class="watch-platforms-row">
-                        </div>
-                    `;
-
-                    // Select watch-platforms-row <div> to insert logos into.
-                    const watchRow = streamingCol.querySelector(
-                        ".watch-platforms-row"
-                    );
-
-                    // Iterate through each entry in flatrate.
-                    for (let entry of streamingResults) {
-                        // Create watch-logo <img>
-                        const watchLogo = document.createElement("img");
-                        watchLogo.classList.add("watch-logo");
-                        // Set watch-logo <img> src using the provided logo path of the current entry.
-                        watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
-
-                        // Append the new watch-logo <img> to watchRow
-                        watchRow.appendChild(watchLogo);
-                    }
-
-                    // Append watch-stream-col <div> into sliderListInner.
-                    sliderListInner.appendChild(streamingCol);
-                }
-
-                // Check if US watchResults have a "rent" section.
-                if ("rent" in watchResults) {
-                    // Store rent results
-                    const rentResults = watchResults.rent;
-
-                    // Create watch-rent-col <div>
-                    const rentCol = document.createElement("div");
-                    rentCol.classList.add("watch-rent-col");
-
-                    // Set rentCol HTML.
-                    rentCol.innerHTML = `
-                        <h4 class="watch-header">Rent</h4>
-                        <div class="watch-platforms-row">
-                        </div>
-                    `;
-
-                    // Select watch-platforms-row <div> to insert logos into.
-                    const watchRow = rentCol.querySelector(
-                        ".watch-platforms-row"
-                    );
-
-                    // Iterate through each entry in rent.
-                    for (let entry of rentResults) {
-                        // Create watch-logo <img>
-                        const watchLogo = document.createElement("img");
-                        watchLogo.classList.add("watch-logo");
-                        // Set watch-logo <img> src using the provided logo path of the current entry.
-                        watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
-
-                        // Append the new watch-logo <img> to watchRow
-                        watchRow.appendChild(watchLogo);
-                    }
-
-                    // Append watch-rent-col <div> into sliderListInner.
-                    sliderListInner.appendChild(rentCol);
-                }
-
-                // Check if US watchResults have a "buy" section.
-                if ("buy" in watchResults) {
-                    // Store buy results
-                    const buyResults = watchResults.buy;
-
-                    // Create watch-buy-col <div>
-                    const buyCol = document.createElement("div");
-                    buyCol.classList.add("watch-buy-col");
-
-                    // Set buyCol HTML.
-                    buyCol.innerHTML = `
-                        <h4 class="watch-header">Buy</h4>
-                        <div class="watch-platforms-row">
-                        </div>
-                    `;
-
-                    // Select watch-platforms-row <div> to insert logos into.
-                    const watchRow = buyCol.querySelector(
-                        ".watch-platforms-row"
-                    );
-
-                    // Iterate through each entry in buy.
-                    for (let entry of buyResults) {
-                        // Create watch-logo <img>
-                        const watchLogo = document.createElement("img");
-                        watchLogo.classList.add("watch-logo");
-                        // Set watch-logo <img> src using the provided logo path of the current entry.
-                        watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
-
-                        // Append the new watch-logo <img> to watchRow
-                        watchRow.appendChild(watchLogo);
-                    }
-
-                    // Append watch-buy-col <div> into sliderListInner.
-                    sliderListInner.appendChild(buyCol);
-                }
-            } else {
-                // Slider-list-inner
-                const sliderListInner =
-                    availableOn.querySelector(".slider-list-inner");
-
-                sliderListInner.innerHTML = `
-                    <h4 class="watch-header">Not Available Online in US</h4>
-                `;
-            }
-
-            // Append Available On <section> into the page content.
-            pageContent.appendChild(availableOn);
-        }
-    );
-};
