@@ -299,7 +299,7 @@ const watchPlatforms = function (id) {
                     availableOn.querySelector(".slider-list-inner");
 
                 sliderListInner.innerHTML = `
-                    <h4 class="watch-header">Not Available in US</h4>
+                    <h4 class="watch-header">Not Available Online in US</h4>
                 `;
             }
 
