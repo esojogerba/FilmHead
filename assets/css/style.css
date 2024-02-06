@@ -1647,9 +1647,7 @@ h4 {
     gap: 1rem;
 }
 
-.watch-stream-col h4,
-.watch-rent-col h4,
-.watch-buy-col h4 {
+.watch-header {
     margin-block: 1.5rem;
 }
 
@@ -1664,9 +1662,7 @@ h4 {
 }
 
 @media (max-width: 35em) {
-    .watch-stream-col h4,
-    .watch-rent-col h4,
-    .watch-buy-col h4 {
+    .watch-header {
         margin-block: 1rem;
         font-size: var(--fs-20);
     }
