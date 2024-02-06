@@ -231,7 +231,7 @@ const watchPlatforms = function (id) {
 
                     // Set streamingCol HTML.
                     streamingCol.innerHTML = `
-                        <h4>Stream</h4>
+                        <h4 class="watch-header">Stream</h4>
                         <div class="watch-platforms-row">
                         </div>
                     `;
@@ -268,7 +268,7 @@ const watchPlatforms = function (id) {
 
                     // Set rentCol HTML.
                     rentCol.innerHTML = `
-                        <h4>Rent</h4>
+                        <h4 class="watch-header">Rent</h4>
                         <div class="watch-platforms-row">
                         </div>
                     `;
@@ -294,7 +294,13 @@ const watchPlatforms = function (id) {
                     sliderListInner.appendChild(rentCol);
                 }
             } else {
-                console.log("Unavailable in US");
+                // Slider-list-inner
+                const sliderListInner =
+                    availableOn.querySelector(".slider-list-inner");
+
+                sliderListInner.innerHTML = `
+                    <h4 class="watch-header">Not Available in US</h4>
+                `;
             }
 
             // Append Available On <section> into the page content.
