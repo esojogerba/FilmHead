@@ -67,6 +67,15 @@ const getDirectors = function (crewList) {
     return directorList.join(", ");
 };
 
+// Filter videos
+const filterVideos = function (videoList) {
+    // Returns all of the teasers and trailers from videoList that are hosted on YouTube as an array.
+    return videoList.filter(
+        ({ type, site }) =>
+            (type === "Trailer" || type === "Teaser") && site === "YouTube"
+    );
+};
+
 // Retrieves movie details using the provided movieId.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=casts,videos,images,releases`,
