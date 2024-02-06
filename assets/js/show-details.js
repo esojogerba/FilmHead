@@ -12,6 +12,16 @@ console.log(showId);
 // Retrieves the page's content.
 const pageContent = document.querySelector("[page-content]");
 
+// Returns the movie's genres separated by a '·'.
+const getGenres = function (genreList) {
+    const newGenreList = [];
+
+    // Pushes the names of the movie's genres into newGenreList.
+    for (const { name } of genreList) newGenreList.push(name);
+
+    return newGenreList.join(" · ");
+};
+
 // Retrieves show details using the provided showId.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/tv/${showId}?api_key=${API_KEY}&append_to_response=credits,videos,images,content_ratings`,
@@ -105,7 +115,7 @@ fetchDataFromAPI(
                         </div>
 
                         <p class="details-genre">
-                            genres
+                            ${getGenres(genres)}
                         </p>
                     </div>
 
