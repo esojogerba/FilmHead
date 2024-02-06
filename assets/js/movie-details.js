@@ -268,10 +268,10 @@ const watchPlatforms = function (id) {
 
                 // Check if US watchResults have a "rent" section.
                 if ("rent" in watchResults) {
-                    // Store flatrate results
+                    // Store rent results
                     const rentResults = watchResults.rent;
 
-                    // Create watch-stream-col <div>
+                    // Create watch-rent-col <div>
                     const rentCol = document.createElement("div");
                     rentCol.classList.add("watch-rent-col");
 
@@ -299,8 +299,45 @@ const watchPlatforms = function (id) {
                         watchRow.appendChild(watchLogo);
                     }
 
-                    // Append watch-stream-col <div> into sliderListInner.
+                    // Append watch-rent-col <div> into sliderListInner.
                     sliderListInner.appendChild(rentCol);
+                }
+
+                // Check if US watchResults have a "buy" section.
+                if ("buy" in watchResults) {
+                    // Store buy results
+                    const buyResults = watchResults.buy;
+
+                    // Create watch-buy-col <div>
+                    const buyCol = document.createElement("div");
+                    buyCol.classList.add("watch-buy-col");
+
+                    // Set buyCol HTML.
+                    buyCol.innerHTML = `
+                        <h4 class="watch-header">Buy</h4>
+                        <div class="watch-platforms-row">
+                        </div>
+                    `;
+
+                    // Select watch-platforms-row <div> to insert logos into.
+                    const watchRow = buyCol.querySelector(
+                        ".watch-platforms-row"
+                    );
+
+                    // Iterate through each entry in buy.
+                    for (let entry of buyResults) {
+                        // Create watch-logo <img>
+                        const watchLogo = document.createElement("img");
+                        watchLogo.classList.add("watch-logo");
+                        // Set watch-logo <img> src using the provided logo path of the current entry.
+                        watchLogo.src = imageBaseURL + "w500" + entry.logo_path;
+
+                        // Append the new watch-logo <img> to watchRow
+                        watchRow.appendChild(watchLogo);
+                    }
+
+                    // Append watch-buy-col <div> into sliderListInner.
+                    sliderListInner.appendChild(buyCol);
                 }
             } else {
                 // Slider-list-inner
