@@ -22,6 +22,21 @@ const getGenres = function (genreList) {
     return newGenreList.join(" · ");
 };
 
+// Returns the show's cast list separated by a ','.
+// Ten cast members is the max length of the list.
+const getCast = function (castList) {
+    const newCastList = [];
+
+    // Pushes cast names into newCastList.
+    // A maximum of 10 names can be pushed.
+    for (let i = 0, len = castList.length; i < len && i < 10; i++) {
+        const { name } = castList[i];
+        newCastList.push(name);
+    }
+
+    return newCastList.join(", ");
+};
+
 // Retrieves show details using the provided showId.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/tv/${showId}?api_key=${API_KEY}&append_to_response=credits,videos,images,content_ratings`,
@@ -127,7 +142,7 @@ fetchDataFromAPI(
                         <p class="cast-title">Starring</p>
 
                         <p class="cast-body">
-                            cast
+                            ${getCast(cast)}
                         </p>
                     </div>
 
