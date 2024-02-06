@@ -197,6 +197,45 @@ fetchDataFromAPI(
         pageContent.appendChild(detailsBanner);
 
         watchPlatforms(movieId);
+
+        // Create trailers & clips <section>
+        const clips = document.createElement("section");
+        clips.classList.add("media-scroll", "container");
+
+        clips.innerHTML = `
+            <div class="media-scroll-title-wrapper">
+                <h3 class="media-scroll-title">Trailers & Clips</h3>
+            </div>
+
+            <div class="media-slider-list">
+                <div class="slider-list-inner">
+                </div>
+            </div>
+         `;
+
+        const clipsSliderInner = clips.querySelector(".slider-list-inner");
+
+        // Creates videos section of the details page.
+        for (const { key, name } of filterVideos(videos)) {
+            // Creates video-card <div>.
+            const videoCard = document.createElement("div");
+            videoCard.classList.add("video-card");
+
+            // Sets video-card <div> HTML.
+            // Uses template literals to inject video data retrieved from API into the HTML.
+            videoCard.innerHTML = `
+                <iframe width="500"  height="294" 
+                src="https://www.youtube.com/embed/${key}?theme=dark&color=white&rel=0" 
+                frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" 
+                loading="lazy"></iframe>
+            `;
+
+            // Adds the completed video card into slider-inner.
+            clipsSliderInner.appendChild(videoCard);
+        }
+
+        // Pushes the completed clips & trailers section into the page.
+        pageContent.appendChild(clips);
     }
 );
 
