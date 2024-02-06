@@ -100,7 +100,6 @@ const heroBanner = function ({ results: getShowList }) {
 
         // Sets inner HTML for sliderItem.
         // Uses template literals to inject movie data retrieved from API into the HTML.
-        // TODO : button add getMediaDetails link
         // TODO : button add "Add To Folder" link
         sliderItem.innerHTML = `
 
@@ -125,7 +124,7 @@ const heroBanner = function ({ results: getShowList }) {
                     <a
                         class="btn"
                         href="show-details.html"
-                        onclick=""
+                        onclick="getShowDetails(${id})"
                     >
                         Details
                     </a>
