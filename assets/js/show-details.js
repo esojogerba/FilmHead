@@ -37,6 +37,20 @@ const getCast = function (castList) {
     return newCastList.join(", ");
 };
 
+// Returns the movie's directors separated by a ','.
+const getCreators = function (creators) {
+    const creatorList = [];
+
+    // Pushes creator names into creatorList.
+    // A maximum of 10 names can be pushed.
+    for (let i = 0, len = creators.length; i < len && i < 10; i++) {
+        const { name } = creators[i];
+        creatorList.push(name);
+    }
+
+    return creatorList.join(", ");
+};
+
 // Retrieves show details using the provided showId.
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/tv/${showId}?api_key=${API_KEY}&append_to_response=credits,videos,images,content_ratings`,
@@ -150,7 +164,7 @@ fetchDataFromAPI(
                         <p class="director-title">Directed By</p>
 
                         <p class="director-body">
-                            director
+                            ${getCreators(created_by)}
                         </p>
                     </div>
                 </div>
