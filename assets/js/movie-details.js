@@ -265,7 +265,7 @@ fetchDataFromAPI(
 
         // Adds Available On <section>.
         fetchDataFromAPI(
-            `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${API_KEY}&region=US`,
+            `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${API_KEY}`,
             watchPlatforms
         );
     }
