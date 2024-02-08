@@ -12,6 +12,34 @@ console.log(showId);
 // Retrieves the page's content.
 const pageContent = document.querySelector("[page-content]");
 
+// Fetch all genres. Example: [ { "id": "123", "name": "Action" } ]
+// Then change genre format to {123: "Action"}
+const genreList = {
+    // Assign correct genre string to each genre_id provided. Example: [23 , 43] = "Action, Romance".
+    asString(genreIdList) {
+        // Will hold list of genre strings.
+        let newGenreList = [];
+
+        for (const genreId of genreIdList) {
+            // If current genreId exists in genreList, push it to newGenreList.
+            // this == genreList
+            this[genreId] && newGenreList.push(this[genreId]);
+        }
+        return newGenreList.join(" · ");
+    },
+};
+
+// Retrieves all TV genres from API.
+fetchDataFromAPI(
+    `https://api.themoviedb.org/3/genre/tv/list?api_key=${API_KEY}`,
+
+    function ({ genres }) {
+        for (const { id, name } of genres) {
+            genreList[id] = name;
+        }
+    }
+);
+
 // Returns the movie's genres separated by a '·'.
 const getGenres = function (genreList) {
     const newGenreList = [];
@@ -372,8 +400,46 @@ const watchPlatforms = function (watchData) {
     pageContent.appendChild(availableOn);
 
     // Adds the You May Also Like <section>
-    //  fetchDataFromAPI(
-    //     `https://api.themoviedb.org/3/movie/${showId}/recommendations?api_key=${API_KEY}&page=1`,
-    //     addSuggestedShows
-    // );
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/tv/${showId}/recommendations?api_key=${API_KEY}&page=1`,
+        addSuggestedShows
+    );
+};
+
+// Creates scrollable show list for suggested shows.
+const addSuggestedShows = function ({ results: showList }) {
+    console.log(showList.length);
+
+    if (showList.length != 0) {
+        // Creates You May Also Like <section>
+        const suggestedShows = document.createElement("section");
+        suggestedShows.classList.add("media-scroll", "container");
+
+        // TODO: Add View More link.
+        suggestedShows.innerHTML = `
+        <div class="media-scroll-title-wrapper">
+            <h3 class="media-scroll-title">You May Also Like</h3>
+
+            <a href="" class="view-more-link">View More</a>
+        </div>
+
+        <div class="media-slider-list">
+            <div class="slider-list-inner">
+            </div>
+        </div>
+    `;
+
+        // Creates a media card for each show in showList.
+        for (const show of showList) {
+            // Imported from media-card.js
+            const showCard = createMediaCard("show", show, genreList);
+
+            // Adds the new media card into the media slider list.
+            suggestedShows
+                .querySelector(".slider-list-inner")
+                .appendChild(showCard);
+        }
+
+        pageContent.appendChild(suggestedShows);
+    }
 };
