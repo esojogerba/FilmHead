@@ -278,7 +278,7 @@ const buildPageHeader = function () {
         for (const [genreId, genreName] of Object.entries(genreList)) {
             // Creates the <a> link.
             const link = document.createElement("a");
-            link.setAttribute("href", "./media-list.html");
+            link.setAttribute("href", "./media-grid.html");
             // OnClick attribute used to create a media list when a genre link is clicked.
             link.setAttribute(
                 "onClick",
