@@ -1674,6 +1674,21 @@ h4 {
 }
 
 /* =======================
+ Media Grid
+ ======================= */
+
+.grid-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#grid-search-svg {
+    fill: var(--clr-white-900);
+    width: 60px;
+}
+
+/* =======================
  Utility
  ======================= */
 
