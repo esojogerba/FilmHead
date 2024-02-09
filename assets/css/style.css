@@ -1703,7 +1703,49 @@ h4 {
     row-gap: 1.5rem;
 }
 
-:is(.genre-list, .search-modal) :is(.media-card, .grid-card-poster) {
+.grid-card {
+    position: relative;
+}
+
+.grid-card-poster {
+    position: relative;
+}
+
+.grid-card-add-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+    background-color: hsl(242, 76%, 63%, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    line-height: normal;
+    font-size: 0;
+    padding: 0.5rem;
+}
+
+#grid-card-add-svg {
+    fill: var(--clr-white-900);
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1;
+}
+
+.grid-card-add-btn:hover,
+.grid-card-add-btn:focus {
+    background-color: hsl(240, 100%, 98%, 0.6);
+    backdrop-filter: blur(6px);
+
+    #card-add-svg {
+        fill: var(--clr-primary);
+    }
+
+    #grid-card-add-svg {
+        fill: var(--clr-primary);
+    }
+}
+
+:is(.genre-list, .search-modal) :is(.grid-card, .grid-card-poster) {
     width: 100%;
 }
 
@@ -1738,9 +1780,15 @@ h4 {
     }
 }
 
-@media (max-width: 35em) {
+@media (max-width: 35.5em) {
     .grid-title {
         font-size: var(--fs-32);
+    }
+
+    #grid-card-add-svg {
+        width: 80px;
+        height: 80px;
+        aspect-ratio: 1;
     }
 }
 
