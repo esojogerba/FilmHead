@@ -1677,15 +1677,23 @@ h4 {
  Media Grid
  ======================= */
 
-.grid-title {
+.grid-header {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 #grid-search-svg {
     fill: var(--clr-white-900);
     width: 60px;
+}
+
+.grid-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .grid-list {
@@ -1707,9 +1715,32 @@ h4 {
 }
 
 @media (max-width: 60em) {
+    .media-grid {
+        margin-top: 4rem;
+    }
+
+    .grid-header {
+        justify-content: center;
+    }
+
+    #grid-search-svg {
+        fill: var(--clr-white-900);
+        min-width: 40px;
+    }
+
+    .grid-title {
+        font-size: var(--fs-40);
+    }
+
     .grid-list {
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media (max-width: 35em) {
+    .grid-title {
+        font-size: var(--fs-32);
     }
 }
 
