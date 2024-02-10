@@ -32,4 +32,31 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
     } else {
         document.title = `${genreName} Shows - FilmHead`;
     }
+
+    // Creates media-grid <section>.
+    const mediaGridElem = document.createElement("section");
+    mediaGridElem.classList.add("media-grid", "container");
+    if (mediaType == "movie") {
+        mediaGridElem.ariaLabel = `${genreName} Movies`;
+    } else {
+        mediaGridElem.ariaLabel = `${genreName} Shows`;
+    }
+
+    // Set media-grid <section> HTML.
+    mediaGridElem.innerHTML = `
+        <div class="grid-header">
+            <svg class="material-icon" id="grid-search-svg">
+                <use
+                    xlink:href="/assets/images/icons.svg#search-icon"
+                />
+            </svg>
+
+            <h1 class="grid-title">Science Fiction Movies</h1>
+        </div>
+
+        <div class="grid-list">
+        </div>
+
+        <button class="btn load-more">Load More</button>
+    `;
 });
