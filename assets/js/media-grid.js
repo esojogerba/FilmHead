@@ -8,3 +8,6 @@ import { createMediaCard } from "./media-card.js";
 const genreName = window.localStorage.getItem("genreName");
 // Retrieve url parameter from local storage.
 const urlParam = window.localStorage.getItem("urlParam");
+
+// Retrieves the page's content.
+const pageContent = document.querySelector("[page-content]");
