@@ -31,3 +31,9 @@ const getMovieDetails = function (movieId) {
 const getShowDetails = function (showId) {
     window.localStorage.setItem("showId", String(showId));
 };
+
+// Stores the genre selected from the dropdown into local storage for later use.
+const getMovieGrid = function (urlParam, genreName) {
+    window.localStorage.setItem("urlParam", urlParam);
+    window.localStorage.setItem("genreName", genreName);
+};
