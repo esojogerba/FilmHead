@@ -117,6 +117,49 @@ export function createMediaCard(type, mediaData, genreList) {
 
         return card;
     } else if (type == "grid-movie") {
+        // Stores data for the current movie
+        const { poster_path, title, genre_ids, release_date, id } = mediaData;
+
+        // Creates grid card <div>.
+        const card = document.createElement("div");
+        card.classList.add("grid-card");
+
+        // Sets grid-card <div> HTML.
+        // Uses template literals to inject movie data retrieved from API into the HTML.
+        // TODO: Add button link and functionality.
+        card.innerHTML = `
+            <figure class="poster-box grid-card-poster">
+                <img
+                    src="/assets/images/Blade Runner Poster.png"
+                    alt="Blade Runner"
+                    class="img-cover"
+                    loading="lazy"
+                />
+
+                <a href="" class="grid-card-add-btn">
+                    <svg
+                        class="material-icon"
+                        id="grid-card-add-svg"
+                    >
+                        <use
+                            xlink:href="/assets/images/icons.svg#add-icon"
+                        />
+                    </svg>
+                </a>
+            </figure>
+
+            <h4 class="media-card-title">${title}</h4>
+
+            <div class="meta-list media-card-meta">
+                <div class="meta-list">
+                    <div class="meta-item">${release_date.split("-")[0]}</div>
+                </div>
+            </div>
+
+            <a href="" class="card-btn" title="" onclick="getMovieDetails(${id})"></a>
+        `;
+
+        return card;
     } else if (type == "grid-tv") {
     }
 }
