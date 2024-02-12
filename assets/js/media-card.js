@@ -130,8 +130,8 @@ export function createMediaCard(type, mediaData, genreList) {
         card.innerHTML = `
             <figure class="poster-box grid-card-poster">
                 <img
-                    src="/assets/images/Blade Runner Poster.png"
-                    alt="Blade Runner"
+                    src="${imageBaseURL}w342${poster_path}"
+                    alt="${title}"
                     class="img-cover"
                     loading="lazy"
                 />
