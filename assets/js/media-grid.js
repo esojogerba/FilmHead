@@ -33,13 +33,18 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
         document.title = `${genreName} Shows - FilmHead`;
     }
 
+    // Stores header for the page.
+    let pageHeader = ``;
+
     // Creates media-grid <section>.
     const mediaGridElem = document.createElement("section");
     mediaGridElem.classList.add("media-grid", "container");
     if (mediaType == "movie") {
         mediaGridElem.ariaLabel = `${genreName} Movies`;
+        pageHeader = `${genreName} Movies`;
     } else {
         mediaGridElem.ariaLabel = `${genreName} Shows`;
+        pageHeader = `${genreName} Shows`;
     }
 
     // Set media-grid <section> HTML.
@@ -51,7 +56,7 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
                 />
             </svg>
 
-            <h1 class="grid-title">Science Fiction Movies</h1>
+            <h1 class="grid-title">${pageHeader}</h1>
         </div>
 
         <div class="grid-list">
@@ -67,4 +72,7 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
         // Adds the newly created media-card into grid-list <div>.
         mediaGridElem.querySelector(".grid-list").appendChild(mediaCard);
     }
+
+    // Adds media-grid to the page.
+    pageContent.appendChild(mediaGridElem);
 });
