@@ -116,5 +116,7 @@ export function createMediaCard(type, mediaData, genreList) {
         `;
 
         return card;
+    } else if (type == "grid-movie") {
+    } else if (type == "grid-tv") {
     }
 }
