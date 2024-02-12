@@ -62,7 +62,7 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
         <div class="grid-list">
         </div>
 
-        <button class="btn load-more">Load More</button>
+        <button class="btn load-more" load-more>Load More</button>
     `;
 
     // Creates a media-card for each item in mediaList.
@@ -75,4 +75,38 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
 
     // Adds media-grid to the page.
     pageContent.appendChild(mediaGridElem);
+
+    // Load more button functionality.
+    // this == load-more-btn.
+    document
+        .querySelector("[load-more]")
+        .addEventListener("click", function () {
+            // If there are no more pages, remove Load More button.
+            if (currentPage >= totalPages) {
+                this.style.display = "none";
+                return;
+            }
+
+            // Increment currentPage to signify next page.
+            currentPage++;
+
+            // Update the URL
+            fetchURL = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`;
+
+            // Retrieve the data for the next page of the media list.
+            fetchDataFromAPI(fetchURL, ({ results: mediaList }) => {
+                // Creates a media-card for each item in mediaList.
+                for (const item of mediaList) {
+                    // Imported from media_card.js.
+                    const mediaCard = createMediaCard(
+                        `grid-${mediaType}`,
+                        item
+                    );
+                    // Adds the newly created media-card into grid-list <div>.
+                    mediaGridElem
+                        .querySelector(".grid-list")
+                        .appendChild(mediaCard);
+                }
+            });
+        });
 });
