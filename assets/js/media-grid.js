@@ -59,4 +59,12 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
 
         <button class="btn load-more">Load More</button>
     `;
+
+    // Creates a media-card for each item in mediaList.
+    for (const item of mediaList) {
+        // Imported from media_card.js.
+        const mediaCard = createMediaCard(`grid-${mediaType}`, item);
+        // Adds the newly created media-card into grid-list <div>.
+        mediaGridElem.querySelector(".grid-list").appendChild(mediaCard);
+    }
 });
