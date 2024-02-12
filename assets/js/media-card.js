@@ -161,5 +161,48 @@ export function createMediaCard(type, mediaData, genreList) {
 
         return card;
     } else if (type == "grid-tv") {
+        // Stores data for the current show
+        const { poster_path, name, first_air_date, genre_ids, id } = mediaData;
+
+        // Creates grid card <div>.
+        const card = document.createElement("div");
+        card.classList.add("grid-card");
+
+        // Sets grid-card <div> HTML.
+        // Uses template literals to inject show data retrieved from API into the HTML.
+        // TODO: Add button link and functionality.
+        card.innerHTML = `
+            <figure class="poster-box grid-card-poster">
+                <img
+                    src="${imageBaseURL}w342${poster_path}"
+                    alt="${name}"
+                    class="img-cover"
+                    loading="lazy"
+                />
+
+                <a href="" class="grid-card-add-btn">
+                    <svg
+                        class="material-icon"
+                        id="grid-card-add-svg"
+                    >
+                        <use
+                            xlink:href="/assets/images/icons.svg#add-icon"
+                        />
+                    </svg>
+                </a>
+            </figure>
+
+            <h4 class="media-card-title">${name}</h4>
+
+            <div class="meta-list media-card-meta">
+                <div class="meta-list">
+                    <div class="meta-item">${first_air_date.split("-")[0]}</div>
+                </div>
+            </div>
+
+            <a href="" class="card-btn" title="" onclick="getShowDetails(${id})"></a>
+        `;
+
+        return card;
     }
 }
