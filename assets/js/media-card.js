@@ -156,7 +156,7 @@ export function createMediaCard(type, mediaData, genreList) {
                 </div>
             </div>
 
-            <a href="" class="card-btn" title="" onclick="getMovieDetails(${id})"></a>
+            <a href="movie-details.html" class="card-btn" title="" onclick="getMovieDetails(${id})"></a>
         `;
 
         return card;
@@ -200,7 +200,7 @@ export function createMediaCard(type, mediaData, genreList) {
                 </div>
             </div>
 
-            <a href="" class="card-btn" title="" onclick="getShowDetails(${id})"></a>
+            <a href="show-details.html" class="card-btn" title="" onclick="getShowDetails(${id})"></a>
         `;
 
         return card;
