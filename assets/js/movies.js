@@ -3,6 +3,7 @@
 // Imports
 import { API_KEY, imageBaseURL, fetchDataFromAPI } from "./api.js";
 import { createMediaCard } from "./media-card.js";
+import { search } from "./search.js";
 
 // Retrieves page-content <article> from movies page.
 const pageContent = document.querySelector("[page-content]");
@@ -339,3 +340,6 @@ const buildMediaScroll = function ({ results: movieList }, title) {
     // Adds media scroll to the page.
     pageContent.appendChild(mediaScrollElem);
 };
+
+// Search functionality.
+search();
