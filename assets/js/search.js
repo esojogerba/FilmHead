@@ -7,7 +7,7 @@ import { createMediaCard } from "./media-card.js";
 // Exports search functionality.
 export function search() {
     // Retrieve the search field.
-    const searchField = document.querySelector("[search-field]");
+    const searchField = document.getElementsByClassName("search-field");
 
     console.log(searchField);
 }
