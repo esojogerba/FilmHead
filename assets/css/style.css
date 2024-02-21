@@ -398,10 +398,13 @@ h4 {
 }
 
 .primary-header {
+    position: fixed;
+    top: 0;
     width: 100%;
     background-color: hsl(0, 0%, 8%);
     align-items: center;
     margin-bottom: 2rem;
+    z-index: 1000;
 }
 
 .mobile-nav-logo {
@@ -1818,7 +1821,7 @@ h4 {
     width: 100%;
     background-color: var(--clr-black-900);
     padding: 3rem 1rem;
-    margin-top: 4rem;
+    margin-top: 3.75rem;
     overflow-y: overlay;
     z-index: 5;
     display: none;
