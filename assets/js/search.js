@@ -40,7 +40,28 @@ export function search() {
                 // Search data from API that corresponds to search field input.
                 fetchDataFromAPI(
                     `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${element.value}&include_adult=false&language=en-US&page=1`,
-                    function ({ results: mediaList }) {}
+                    function ({ results: mediaList }) {
+                        // When a search is initiated, add active class.
+                        searchModal.classList.add("active");
+
+                        // Sets search-modal <div> HTML.
+                        // Uses template literals to inject current input value into the HTML.
+                        searchModal.innerHTML = `
+                            <section class="media-grid container">
+                                <div class="grid-header">
+                                    <svg class="material-icon" id="grid-search-svg">
+                                        <use
+                                            xlink:href="/assets/images/icons.svg#search-icon"
+                                        />
+                                    </svg>
+                                    <h1 class="grid-title">${element.value}</h1>
+                                </div>
+            
+                                <div class="grid-list">
+                                </div>
+                            </section>
+                        `;
+                    }
                 );
             }, 500);
         });
