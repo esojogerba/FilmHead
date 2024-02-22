@@ -167,6 +167,10 @@ body {
     overflow-x: hidden;
 }
 
+article {
+    margin-top: 3.75rem;
+}
+
 header {
     color: var(--clr-white-900);
     font-size: var(--fs-nav);
@@ -984,6 +988,9 @@ h4 {
 /* =======================
  Sign Up / Log In
  ======================= */
+.account-page {
+    margin-top: 3.75rem;
+}
 
 .account-form-columns {
     display: flex;
@@ -1057,12 +1064,6 @@ h4 {
     max-height: 1000px;
     object-fit: cover;
     object-position: center;
-}
-
-@media (min-width: 87em) {
-    .account-form-col-left {
-        margin-top: 2rem;
-    }
 }
 
 @media (max-width: 60em) {
