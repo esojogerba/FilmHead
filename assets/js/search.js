@@ -34,6 +34,15 @@ export function search() {
 
             // Reset timeout.
             clearTimeout(searchTimeout);
+
+            // Set timeout to the time it takes to retrieve the results of the current search field input.
+            searchTimeout = setTimeout(() => {
+                // Search data from API that corresponds to search field input.
+                fetchDataFromAPI(
+                    `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${element.value}&include_adult=false&language=en-US&page=1`,
+                    function ({ results: mediaList }) {}
+                );
+            }, 500);
         });
     });
 }
