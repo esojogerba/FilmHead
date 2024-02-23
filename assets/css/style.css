@@ -204,8 +204,10 @@ ul {
 }
 
 .poster-box {
-    background-image: url(/assets/images/poster-bg-icon.png);
+    background-image: url(/assets/images/no-image.svg);
     background-size: 50px;
+    text-align: center;
+    font-weight: var(--fw-bold);
     aspect-ratio: 2/3;
 }
 
