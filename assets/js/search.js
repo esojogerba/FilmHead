@@ -61,6 +61,25 @@ export function search() {
                                 </div>
                             </section>
                         `;
+
+                        // Creates a media-card for each item in mediaList.
+                        for (const item of mediaList) {
+                            // Only creates media cards for movies and tv shows.
+                            if (
+                                item.media_type == "movie" ||
+                                item.media_type == "tv"
+                            ) {
+                                // Imported from media_card.js.
+                                const mediaCard = createMediaCard(
+                                    `grid-${item.media_type}`,
+                                    item
+                                );
+                                // Adds the newly created media-card into grid-list <div>.
+                                searchModal
+                                    .querySelector(".grid-list")
+                                    .appendChild(mediaCard);
+                            }
+                        }
                     }
                 );
             }, 500);
