@@ -11,8 +11,6 @@ export function search() {
         document.getElementsByClassName("search-field")
     );
 
-    console.log(searchFields);
-
     // Create the search-modal <div>
     const searchModal = document.createElement("div");
     searchModal.classList.add("search-modal");
