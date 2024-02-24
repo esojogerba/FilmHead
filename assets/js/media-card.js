@@ -5,7 +5,7 @@ import { imageBaseURL } from "./api";
 
 // Creates a media card using the data collected from the API.
 // TODO: add show path.
-export function createMediaCard(type, mediaData, genreList) {
+export function createMediaCard(type, mediaData, genreList, page) {
     if (type == "movie") {
         // Stores data for the current movie
         const { poster_path, title, genre_ids, release_date, id } = mediaData;
@@ -20,10 +20,15 @@ export function createMediaCard(type, mediaData, genreList) {
         card.innerHTML = `
             <figure class="poster-box card-poster">
                 <img
-                    src="${imageBaseURL}w342${poster_path}"
+                    src="${
+                        poster_path != null
+                            ? imageBaseURL + "w342" + poster_path
+                            : "#"
+                    }"
                     alt="${title}"
                     class="img-cover"
                     loading="lazy"
+                    onerror='this.style.display = "none"'
                 />
 
                 <a href="" class="media-card-add-btn">
@@ -75,10 +80,15 @@ export function createMediaCard(type, mediaData, genreList) {
         card.innerHTML = `
             <figure class="poster-box card-poster">
                 <img
-                    src="${imageBaseURL}w342${poster_path}"
+                    src="${
+                        poster_path != null
+                            ? imageBaseURL + "w342" + poster_path
+                            : "#"
+                    }"
                     alt="${name}"
                     class="img-cover"
                     loading="lazy"
+                    onerror='this.style.display = "none"'
                 />
 
                 <a href="" class="media-card-add-btn">
@@ -130,10 +140,15 @@ export function createMediaCard(type, mediaData, genreList) {
         card.innerHTML = `
             <figure class="poster-box grid-card-poster">
                 <img
-                    src="${imageBaseURL}w342${poster_path}"
+                    src="${
+                        poster_path != null
+                            ? imageBaseURL + "w342" + poster_path
+                            : "#"
+                    }"
                     alt="${title}"
                     class="img-cover"
                     loading="lazy"
+                    onerror='this.style.display = "none"'
                 />
 
                 <a href="" class="grid-card-add-btn">
@@ -156,7 +171,13 @@ export function createMediaCard(type, mediaData, genreList) {
                 </div>
             </div>
 
-            <a href="movie-details.html" class="card-btn" title="" onclick="getMovieDetails(${id})"></a>
+            <a 
+            href="${
+                page == "home"
+                    ? "/html/movie-details.html"
+                    : "movie-details.html"
+            }"  
+            class="card-btn" title="" onclick="getMovieDetails(${id})"></a>
         `;
 
         return card;
@@ -174,10 +195,15 @@ export function createMediaCard(type, mediaData, genreList) {
         card.innerHTML = `
             <figure class="poster-box grid-card-poster">
                 <img
-                    src="${imageBaseURL}w342${poster_path}"
+                    src="${
+                        poster_path != null
+                            ? imageBaseURL + "w342" + poster_path
+                            : "#"
+                    }"
                     alt="${name}"
                     class="img-cover"
                     loading="lazy"
+                    onerror='this.style.display = "none"'
                 />
 
                 <a href="" class="grid-card-add-btn">
@@ -200,7 +226,11 @@ export function createMediaCard(type, mediaData, genreList) {
                 </div>
             </div>
 
-            <a href="show-details.html" class="card-btn" title="" onclick="getShowDetails(${id})"></a>
+            <a 
+            href="${
+                page == "home" ? "/html/show-details.html" : "show-details.html"
+            }" 
+            class="card-btn" title="" onclick="getShowDetails(${id})"></a>
         `;
 
         return card;
