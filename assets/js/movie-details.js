@@ -136,15 +136,26 @@ fetchDataFromAPI(
         // Uses template literals to inject movie data retrieved from API into the HTML.
         // TODO : Add link to Add To Folder button.
         detailsBanner.innerHTML = `
-            <div class="backdrop-image" style="background-image: linear-gradient(var(--details-overlay)), url('${imageBaseURL}w1280${backdrop_path}');"></div>
+            <div class="backdrop-image" style="background-image: linear-gradient(var(--details-overlay)), 
+            url('${
+                poster_path != null
+                    ? imageBaseURL + "w1280" + backdrop_path
+                    : "#"
+            }');"></div>
+
 
             <div class="banner-columns">
                 <div class="banner-left-column">
                     <figure class="poster-box details-poster">
                         <img
-                            src="${imageBaseURL}w342${poster_path}"
+                            src="${
+                                poster_path != null
+                                    ? imageBaseURL + "w342" + poster_path
+                                    : "#"
+                            }"
                             alt="${title}"
                             class="img-cover"
+                            onerror='this.style.display = "none"'
                         />
                     </figure>
 
