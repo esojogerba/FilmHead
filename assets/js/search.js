@@ -70,7 +70,9 @@ export function search() {
                                 // Imported from media_card.js.
                                 const mediaCard = createMediaCard(
                                     `grid-${item.media_type}`,
-                                    item
+                                    item,
+                                    "",
+                                    "home"
                                 );
                                 // Adds the newly created media-card into grid-list <div>.
                                 searchModal
