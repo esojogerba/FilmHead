@@ -1842,6 +1842,36 @@ h4 {
 }
 
 /* =======================
+ Add To Folder Pop-Up
+ ======================= */
+
+.add-to-folder-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#add-to-folder-btn {
+    background-color: var(--clr-primary);
+}
+
+#add-to-folder-btn:hover,
+#add-to-folder-btn:focus {
+    background-color: var(--clr-white-900);
+
+    #add-to-folder-svg {
+        fill: var(--clr-primary);
+    }
+}
+
+#add-to-folder-svg {
+    fill: var(--clr-white-900);
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1;
+}
+
+/* =======================
  Utility
  ======================= */
 
