@@ -1845,6 +1845,13 @@ h4 {
  Add To Folder Pop-Up
  ======================= */
 
+.add-to-folder {
+    background-color: var(--clr-black-700);
+    padding: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .add-to-folder-footer {
     display: flex;
     align-items: center;
