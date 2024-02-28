@@ -1861,7 +1861,7 @@ h4 {
 .add-to-folder-footer {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 #add-to-folder-btn {
