@@ -1846,8 +1846,14 @@ h4 {
  ======================= */
 
 .add-to-folder {
-    background-color: var(--clr-black-700);
-    padding: 4rem;
+    background-color: var(--clr-black-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 600px;
+    border-radius: 6px;
+    padding: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
