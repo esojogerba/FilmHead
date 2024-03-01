@@ -1888,6 +1888,13 @@ h4 {
     max-height: 45px;
 }
 
+.add-to-folder-scroll {
+    background-color: var(--clr-black-700);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: overlay;
+}
+
 .add-to-folder-footer {
     display: flex;
     align-items: center;
