@@ -1882,6 +1882,12 @@ h4 {
     font-weight: var(--fw-semi-bold);
 }
 
+.add-to-folder-search {
+    background-color: var(--clr-black-900);
+    max-width: 500px;
+    max-height: 45px;
+}
+
 .add-to-folder-footer {
     display: flex;
     align-items: center;
