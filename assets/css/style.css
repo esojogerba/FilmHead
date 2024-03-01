@@ -1863,7 +1863,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .pop-up-close-btn {
@@ -1875,6 +1875,11 @@ h4 {
 #pop-up-close-img {
     width: 20px;
     aspect-ratio: 1;
+}
+
+.add-to-folder-header h3 {
+    font-size: var(--fs-24);
+    font-weight: var(--fw-semi-bold);
 }
 
 .add-to-folder-footer {
