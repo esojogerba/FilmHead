@@ -1851,10 +1851,9 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 400px;
     border-radius: 6px;
-    padding: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1864,6 +1863,7 @@ h4 {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
 }
 
 .pop-up-close-btn {
@@ -1892,6 +1892,7 @@ h4 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 1rem 2rem 2rem 2rem;
 }
 
 #add-to-folder-btn {
