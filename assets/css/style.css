@@ -1928,6 +1928,13 @@ h4 {
     background-color: var(--clr-primary);
 }
 
+.add-to-folder-scroll-btn {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--clr-white-900);
+    border-radius: 4px;
+}
+
 .add-to-folder-footer {
     display: flex;
     align-items: center;
