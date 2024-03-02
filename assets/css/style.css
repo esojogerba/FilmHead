@@ -1935,6 +1935,11 @@ h4 {
     border-radius: 4px;
 }
 
+.add-to-folder-scroll-btn:hover,
+.add-to-folder-scroll-btn:focus {
+    background-color: var(--clr-white-900);
+}
+
 .add-to-folder-footer {
     display: flex;
     align-items: center;
