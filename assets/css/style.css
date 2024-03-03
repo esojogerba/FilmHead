@@ -1871,6 +1871,7 @@ h4 {
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 101;
 }
 
 .add-to-folder-header {
