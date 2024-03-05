@@ -1846,6 +1846,11 @@ h4 {
  ======================= */
 
 .pop-up-overlay {
+    display: none;
+}
+
+.pop-up-overlay.active {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -1858,6 +1863,11 @@ h4 {
 }
 
 .add-to-folder {
+    display: none;
+}
+
+.add-to-folder.active {
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
