@@ -38,3 +38,9 @@ const getMovieGrid = function (urlParam, genreName, mediaType) {
     window.localStorage.setItem("genreName", genreName);
     window.localStorage.setItem("mediaType", mediaType);
 };
+
+// Opens a pop up.
+const openPopUp = function (name) {
+    document.querySelector(".pop-up-overlay").classList.add("active");
+    document.querySelector(`${name}`).classList.add("active");
+};
