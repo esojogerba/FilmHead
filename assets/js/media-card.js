@@ -31,7 +31,9 @@ export function createMediaCard(type, mediaData, genreList, page) {
                     onerror='this.style.display = "none"'
                 />
 
-                <a href="" class="media-card-add-btn">
+                <a class="media-card-add-btn"
+                    onclick='openPopUp(".add-to-folder")'
+                >
                     <svg
                         class="material-icon"
                         id="card-add-svg"
@@ -91,7 +93,9 @@ export function createMediaCard(type, mediaData, genreList, page) {
                     onerror='this.style.display = "none"'
                 />
 
-                <a href="" class="media-card-add-btn">
+                <a class="media-card-add-btn"
+                    onclick='openPopUp(".add-to-folder")'
+                >
                     <svg
                         class="material-icon"
                         id="card-add-svg"
@@ -151,7 +155,9 @@ export function createMediaCard(type, mediaData, genreList, page) {
                     onerror='this.style.display = "none"'
                 />
 
-                <a href="" class="grid-card-add-btn">
+                <a class="grid-card-add-btn"
+                    onclick='openPopUp(".add-to-folder")'
+                >
                     <svg
                         class="material-icon"
                         id="grid-card-add-svg"
@@ -206,7 +212,9 @@ export function createMediaCard(type, mediaData, genreList, page) {
                     onerror='this.style.display = "none"'
                 />
 
-                <a href="" class="grid-card-add-btn">
+                <a class="grid-card-add-btn"
+                    onclick='openPopUp(".add-to-folder")'
+                >
                     <svg
                         class="material-icon"
                         id="grid-card-add-svg"
