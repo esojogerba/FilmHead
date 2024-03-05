@@ -44,3 +44,9 @@ const openPopUp = function (name) {
     document.querySelector(".pop-up-overlay").classList.add("active");
     document.querySelector(`${name}`).classList.add("active");
 };
+
+// Closes a pop up.
+const closePopUp = function (name) {
+    document.querySelector(".pop-up-overlay").classList.remove("active");
+    document.querySelector(`${name}`).classList.remove("active");
+};
