@@ -131,8 +131,7 @@ const heroBanner = function ({ results: getShowList }) {
 
                     <a
                         class="btn-icon"
-                        href=""
-                        onclick=""
+                        onclick='openPopUp(".add-to-folder")'
                         id="banner-add-btn"
                     >
                         <svg class="material-icon" id="add-svg">
