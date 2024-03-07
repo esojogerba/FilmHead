@@ -146,8 +146,7 @@ fetchDataFromAPI(
 
                     <a
                         class="btn btn-text-icon"
-                        href=""
-                        onclick=""
+                        onclick='openPopUp(".add-to-folder")'
                     >
                         <span>Add to Folder</span>
 
