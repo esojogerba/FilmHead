@@ -1993,6 +1993,20 @@ h4 {
     aspect-ratio: 1;
 }
 
+@media (max-width: 43rem) {
+    .add-to-folder.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 80%;
+        transform: none;
+        margin-top: 4rem;
+        overflow-y: overlay;
+    }
+}
+
 /* =======================
  Utility
  ======================= */
