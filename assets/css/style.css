@@ -2010,8 +2010,13 @@ h4 {
  Create Folder Pop-Up
  ======================= */
 
+.pop-up-overlay.second-overlay.active {
+    z-index: 110;
+}
+
 .create-folder {
     display: none;
+    z-index: 111;
 }
 
 .create-folder.active {
