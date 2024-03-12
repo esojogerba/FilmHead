@@ -102,6 +102,7 @@
         <main>
             <article page-content></article>
             <div class="pop-up-overlay"></div>
+            <div class="pop-up-overlay second-overlay"></div>
             <div class="add-to-folder">
                 <div class="add-to-folder-header">
                     <a
@@ -167,9 +168,32 @@
                             />
                         </svg>
                     </a>
-
                     <span>Create Folder</span>
                 </div>
+            </div>
+            <div class="create-folder">
+                <div class="create-folder-header">
+                    <a
+                        class="pop-up-close-btn"
+                        onclick='closePopUp(".create-folder")'
+                        ><img
+                            id="pop-up-close-img"
+                            src="/assets/images/icon-close.svg"
+                            alt=""
+                    /></a>
+                    <svg class="material-icon" id="create-folder-svg">
+                        <use xlink:href="/assets/images/icons.svg#folder" />
+                    </svg>
+                    <h3 class="header-title">Create Folder</h3>
+                </div>
+
+                <input
+                    class="add-to-folder-search"
+                    type="text"
+                    placeholder="Name"
+                />
+
+                <a class="btn" onclick=""> Done </a>
             </div>
         </main>
         <footer>
