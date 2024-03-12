@@ -2007,6 +2007,18 @@ h4 {
 }
 
 /* =======================
+ Create Folder Pop-Up
+ ======================= */
+
+.create-folder {
+    display: none;
+}
+
+.create-folder.active {
+    display: block;
+}
+
+/* =======================
  Utility
  ======================= */
 
