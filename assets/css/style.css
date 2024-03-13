@@ -2053,6 +2053,19 @@ h4 {
     font-weight: var(--fw-semi-bold);
 }
 
+.create-folder-input {
+    width: 100%;
+    max-width: 500px;
+    max-height: 60px;
+    background-color: var(--clr-black-900);
+    color: var(--clr-white-900);
+    font-size: var(--fs-24);
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px 4px 8px;
+}
+
 /* =======================
  Utility
  ======================= */
