@@ -41,12 +41,18 @@ const getMovieGrid = function (urlParam, genreName, mediaType) {
 
 // Opens a pop up.
 const openPopUp = function (name) {
-    document.querySelector(".pop-up-overlay").classList.add("active");
-    document.querySelector(`${name}`).classList.add("active");
+    if (name === ".create-folder") {
+        document.querySelector(".second-overlay").classList.add("active");
+        document.querySelector(`${name}`).classList.add("active");
+    } else {
+        document.querySelector(".pop-up-overlay").classList.add("active");
+        document.querySelector(`${name}`).classList.add("active");
+    }
 };
 
 // Closes a pop up.
 const closePopUp = function (name) {
     document.querySelector(".pop-up-overlay").classList.remove("active");
+    document.querySelector(".second-overlay").classList.remove("active");
     document.querySelector(`${name}`).classList.remove("active");
 };
