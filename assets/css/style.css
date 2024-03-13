@@ -1973,10 +1973,6 @@ h4 {
     padding: 1rem 2rem 2rem 2rem;
 }
 
-#add-to-folder-btn {
-    background-color: var(--clr-primary);
-}
-
 #add-to-folder-btn:hover,
 #add-to-folder-btn:focus {
     background-color: var(--clr-white-900);
