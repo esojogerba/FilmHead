@@ -2016,11 +2016,24 @@ h4 {
 
 .create-folder {
     display: none;
-    z-index: 111;
 }
 
 .create-folder.active {
     display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-black-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 400px;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 111;
 }
 
 /* =======================
