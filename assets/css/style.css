@@ -2029,11 +2029,28 @@ h4 {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    max-width: 400px;
     border-radius: 6px;
+    padding: 3rem 3rem;
     margin-left: auto;
     margin-right: auto;
     z-index: 111;
+}
+
+.create-folder-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#create-folder-svg {
+    width: 40px;
+    aspect-ratio: 1;
+}
+
+.create-folder-header h3 {
+    font-size: var(--fs-32);
+    font-weight: var(--fw-semi-bold);
 }
 
 /* =======================
