@@ -2040,12 +2040,12 @@ h4 {
 }
 
 #create-folder-svg {
-    width: 40px;
+    width: 30px;
     aspect-ratio: 1;
 }
 
 .create-folder-header h3 {
-    font-size: var(--fs-32);
+    font-size: var(--fs-24);
     font-weight: var(--fw-semi-bold);
 }
 
@@ -2060,6 +2060,34 @@ h4 {
     border: none;
     border-radius: 6px;
     padding: 4px 8px 4px 8px;
+}
+
+@media (max-width: 43rem) {
+    .create-folder.active {
+        top: 10%;
+        left: 0;
+        bottom: 5;
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        margin-top: 4rem;
+        padding: 1.5rem 1.5rem;
+        overflow-y: overlay;
+    }
+
+    #create-folder-svg {
+        width: 20px;
+        aspect-ratio: 1;
+    }
+
+    .create-folder-header h3 {
+        font-size: var(--fs-24);
+        font-weight: var(--fw-semi-bold);
+    }
+
+    .create-folder-input {
+        font-size: var(--fs-16);
+    }
 }
 
 /* =======================
