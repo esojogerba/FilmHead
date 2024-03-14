@@ -265,6 +265,7 @@ ul {
     padding: 0.8em 1.2em;
     border-radius: 6px;
     border-style: none;
+    cursor: pointer;
 }
 
 .btn:hover,
@@ -283,12 +284,14 @@ ul {
     line-height: normal;
     font-size: 0;
     padding: 0.5rem;
+    cursor: pointer;
 }
 
 .btn-text-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 /* Dropdown */
@@ -309,6 +312,7 @@ ul {
     border-radius: 6px;
     border-style: none;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .dropdown-btn:hover,
@@ -1442,6 +1446,7 @@ h4 {
     line-height: normal;
     font-size: 0;
     padding: 0.5rem;
+    cursor: pointer;
 }
 
 #card-add-svg {
@@ -1742,6 +1747,7 @@ h4 {
     line-height: normal;
     font-size: 0;
     padding: 0.5rem;
+    cursor: pointer;
 }
 
 #grid-card-add-svg {
@@ -2089,6 +2095,10 @@ h4 {
         font-size: var(--fs-16);
     }
 }
+
+/* =======================
+ Delete Folder Pop-Up
+ ======================= */
 
 /* Temporary */
 
