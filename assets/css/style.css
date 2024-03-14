@@ -2123,6 +2123,23 @@ h4 {
     z-index: 101;
 }
 
+.delete-folder-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.delete-svg {
+    width: 30px;
+    aspect-ratio: 1;
+}
+
+.delete-folder-header h3 {
+    font-size: var(--fs-32);
+    font-weight: var(--fw-semi-bold);
+}
+
 /* Temporary */
 
 .pop-up-btns {
