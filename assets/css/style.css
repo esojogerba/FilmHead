@@ -1902,6 +1902,7 @@ h4 {
     position: absolute;
     top: 15px;
     right: 15px;
+    cursor: pointer;
 }
 
 #pop-up-close-img {
@@ -2099,6 +2100,28 @@ h4 {
 /* =======================
  Delete Folder Pop-Up
  ======================= */
+
+.delete-folder {
+    display: none;
+}
+
+.delete-folder.active {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-black-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 6px;
+    padding: 3rem 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 101;
+}
 
 /* Temporary */
 
