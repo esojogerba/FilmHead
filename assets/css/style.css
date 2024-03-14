@@ -2140,6 +2140,15 @@ h4 {
     font-weight: var(--fw-semi-bold);
 }
 
+.pop-up-body {
+    text-align: center;
+}
+
+.confirm-cancel-btns {
+    display: flex;
+    gap: 1rem;
+}
+
 /* Temporary */
 
 .pop-up-btns {
