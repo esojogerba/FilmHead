@@ -244,7 +244,7 @@
                 <div class="filter-header">
                     <a
                         class="pop-up-close-btn"
-                        onclick='closePopUp(".add-to-folder")'
+                        onclick='closePopUp(".filter-pop-up")'
                         ><img
                             id="pop-up-close-img"
                             src="/assets/images/icon-close.svg"
@@ -255,11 +255,20 @@
                     </svg>
                     <h3 class="header-title">Sort & Filter</h3>
                 </div>
-                <div class="sort-by-dropdown"></div>
+                <div class="sort-by-dropdown">
+                    <h4>Sort By</h4>
+                </div>
                 <div class="filter-by-dropdown">
-                    <div class="movie-genres-scroll"></div>
-                    <div class="show-genres-scroll"></div>
-                    <div class="streaming-scroll"></div>
+                    <h4>Filter By</h4>
+                    <div class="movie-genres-scroll">
+                        <h4>Movie Genres</h4>
+                    </div>
+                    <div class="show-genres-scroll">
+                        <h4>Show Genres</h4>
+                    </div>
+                    <div class="streaming-scroll">
+                        <h4>Streaming Platforms</h4>
+                    </div>
                 </div>
             </div>
 
@@ -297,7 +306,7 @@
                 <a
                     class="btn btn-text-icon"
                     id="add-to-folder-btn"
-                    onclick="openPopUp('.filter-items')"
+                    onclick="openPopUp('.filter-pop-up')"
                 >
                     <svg class="material-icon" id="add-to-folder-svg">
                         <use xlink:href="/assets/images/icons.svg#add-icon" />
