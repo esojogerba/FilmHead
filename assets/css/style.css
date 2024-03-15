@@ -2195,6 +2195,38 @@ h4 {
     }
 }
 
+/* =======================
+ Delete Item Pop-Up
+ ======================= */
+.delete-item {
+    display: none;
+}
+
+.delete-item.active {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-black-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 6px;
+    padding: 3rem 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 101;
+}
+
+.delete-item-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
 /* Temporary */
 
 .pop-up-btns {
