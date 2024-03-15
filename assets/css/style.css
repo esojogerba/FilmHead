@@ -2256,6 +2256,31 @@ h4 {
     }
 }
 
+/* =======================
+ Filter Pop-Up
+ ======================= */
+.filter-pop-up {
+    display: none;
+}
+
+.filter-pop-up.active {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-black-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 6px;
+    padding: 3rem 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 101;
+}
+
 /* Temporary */
 
 .pop-up-btns {
