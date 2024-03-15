@@ -2149,17 +2149,9 @@ h4 {
     gap: 1rem;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 50rem) {
     .delete-folder.active {
-        top: 10%;
-        left: 0;
-        bottom: 5;
-        width: 100%;
-        max-width: 100%;
-        transform: none;
-        margin-top: 4rem;
         padding: 1.5rem 1.5rem;
-        overflow-y: overlay;
     }
 
     .delete-svg {
@@ -2178,6 +2170,19 @@ h4 {
 
     .confirm-cancel-btns a {
         font-size: var(--fs-16);
+    }
+}
+
+@media (max-width: 36rem) {
+    .delete-folder.active {
+        top: 10%;
+        left: 0;
+        bottom: 5;
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        margin-top: 4rem;
+        overflow-y: overlay;
     }
 }
 
