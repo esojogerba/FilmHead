@@ -2281,6 +2281,18 @@ h4 {
     z-index: 101;
 }
 
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#filter-pop-up-svg {
+    width: 30px;
+    aspect-ratio: 1;
+}
+
 /* Temporary */
 
 .pop-up-btns {
