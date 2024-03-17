@@ -2293,6 +2293,30 @@ h4 {
     aspect-ratio: 1;
 }
 
+.filter-dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fs-24);
+    font-weight: var(--fw-bold);
+    border-bottom: 1px solid hsl(240, 100%, 98%, 0.3);
+    padding-bottom: 6px;
+}
+
+.sort-by-dropdown {
+}
+
+.filter-by-dropdown {
+}
+
+.movie-genres-scroll {
+}
+
+.show-genres-scroll {
+}
+
+.streaming-scroll {
+}
+
 /* Temporary */
 
 .pop-up-btns {
