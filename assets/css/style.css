@@ -2276,6 +2276,8 @@ h4 {
     gap: 2rem;
     border-radius: 6px;
     width: 600px;
+    max-height: 80%;
+    overflow-y: overlay;
     padding: 3rem 3rem;
     margin-left: auto;
     margin-right: auto;
@@ -2307,7 +2309,20 @@ h4 {
 }
 
 .sort-by-dropdown {
+    background-color: var(--clr-black-700);
     width: 100%;
+}
+
+.sort-by-scroll-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.sort-by-scroll-item:hover,
+.sort-by-scroll-item:focus {
+    background-color: var(--clr-primary);
 }
 
 .filter-by-dropdown {
@@ -2316,15 +2331,6 @@ h4 {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-}
-
-.movie-genres-scroll {
-}
-
-.show-genres-scroll {
-}
-
-.streaming-scroll {
 }
 
 /* Temporary */
