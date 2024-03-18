@@ -2384,6 +2384,46 @@ h4 {
     background-color: var(--clr-primary);
 }
 
+@media (max-width: 37.5rem) {
+    .filter-pop-up.active {
+        top: 12%;
+        left: 0;
+        bottom: 5;
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        overflow-y: overlay;
+    }
+}
+
+@media (max-width: 28rem) {
+    .filter-header {
+        padding: 0.5rem;
+    }
+
+    .filter-header h3 {
+        font-size: var(--fs-24);
+    }
+
+    .filter-dropdown-btn,
+    .sort-by-scroll-item,
+    .filter-by-scroll-item {
+        font-size: var(--fs-16);
+    }
+
+    .sort-by-scroll-item,
+    .filter-by-scroll-item,
+    .filter-by-dropdown {
+        padding: 0.5rem;
+    }
+
+    .movie-genres-scroll,
+    .show-genres-scroll,
+    .streaming-scroll {
+        max-height: 180px;
+    }
+}
+
 /* Temporary */
 
 .pop-up-btns {
