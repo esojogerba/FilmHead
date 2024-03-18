@@ -2372,6 +2372,18 @@ h4 {
     overflow-y: overlay;
 }
 
+.filter-by-scroll-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.filter-by-scroll-item:hover,
+.filter-by-scroll-item:focus {
+    background-color: var(--clr-primary);
+}
+
 /* Temporary */
 
 .pop-up-btns {
