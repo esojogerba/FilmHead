@@ -2275,6 +2275,7 @@ h4 {
     align-items: center;
     gap: 2rem;
     border-radius: 6px;
+    width: 600px;
     padding: 3rem 3rem;
     margin-left: auto;
     margin-right: auto;
@@ -2296,16 +2297,13 @@ h4 {
 .filter-dropdown-btn {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
     font-size: var(--fs-24);
     font-weight: var(--fw-bold);
     border-bottom: 1px solid hsl(240, 100%, 98%, 0.3);
     padding-bottom: 6px;
-}
-
-.sort-by-dropdown {
-}
-
-.filter-by-dropdown {
+    cursor: pointer;
 }
 
 .movie-genres-scroll {
@@ -2325,6 +2323,7 @@ h4 {
     gap: 1rem;
     max-width: 500px;
     margin-inline: auto;
+    cursor: pointer;
 }
 
 /* =======================
