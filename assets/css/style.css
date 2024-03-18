@@ -2351,6 +2351,27 @@ h4 {
     width: 1px;
 }
 
+.movie-genres-scroll {
+    background-color: var(--clr-black-700);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: overlay;
+}
+
+.show-genres-scroll {
+    background-color: var(--clr-black-700);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: overlay;
+}
+
+.streaming-scroll {
+    background-color: var(--clr-black-700);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: overlay;
+}
+
 /* Temporary */
 
 .pop-up-btns {
