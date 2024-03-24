@@ -56,3 +56,5 @@ const closePopUp = function (name) {
     document.querySelector(".second-overlay").classList.remove("active");
     document.querySelector(`${name}`).classList.remove("active");
 };
+
+// Open filter drop down section.
