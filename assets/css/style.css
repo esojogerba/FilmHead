@@ -2321,6 +2321,11 @@ h4 {
 }
 
 .sort-by-dropdown {
+    display: none;
+}
+
+.sort-by-dropdown.active {
+    display: block;
     background-color: var(--clr-black-700);
     width: 100%;
 }
@@ -2338,8 +2343,12 @@ h4 {
 }
 
 .filter-by-dropdown {
-    width: 100%;
+    display: none;
+}
+
+.filter-by-dropdown.active {
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
@@ -2363,21 +2372,16 @@ h4 {
     width: 1px;
 }
 
-.movie-genres-scroll {
-    background-color: var(--clr-black-700);
-    width: 100%;
-    max-height: 300px;
-    overflow-y: overlay;
-}
-
-.show-genres-scroll {
-    background-color: var(--clr-black-700);
-    width: 100%;
-    max-height: 300px;
-    overflow-y: overlay;
-}
-
+.movie-genres-scroll,
+.show-genres-scroll,
 .streaming-scroll {
+    display: none;
+}
+
+.movie-genres-scroll.active,
+.show-genres-scroll.active,
+.streaming-scroll.active {
+    display: block;
     background-color: var(--clr-black-700);
     width: 100%;
     max-height: 300px;
@@ -2429,9 +2433,9 @@ h4 {
         padding: 0.5rem;
     }
 
-    .movie-genres-scroll,
-    .show-genres-scroll,
-    .streaming-scroll {
+    .movie-genres-scroll.active,
+    .show-genres-scroll.active,
+    .streaming-scroll.active {
         max-height: 180px;
     }
 }
