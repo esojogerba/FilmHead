@@ -58,3 +58,23 @@ const closePopUp = function (name) {
 };
 
 // Open filter drop down section.
+const filterDropdown = function (name) {
+    var dropdown;
+    // Toggle active on the appropriate dropdown.
+    if (name == "sort-by") {
+        dropdown = document.querySelector(".sort-by-dropdown");
+        dropdown.classList.toggle("active");
+    } else if (name == "filter-by") {
+        dropdown = document.querySelector(".filter-by-dropdown");
+        dropdown.classList.toggle("active");
+    } else if (name == "filter-movie-genres") {
+        dropdown = document.querySelector(".movie-genres-scroll");
+        dropdown.classList.toggle("active");
+    } else if (name == "filter-show-genres") {
+        dropdown = document.querySelector(".show-genres-scroll");
+        dropdown.classList.toggle("active");
+    } else if (name == "filter-streaming") {
+        dropdown = document.querySelector(".streaming-scroll");
+        dropdown.classList.toggle("active");
+    }
+};
