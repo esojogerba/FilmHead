@@ -34,7 +34,6 @@
         <script src="/assets/js/nav.js" defer></script>
         <script src="/assets/js/global.js" defer></script>
         <script src="/assets/js/add-search.js" type="module" defer></script>
-        <script src="/assets/js/movie-details.js" type="module"></script>
     </head>
     <body>
         <header class="container primary-header">
@@ -63,6 +62,7 @@
                     class="search-field"
                     type="search"
                     placeholder="Search..."
+                    search-field
                 />
             </div>
 
@@ -77,10 +77,12 @@
             <nav class="nav-links" id="nav-links" data-visible="false">
                 <ul role="list" class="nav-links-left">
                     <li>
-                        <a class="current-page" href="movies.html">Movies</a>
+                        <a href="movies.html">Movies</a>
                     </li>
                     <li><a href="shows.html">Shows</a></li>
-                    <li><a href="backlog.html">Backlog</a></li>
+                    <li>
+                        <a class="current-page" href="backlog.html">Backlog</a>
+                    </li>
                 </ul>
                 <ul role="list" class="nav-links-right">
                     <li class="search-box-desktop">
@@ -88,6 +90,7 @@
                             class="search-field"
                             type="search"
                             placeholder="Search..."
+                            search-field
                         />
                     </li>
                     <li>
@@ -97,79 +100,8 @@
                 </ul>
             </nav>
         </header>
-
         <main>
             <article page-content></article>
-
-            <div class="pop-up-overlay"></div>
-
-            <div class="add-to-folder">
-                <div class="add-to-folder-header">
-                    <a
-                        class="pop-up-close-btn"
-                        onclick='closePopUp(".add-to-folder")'
-                        ><img
-                            id="pop-up-close-img"
-                            src="/assets/images/icon-close.svg"
-                            alt=""
-                    /></a>
-                    <h3 class="header-title">Save To Folder</h3>
-                    <input
-                        class="add-to-folder-search"
-                        type="search"
-                        placeholder="Search..."
-                        search-field
-                    />
-                </div>
-                <div class="add-to-folder-scroll">
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 1</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 2</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 3</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 4</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 5</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 6</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 7</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 8</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                </div>
-                <div class="add-to-folder-footer">
-                    <a
-                        class="btn btn-text-icon"
-                        id="add-to-folder-btn"
-                        onclick=""
-                    >
-                        <svg class="material-icon" id="add-to-folder-svg">
-                            <use
-                                xlink:href="/assets/images/icons.svg#add-icon"
-                            />
-                        </svg>
-                        <span>Add</span>
-                    </a>
-                </div>
-            </div>
         </main>
         <footer>
             <div class="container">
