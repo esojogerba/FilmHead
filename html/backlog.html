@@ -102,6 +102,77 @@
         </header>
         <main>
             <article page-content></article>
+
+            <div class="pop-up-overlay"></div>
+
+            <div class="create-folder">
+                <div class="create-folder-header">
+                    <a
+                        class="pop-up-close-btn"
+                        onclick='closePopUp(".create-folder")'
+                        ><img
+                            id="pop-up-close-img"
+                            src="/assets/images/icon-close.svg"
+                            alt=""
+                    /></a>
+                    <svg class="material-icon" id="create-folder-svg">
+                        <use xlink:href="/assets/images/icons.svg#folder" />
+                    </svg>
+                    <h3 class="header-title">Create Folder</h3>
+                </div>
+
+                <input
+                    class="create-folder-input"
+                    type="text"
+                    placeholder="Name"
+                    autocomplete="off"
+                />
+
+                <a class="btn" onclick="">Done</a>
+            </div>
+
+            <div class="delete-folder">
+                <div class="delete-folder-header">
+                    <svg class="material-icon delete-svg">
+                        <use xlink:href="/assets/images/icons.svg#trash" />
+                    </svg>
+                    <h3 class="header-title">Delete Folder?</h3>
+                </div>
+
+                <p class="pop-up-body">
+                    Are you sure you want to permanently delete this folder?
+                </p>
+
+                <div class="confirm-cancel-btns">
+                    <a class="btn" onclick="">Confirm</a>
+                    <a class="btn" onclick='closePopUp(".delete-folder")'
+                        >Cancel</a
+                    >
+                </div>
+            </div>
+
+            <div class="pop-up-btns">
+                <a
+                    class="btn btn-text-icon"
+                    id="add-to-folder-btn"
+                    onclick="openPopUp('.create-folder')"
+                >
+                    <svg class="material-icon" id="add-to-folder-svg">
+                        <use xlink:href="/assets/images/icons.svg#add-icon" />
+                    </svg>
+                    <span>Create Folder</span>
+                </a>
+                <a
+                    class="btn btn-text-icon"
+                    id="add-to-folder-btn"
+                    onclick="openPopUp('.delete-folder')"
+                >
+                    <svg class="material-icon" id="add-to-folder-svg">
+                        <use xlink:href="/assets/images/icons.svg#add-icon" />
+                    </svg>
+                    <span>Delete Folder</span>
+                </a>
+            </div>
         </main>
         <footer>
             <div class="container">
