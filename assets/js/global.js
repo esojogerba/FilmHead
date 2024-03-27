@@ -53,7 +53,6 @@ const openPopUp = function (name) {
 // Closes a pop up.
 const closePopUp = function (name) {
     document.querySelector(".pop-up-overlay").classList.remove("active");
-    document.querySelector(".second-overlay").classList.remove("active");
     document.querySelector(`${name}`).classList.remove("active");
 };
 
