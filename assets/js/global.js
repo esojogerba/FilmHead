@@ -41,13 +41,8 @@ const getMovieGrid = function (urlParam, genreName, mediaType) {
 
 // Opens a pop up.
 const openPopUp = function (name) {
-    if (name === ".create-folder") {
-        document.querySelector(".second-overlay").classList.add("active");
-        document.querySelector(`${name}`).classList.add("active");
-    } else {
-        document.querySelector(".pop-up-overlay").classList.add("active");
-        document.querySelector(`${name}`).classList.add("active");
-    }
+    document.querySelector(".pop-up-overlay").classList.add("active");
+    document.querySelector(`${name}`).classList.add("active");
 };
 
 // Closes a pop up.
