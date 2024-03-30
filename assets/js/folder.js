@@ -13,6 +13,15 @@ const movieGenres = function ({ genres }) {
     // Retrieve movie scroll inside filter pop up from doc
     const movieScroll = document.querySelector(".movie-genres-scroll");
 
+    // Holds all movie genres and their ID's.
+    const movieGenres = {};
+
+    // Iterates through each movie genre in the JSON file.
+    for (const { id, name } of genres) {
+        // Make a key value pair
+        movieGenres[id] = name;
+    }
+
     // API call to get show genres
 };
 
