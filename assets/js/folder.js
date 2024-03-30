@@ -10,16 +10,15 @@ fetchDataFromAPI(
 );
 
 const movieGenres = function ({ genres }) {
+    // Retrieve filter pop up from doc
     const movieScroll = document.querySelector;
+
+    // Edit inner HTML of movie genre dropdown
+
+    // Create a scroll item for each genre
+
+    // API call to get show genres
 };
-
-// Get filter pop up from doc
-
-// Edit inner HTML of movie genre dropdown
-
-// Create a scroll item for each genre
-
-// API call to get show genres
 
 // Edit inner HTML of movie genre dropdown
 
