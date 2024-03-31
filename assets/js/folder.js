@@ -31,6 +31,25 @@ const movieGenres = function ({ genres }) {
     }
 
     // API call to get show genres
+    //  API call to get movie genres
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/genre/tv/list?api_key=${API_KEY}`,
+        showGenres
+    );
+};
+
+const showGenres = function ({ genres }) {
+    // Retrieve show scroll inside filter pop up from doc
+    const showScroll = document.querySelector(".show-genres-scroll");
+
+    // Holds all show genres and their ID's.
+    const showGenresList = {};
+
+    // Iterates through each show genre in the JSON file.
+    for (const { id, name } of genres) {
+        // Make a key value pair
+        showGenresList[id] = name;
+    }
 };
 
 //  API call to get movie genres
