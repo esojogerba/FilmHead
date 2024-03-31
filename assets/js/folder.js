@@ -38,7 +38,10 @@ const movieGenres = function ({ genres }) {
     );
 };
 
-const showGenres = function ({ genres }) {};
+const showGenres = function ({ genres }) {
+    // Retrieve show scroll inside filter pop up from doc
+    const showScroll = document.querySelector(".show-genres-scroll");
+};
 
 //  API call to get movie genres
 fetchDataFromAPI(
