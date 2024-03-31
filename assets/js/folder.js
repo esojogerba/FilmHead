@@ -38,6 +38,8 @@ const movieGenres = function ({ genres }) {
     );
 };
 
+const showGenres = function ({ genres }) {};
+
 //  API call to get movie genres
 fetchDataFromAPI(
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`,
