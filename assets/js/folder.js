@@ -50,6 +50,20 @@ const showGenres = function ({ genres }) {
         // Make a key value pair
         showGenresList[id] = name;
     }
+
+    // Iterates through each entry in genreList.
+    for (const [genreId, genreName] of Object.entries(showGenresList)) {
+        // Create scroll item
+        const scrollItem = document.createElement("div");
+        scrollItem.classList.add("filter-by-scroll-item");
+        // Set scroll item inner HTML.
+        scrollItem.innerHTML = `
+            <a class="add-to-folder-scroll-btn" href=""></a>
+            <span>${genreName}</span>
+        `;
+        // Add new scroll item to showScroll
+        showScroll.appendChild(scrollItem);
+    }
 };
 
 //  API call to get movie genres
