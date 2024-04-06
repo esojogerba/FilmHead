@@ -64,6 +64,9 @@ const showGenres = function ({ genres }) {
         // Add new scroll item to showScroll
         showScroll.appendChild(scrollItem);
     }
+
+    // API call to get watch providers
+    // If not available, manually input them.
 };
 
 //  API call to get movie genres
@@ -71,10 +74,3 @@ fetchDataFromAPI(
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`,
     movieGenres
 );
-
-// Edit inner HTML of movie genre dropdown
-
-// Create a scroll item for each genre
-
-// API call to get watch providers
-// If not available, manually input them.
