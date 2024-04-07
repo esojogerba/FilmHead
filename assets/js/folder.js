@@ -65,7 +65,10 @@ const showGenres = function ({ genres }) {
     }
 
     // API call to get watch providers
-    // If not available, manually input them.
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/watch/providers/movie?api_key=${API_KEY}&language=en-US&watch_region=US`,
+        watchProviders
+    );
 };
 
 const watchProviders = function ({ providers }) {};
