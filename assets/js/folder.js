@@ -31,7 +31,6 @@ const movieGenres = function ({ genres }) {
     }
 
     // API call to get show genres
-    //  API call to get movie genres
     fetchDataFromAPI(
         `https://api.themoviedb.org/3/genre/tv/list?api_key=${API_KEY}`,
         showGenres
@@ -68,6 +67,8 @@ const showGenres = function ({ genres }) {
     // API call to get watch providers
     // If not available, manually input them.
 };
+
+const watchProviders = function ({ providers }) {};
 
 //  API call to get movie genres
 fetchDataFromAPI(
