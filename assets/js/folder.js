@@ -71,7 +71,13 @@ const showGenres = function ({ genres }) {
     );
 };
 
-const watchProviders = function ({ providers }) {};
+const watchProviders = function ({ results: providers }) {
+    for (const provider of providers.entries()) {
+        const { provider_name } = provider;
+
+        console.log(provider[1].provider_name);
+    }
+};
 
 //  API call to get movie genres
 fetchDataFromAPI(
