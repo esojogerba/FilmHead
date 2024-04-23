@@ -76,13 +76,15 @@ const watchProviders = function ({ results: providers }) {
     const streamingScroll = document.querySelector(".streaming-scroll");
 
     for (const provider of providers.entries()) {
-        const { provider_name } = provider;
-
         // Create scroll item
         const scrollItem = document.createElement("div");
         scrollItem.classList.add("filter-by-scroll-item");
 
-        console.log(provider[1].provider_name);
+        // Set scroll item inner HTML.
+        scrollItem.innerHTML = `
+            <a class="add-to-folder-scroll-btn" href=""></a>
+            <span>${provider[1].provider_name}</span>
+        `;
     }
 };
 
