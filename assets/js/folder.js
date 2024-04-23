@@ -85,6 +85,9 @@ const watchProviders = function ({ results: providers }) {
             <a class="add-to-folder-scroll-btn" href=""></a>
             <span>${provider[1].provider_name}</span>
         `;
+
+        // Add new scroll item to streamingScroll
+        streamingScroll.appendChild(scrollItem);
     }
 };
 
