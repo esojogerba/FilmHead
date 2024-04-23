@@ -72,8 +72,15 @@ const showGenres = function ({ genres }) {
 };
 
 const watchProviders = function ({ results: providers }) {
+    // Retrieve streaming scroll inside filter pop up from doc
+    const streamingScroll = document.querySelector(".streaming-scroll");
+
     for (const provider of providers.entries()) {
         const { provider_name } = provider;
+
+        // Create scroll item
+        const scrollItem = document.createElement("div");
+        scrollItem.classList.add("filter-by-scroll-item");
 
         console.log(provider[1].provider_name);
     }
