@@ -78,6 +78,10 @@ const watchProviders = function ({ results: providers }) {
     for (const provider of providers.entries()) {
         const { provider_name } = provider;
 
+        // Create scroll item
+        const scrollItem = document.createElement("div");
+        scrollItem.classList.add("filter-by-scroll-item");
+
         console.log(provider[1].provider_name);
     }
 };
