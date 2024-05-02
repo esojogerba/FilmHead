@@ -1848,6 +1848,17 @@ h4 {
 }
 
 /* =======================
+ Backlog
+ ======================= */
+
+.backlog-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* =======================
  Add To Folder Pop-Up
  ======================= */
 
