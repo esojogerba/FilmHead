@@ -102,70 +102,78 @@
         </header>
         <main>
             <article page-content>
-                <div class="backlog-header">
-                    <svg class="material-icon" id="grid-search-svg">
-                        <use xlink:href="/assets/images/icons.svg#backlog" />
-                    </svg>
-                    <h1 class="grid-title">Backlog</h1>
-                </div>
-
-                <div class="backlog-menu">
-                    <div class="search-box-mobile">
-                        <input
-                            class="search-field"
-                            type="search"
-                            placeholder="Search..."
-                        />
-                    </div>
-
-                    <a class="btn-icon" onclick="" id="backlog-add-btn">
-                        <svg class="material-icon" id="add-svg">
+                <section class="container">
+                    <div class="backlog-header">
+                        <svg class="material-icon" id="grid-search-svg">
                             <use
-                                xlink:href="/assets/images/icons.svg#add-icon"
+                                xlink:href="/assets/images/icons.svg#backlog"
                             />
                         </svg>
-                    </a>
-                </div>
+                        <h1 class="grid-title">Backlog</h1>
+                    </div>
 
-                <div class="backlog-grid">
-                    <div class="folder">
-                        <div class="folder-posters">
-                            <figure class="poster-box">
-                                <img
-                                    src="/assets/images/Blade Runner Poster.png"
-                                    alt="Blade Runner"
-                                    class="img-cover"
-                                    loading="lazy"
-                                />
-                            </figure>
-                            <figure class="poster-box">
-                                <img
-                                    src="/assets/images/Blade Runner Poster.png"
-                                    alt="Blade Runner"
-                                    class="img-cover"
-                                    loading="lazy"
-                                />
-                            </figure>
-                            <figure class="poster-box">
-                                <img class="img-cover" loading="lazy" />
-                            </figure>
+                    <div class="backlog-menu">
+                        <div class="search-box-mobile">
+                            <input
+                                class="search-field"
+                                type="search"
+                                placeholder="Search..."
+                            />
                         </div>
 
-                        <div class="folder-details">
-                            <h3 class="folder-title">Folder</h3>
-
-                            <p class="folder-entry-count">15 Entries</p>
-                        </div>
-
-                        <a class="btn-icon" onclick="" id="backlog-trash-btn">
-                            <svg class="material-icon" id="trash-svg">
+                        <a class="btn-icon" onclick="" id="backlog-add-btn">
+                            <svg class="material-icon" id="add-svg">
                                 <use
-                                    xlink:href="/assets/images/icons.svg#trash-icon"
+                                    xlink:href="/assets/images/icons.svg#add-icon"
                                 />
                             </svg>
                         </a>
                     </div>
-                </div>
+
+                    <div class="backlog-grid">
+                        <div class="folder">
+                            <div class="folder-posters">
+                                <figure class="poster-box">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box">
+                                    <img class="img-cover" loading="lazy" />
+                                </figure>
+                            </div>
+
+                            <div class="folder-details">
+                                <h3 class="folder-title">Folder</h3>
+
+                                <p class="folder-entry-count">15 Entries</p>
+                            </div>
+
+                            <a
+                                class="btn-icon"
+                                onclick=""
+                                id="backlog-trash-btn"
+                            >
+                                <svg class="material-icon" id="trash-svg">
+                                    <use
+                                        xlink:href="/assets/images/icons.svg#trash-icon"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
             </article>
 
             <div class="pop-up-overlay"></div>
