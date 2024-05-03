@@ -1858,6 +1858,15 @@ h4 {
     margin-bottom: 1rem;
 }
 
+.backlog-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
