@@ -1867,6 +1867,38 @@ h4 {
     margin-bottom: 5rem;
 }
 
+.backlog-search-field {
+    width: 100%;
+    height: 70px;
+    background: var(--clr-black-500) url("/assets/images/search-icon-white.svg")
+        no-repeat 20px;
+    background-position: left;
+    background-position-x: 20px;
+    background-size: 34px;
+    color: var(--clr-white-900);
+    font-size: var(--fs-24);
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px 4px 34px;
+}
+
+.backlog-search-field:focus {
+    outline: none;
+}
+
+@media (max-width: 60em) {
+    .backlog-search-field {
+        width: 100%;
+        background: var(--clr-black-500)
+            url("/assets/images/search-icon-white.svg") no-repeat 10px;
+        background-size: 30px;
+        font-size: var(--fs-20);
+        margin-block: 1rem;
+        padding: 4px 8px 4px 50px;
+    }
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
