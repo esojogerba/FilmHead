@@ -1932,6 +1932,23 @@ h4 {
     max-width: 156px;
 }
 
+.folder-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.folder-title {
+    font-size: var(--fs-44);
+}
+
+.folder-entry-count {
+    color: var(--clr-black-300);
+    font-size: var(--fs-18);
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
