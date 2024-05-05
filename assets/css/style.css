@@ -1905,6 +1905,21 @@ h4 {
     }
 }
 
+/* Backlog Grid */
+
+.backlog-grid {
+    margin-bottom: 5rem;
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: var(--clr-black-700);
+    border-radius: 6px;
+    padding: 2rem;
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
