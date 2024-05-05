@@ -1858,6 +1858,8 @@ h4 {
     margin-bottom: 1rem;
 }
 
+/* Backlog Menu */
+
 .backlog-menu {
     display: flex;
     align-items: center;
@@ -1887,6 +1889,10 @@ h4 {
     outline: none;
 }
 
+#backlog-add-btn {
+    background-color: var(--clr-primary);
+}
+
 @media (max-width: 60em) {
     .backlog-search-field {
         width: 100%;
@@ -1897,6 +1903,33 @@ h4 {
         margin-block: 1rem;
         padding: 4px 8px 4px 50px;
     }
+}
+
+/* Backlog Grid */
+
+.backlog-grid {
+    margin-bottom: 5rem;
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: var(--clr-black-700);
+    border-radius: 6px;
+    padding: 2rem;
+}
+
+.folder-posters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.folder-poster {
+    max-width: 156px;
 }
 
 /* =======================
