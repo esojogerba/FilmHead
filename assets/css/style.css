@@ -1920,6 +1920,18 @@ h4 {
     padding: 2rem;
 }
 
+.folder-posters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.folder-poster {
+    max-width: 156px;
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
