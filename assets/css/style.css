@@ -1955,8 +1955,7 @@ h4 {
     bottom: 15px;
     right: 15px;
     z-index: 3;
-    background-color: hsl(242, 76%, 63%, 0.6);
-    backdrop-filter: blur(6px);
+    background: none;
     border-radius: 6px;
     line-height: normal;
     font-size: 0;
@@ -1966,9 +1965,15 @@ h4 {
 
 #trash-svg {
     fill: var(--clr-white-900);
-    width: 30px;
+    width: 24px;
     height: 30px;
     aspect-ratio: 1;
+}
+
+#backlog-trash-btn:hover,
+#backlog-trash-btn:focus {
+    background-color: hsl(242, 76%, 63%, 0.8);
+    backdrop-filter: blur(6px);
 }
 
 /* =======================
