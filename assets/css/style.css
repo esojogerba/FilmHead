@@ -1970,6 +1970,12 @@ h4 {
     aspect-ratio: 1;
 }
 
+#backlog-trash-btn:hover,
+#backlog-trash-btn:focus {
+    background-color: hsl(242, 76%, 63%, 0.8);
+    backdrop-filter: blur(6px);
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
