@@ -1950,6 +1950,20 @@ h4 {
     font-size: var(--fs-18);
 }
 
+#backlog-trash-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+    background-color: hsl(242, 76%, 63%, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    line-height: normal;
+    font-size: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
