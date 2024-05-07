@@ -1964,6 +1964,13 @@ h4 {
     cursor: pointer;
 }
 
+#trash-svg {
+    fill: var(--clr-white-900);
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
