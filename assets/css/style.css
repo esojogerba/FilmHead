@@ -1912,6 +1912,7 @@ h4 {
 }
 
 .folder {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 600px;
@@ -1947,6 +1948,27 @@ h4 {
 .folder-entry-count {
     color: var(--clr-black-300);
     font-size: var(--fs-18);
+}
+
+#backlog-trash-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+    background-color: hsl(242, 76%, 63%, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    line-height: normal;
+    font-size: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#trash-svg {
+    fill: var(--clr-white-900);
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
 }
 
 /* =======================
