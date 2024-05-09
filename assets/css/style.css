@@ -1909,8 +1909,8 @@ h4 {
 
 .backlog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
-    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-gap: 2rem;
     justify-items: center;
     margin-bottom: 5rem;
 }
