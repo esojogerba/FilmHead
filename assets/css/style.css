@@ -1908,6 +1908,10 @@ h4 {
 /* Backlog Grid */
 
 .backlog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+    grid-gap: 1.5rem;
+    justify-items: center;
     margin-bottom: 5rem;
 }
 
@@ -1942,6 +1946,10 @@ h4 {
 }
 
 .folder-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
     font-size: var(--fs-44);
 }
 
