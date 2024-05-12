@@ -1915,13 +1915,19 @@ h4 {
 
 @media (max-width: 60em) {
     .backlog-search-field {
-        width: 100%;
         background: var(--clr-black-500)
             url("/assets/images/search-icon-white.svg") no-repeat 10px;
         background-size: 30px;
-        font-size: var(--fs-20);
-        margin-block: 1rem;
+        font-size: var(--fs-24);
         padding: 4px 8px 4px 50px;
+    }
+}
+
+@media (max-width: 35em) {
+    .backlog-search-field {
+        height: 48px;
+        background-size: 24px;
+        font-size: var(--fs-20);
     }
 }
 
