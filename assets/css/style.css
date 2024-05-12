@@ -1858,6 +1858,26 @@ h4 {
     margin-bottom: 1rem;
 }
 
+#backlog-svg {
+    fill: var(--clr-white-900);
+    width: 60px;
+}
+
+@media (max-width: 35em) {
+    .backlog-header {
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    #backlog-title {
+        font-size: var(--fs-44);
+    }
+
+    #backlog-svg {
+        width: 40px;
+    }
+}
+
 /* Backlog Menu */
 
 .backlog-menu {
@@ -1895,13 +1915,19 @@ h4 {
 
 @media (max-width: 60em) {
     .backlog-search-field {
-        width: 100%;
         background: var(--clr-black-500)
             url("/assets/images/search-icon-white.svg") no-repeat 10px;
         background-size: 30px;
-        font-size: var(--fs-20);
-        margin-block: 1rem;
+        font-size: var(--fs-24);
         padding: 4px 8px 4px 50px;
+    }
+}
+
+@media (max-width: 35em) {
+    .backlog-search-field {
+        height: 48px;
+        background-size: 24px;
+        font-size: var(--fs-20);
     }
 }
 
