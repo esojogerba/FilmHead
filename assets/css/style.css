@@ -2035,6 +2035,10 @@ h4 {
     .folder-posters {
         gap: 1rem;
     }
+
+    .folder-title {
+        font-size: var(--fs-32);
+    }
 }
 
 @media (max-width: 19em) {
