@@ -2037,7 +2037,7 @@ h4 {
     }
 }
 
-@media (max-width: 20em) {
+@media (max-width: 19em) {
     .backlog-grid {
         grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
         grid-gap: 1.5rem;
