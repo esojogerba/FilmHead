@@ -2010,6 +2010,28 @@ h4 {
     backdrop-filter: blur(6px);
 }
 
+@media (max-width: 40em) {
+    .backlog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-gap: 1.5rem;
+    }
+
+    .folder {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 28em) {
+    .backlog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1.5rem;
+    }
+
+    .folder {
+        max-width: 300px;
+    }
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
