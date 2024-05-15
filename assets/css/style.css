@@ -2029,6 +2029,19 @@ h4 {
 
     .folder {
         max-width: 300px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 20em) {
+    .backlog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+        grid-gap: 1.5rem;
+    }
+
+    .folder {
+        max-width: 275px;
+        padding: 1.5rem;
     }
 }
 
