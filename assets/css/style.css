@@ -1951,6 +1951,12 @@ h4 {
     padding: 2rem;
 }
 
+.folder-btn {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
 .folder-posters {
     display: flex;
     align-items: center;
