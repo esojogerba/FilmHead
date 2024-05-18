@@ -2016,7 +2016,7 @@ h4 {
     backdrop-filter: blur(6px);
 }
 
-@media (max-width: 40em) {
+@media (max-width: 80em) {
     .backlog-grid {
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         grid-gap: 1.5rem;
@@ -2027,7 +2027,7 @@ h4 {
     }
 }
 
-@media (max-width: 28em) {
+@media (max-width: 55em) {
     .backlog-grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 1.5rem;
@@ -2047,14 +2047,14 @@ h4 {
     }
 }
 
-@media (max-width: 19em) {
+@media (max-width: 22em) {
     .backlog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
         grid-gap: 1.5rem;
     }
 
     .folder {
-        max-width: 275px;
+        max-width: 270px;
         padding: 1.5rem;
     }
 }
