@@ -2049,12 +2049,12 @@ h4 {
 
 @media (max-width: 22em) {
     .backlog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
         grid-gap: 1.5rem;
     }
 
     .folder {
-        max-width: 270px;
+        max-width: 260px;
         padding: 1.5rem;
     }
 }
