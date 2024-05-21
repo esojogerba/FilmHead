@@ -2047,6 +2047,18 @@ h4 {
     }
 }
 
+@media (max-width: 41em) {
+    .backlog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        grid-gap: 1.5rem;
+    }
+
+    .folder {
+        max-width: 500px;
+        padding: 1.5rem;
+    }
+}
+
 @media (max-width: 22em) {
     .backlog-grid {
         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
