@@ -2103,6 +2103,12 @@ h4 {
     margin-bottom: 6rem;
 }
 
+@media (max-width: 60em) {
+    .folder-grid {
+        margin-bottom: 4rem;
+    }
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
