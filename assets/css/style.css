@@ -2130,6 +2130,13 @@ h4 {
     }
 }
 
+@media (max-width: 35.5em) {
+    #grid-card-trash-svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* =======================
  Add To Folder Pop-Up
  ======================= */
