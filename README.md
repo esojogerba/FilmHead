@@ -1,4 +1,1 @@
-FilmHead helps you keep track of your media backlog.
-Organize your media in categorized folders to keep track
-of your progress as you conquer your ever growing
-backlog.
+FilmHead is a web application designed to help you keep track of your media backlog with ease. Whether you're an avid movie buff, or a TV series binge-watcher FilmHead provides a simple and intuitive way to organize and power through your backlog.
