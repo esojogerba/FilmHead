@@ -2117,6 +2117,13 @@ h4 {
     cursor: pointer;
 }
 
+#grid-card-trash-svg {
+    fill: var(--clr-white-900);
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+}
+
 @media (max-width: 60em) {
     .folder-grid {
         margin-bottom: 4rem;
