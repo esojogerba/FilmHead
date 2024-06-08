@@ -2124,6 +2124,16 @@ h4 {
     aspect-ratio: 1;
 }
 
+.grid-card-trash-btn:hover,
+.grid-card-trash-btn:focus {
+    background-color: hsl(240, 100%, 98%, 0.6);
+    backdrop-filter: blur(6px);
+
+    #grid-card-trash-svg {
+        fill: var(--clr-primary);
+    }
+}
+
 @media (max-width: 60em) {
     .folder-grid {
         margin-bottom: 4rem;
