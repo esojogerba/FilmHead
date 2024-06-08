@@ -1309,6 +1309,12 @@ h4 {
     border-radius: 6px;
     flex-shrink: 0;
     filter: brightness(0.4);
+    cursor: pointer;
+}
+
+.banner-control-item:hover,
+.banner-control-item:focus {
+    filter: brightness(0.6);
 }
 
 .banner-control-row .active {
