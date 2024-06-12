@@ -1869,6 +1869,13 @@ h4 {
     width: 60px;
 }
 
+#backlog-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
 @media (max-width: 35em) {
     .backlog-header {
         justify-content: center;
