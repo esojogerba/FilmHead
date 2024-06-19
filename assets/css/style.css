@@ -1817,6 +1817,13 @@ h4 {
         font-size: var(--fs-32);
     }
 
+    .grid-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        column-gap: 1rem;
+        row-gap: 1.5rem;
+    }
+
     #grid-card-add-svg {
         width: 80px;
         height: 80px;
@@ -2154,9 +2161,13 @@ h4 {
 }
 
 @media (max-width: 35.5em) {
+    .grid-card-trash-btn {
+        top: 5px;
+        right: 5px;
+    }
+
     #grid-card-trash-svg {
-        width: 40px;
-        height: 40px;
+        width: 24px;
     }
 }
 
