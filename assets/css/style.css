@@ -1825,8 +1825,8 @@ h4 {
     }
 
     #grid-card-add-svg {
-        width: 80px;
-        height: 80px;
+        width: 20px;
+        height: 20px;
         aspect-ratio: 1;
     }
 }
