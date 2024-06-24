@@ -1812,6 +1812,26 @@ h4 {
     }
 }
 
+@media (max-width: 38.375em) {
+    .grid-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        column-gap: 1rem;
+        row-gap: 1.5rem;
+    }
+
+    .grid-card-add-btn {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    #grid-card-add-svg {
+        width: 30px;
+        height: 30px;
+        aspect-ratio: 1;
+    }
+}
+
 @media (max-width: 35.5em) {
     .grid-title {
         font-size: var(--fs-32);
