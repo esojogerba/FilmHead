@@ -51,7 +51,7 @@ fetchDataFromAPI(
 
         // Retrieves trending show data and passes it in JSON format to heroBanner().
         fetchDataFromAPI(
-            `https://api.themoviedb.org/3//trending/tv/day?api_key=${API_KEY}`,
+            `https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`,
             heroBanner
         );
     }
