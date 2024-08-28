@@ -281,7 +281,7 @@ const buildPageHeader = function () {
             // OnClick attribute used to create a media list when a genre link is clicked.
             link.setAttribute(
                 "onClick",
-                `getMovieGrid("with_genres=${genreId}", "${genreName}", "tv")`
+                `getMediaGrid("genre", "with_genres=${genreId}", "${genreName}", "tv")`
             );
 
             // Gives resulting media list page the title of the genre selected.
