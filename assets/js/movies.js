@@ -306,9 +306,6 @@ const buildMediaScroll = function ({ results: movieList }, title, path) {
     mediaScrollElem.classList.add("container");
     mediaScrollElem.ariaLabel = `${title}`;
 
-    console.log(title);
-    console.log(path);
-
     // Set media-scroll <section> HTML.
     // Uses template literals to inject movie data retrieved from API into the HTML.
     // TODO: Add link to view more button.
