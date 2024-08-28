@@ -181,7 +181,8 @@ const heroBanner = function ({ results: getMovieList }) {
         fetchDataFromAPI(
             `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&page=1`,
             buildMediaScroll,
-            title
+            title,
+            path
         );
     }
 };
@@ -298,12 +299,15 @@ const buildPageHeader = function () {
 };
 
 // Creates scrollable media lists.
-const buildMediaScroll = function ({ results: movieList }, title) {
+const buildMediaScroll = function ({ results: movieList }, title, path) {
     // Creates media-scroll <section>
     const mediaScrollElem = document.createElement("section");
     mediaScrollElem.classList.add("media-scroll");
     mediaScrollElem.classList.add("container");
     mediaScrollElem.ariaLabel = `${title}`;
+
+    console.log(title);
+    console.log(path);
 
     // Set media-scroll <section> HTML.
     // Uses template literals to inject movie data retrieved from API into the HTML.
@@ -312,7 +316,7 @@ const buildMediaScroll = function ({ results: movieList }, title) {
         <div class="media-scroll-title-wrapper">
 
             <h3 class="media-scroll-title">${title}</h3>
-            <a href="" class="view-more-link">View More</a>
+            <a href="./media-grid.html" onclick='getMediaGrid("list", "${path}", "${title}", "movie")' class="view-more-link">View More</a>
 
         </div>
 
