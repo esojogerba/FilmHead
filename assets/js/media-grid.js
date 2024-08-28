@@ -4,22 +4,32 @@
 import { API_KEY, imageBaseURL, fetchDataFromAPI } from "./api.js";
 import { createMediaCard } from "./media-card.js";
 
-// Retrieve genre name of movie list from local storage.
-const genreName = window.localStorage.getItem("genreName");
+// Retrieve the link type from local storage.
+const linkType = window.localStorage.getItem("linkType");
+// Retrieve page name from local storage.
+const pageName = window.localStorage.getItem("pageName");
 // Retrieve url parameter from local storage.
 const urlParam = window.localStorage.getItem("urlParam");
 // Retrieve media type from local storage.
 const mediaType = window.localStorage.getItem("mediaType");
-
-// Retrieves the page's content.
-const pageContent = document.querySelector("[page-content]");
+// URL
+let fetchURL;
 
 // Variables for movie list page.
 let currentPage = 1;
 let totalPages = 0;
 
-// URL
-let fetchURL = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`;
+// Set URL
+if (linkType == "genre") {
+    // Set URL
+    fetchURL = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`;
+} else if (linkType == "list") {
+    // Set URL
+    fetchURL = `https://api.themoviedb.org/3${urlParam}?api_key=${API_KEY}&page=${currentPage}`;
+}
+
+// Retrieves the page's content.
+const pageContent = document.querySelector("[page-content]");
 
 // Creates a media grid for the genre selected from the dropdown.
 fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
@@ -28,9 +38,9 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
 
     // Set title of document to the type of media list being loaded.
     if (mediaType == "movie") {
-        document.title = `${genreName} Movies - FilmHead`;
+        document.title = `${pageName} Movies - FilmHead`;
     } else {
-        document.title = `${genreName} Shows - FilmHead`;
+        document.title = `${pageName} Shows - FilmHead`;
     }
 
     // Stores header for the page.
@@ -39,12 +49,13 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
     // Creates media-grid <section>.
     const mediaGridElem = document.createElement("section");
     mediaGridElem.classList.add("media-grid", "container");
+
     if (mediaType == "movie") {
-        mediaGridElem.ariaLabel = `${genreName} Movies`;
-        pageHeader = `${genreName} Movies`;
+        mediaGridElem.ariaLabel = `${pageName} Movies`;
+        pageHeader = `${pageName} Movies`;
     } else {
-        mediaGridElem.ariaLabel = `${genreName} Shows`;
-        pageHeader = `${genreName} Shows`;
+        mediaGridElem.ariaLabel = `${pageName} Shows`;
+        pageHeader = `${pageName} Shows`;
     }
 
     // Set media-grid <section> HTML.
@@ -91,7 +102,11 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
             currentPage++;
 
             // Update the URL
-            fetchURL = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`;
+            if (linkType == "genre") {
+                fetchURL = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`;
+            } else if (linkType == "list") {
+                fetchURL = `https://api.themoviedb.org/3${urlParam}?api_key=${API_KEY}&page=${currentPage}`;
+            }
 
             // Retrieve the data for the next page of the media list.
             fetchDataFromAPI(fetchURL, ({ results: mediaList }) => {
