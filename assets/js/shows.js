@@ -181,7 +181,8 @@ const heroBanner = function ({ results: getShowList }) {
         fetchDataFromAPI(
             `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&page=1`,
             buildMediaScroll,
-            title
+            title,
+            path
         );
     }
 };
@@ -297,7 +298,7 @@ const buildPageHeader = function () {
 };
 
 // Creates scrollable media lists.
-const buildMediaScroll = function ({ results: showList }, title) {
+const buildMediaScroll = function ({ results: showList }, title, path) {
     // Creates media-scroll <section>
     const mediaScrollElem = document.createElement("section");
     mediaScrollElem.classList.add("media-scroll");
@@ -311,7 +312,7 @@ const buildMediaScroll = function ({ results: showList }, title) {
         <div class="media-scroll-title-wrapper">
 
             <h3 class="media-scroll-title">${title}</h3>
-            <a href="" class="view-more-link">View More</a>
+            <a href="./media-grid.html" onclick='getMediaGrid("list", "${path}", "${title}", "tv")' class="view-more-link">View More</a>
 
         </div>
 
