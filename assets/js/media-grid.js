@@ -21,10 +21,10 @@ let totalPages = 0;
 
 // Set URL
 if (linkType == "genre") {
-    // Set URL
+    // Set genre URL
     fetchURL = `https://api.themoviedb.org/3/discover/${mediaType}?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`;
 } else if (linkType == "list") {
-    // Set URL
+    // Set list URL
     fetchURL = `https://api.themoviedb.org/3${urlParam}?api_key=${API_KEY}&page=${currentPage}`;
 }
 
