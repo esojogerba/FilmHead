@@ -52,10 +52,10 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
 
     if (mediaType == "movie") {
         mediaGridElem.ariaLabel = `${pageName} Movies`;
-        pageHeader = `${pageName} Movies`;
+        pageHeader = `${pageName} ·  Movies`;
     } else {
         mediaGridElem.ariaLabel = `${pageName} Shows`;
-        pageHeader = `${pageName} Shows`;
+        pageHeader = `${pageName} ·  Shows`;
     }
 
     // Set media-grid <section> HTML.
