@@ -14,14 +14,17 @@ const fetchDataFromAPI = function (
     url,
     callback,
     optionalParam1,
-    optionalParam2
+    optionalParam2,
+    optionalParam3
 ) {
     // Fetch data from URL.
     fetch(url)
         // Format results into JSON format.
         .then((response) => response.json())
         // Callback function provided as parameter is called.
-        .then((data) => callback(data, optionalParam1, optionalParam2));
+        .then((data) =>
+            callback(data, optionalParam1, optionalParam2, optionalParam3)
+        );
 };
 
 // Export functionalities and constant variables.
