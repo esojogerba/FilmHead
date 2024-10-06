@@ -2572,7 +2572,7 @@ h4 {
     padding: 1rem;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 65rem) {
     .delete-item.active {
         padding: 1.5rem 1.5rem;
     }
