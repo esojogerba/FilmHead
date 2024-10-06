@@ -10,7 +10,7 @@ const pageContent = document.querySelector("[page-content]");
 // Home page movie list sections (Top Rated, Upcoming, Trending Movies).
 const moviePageSections = [
     {
-        title: "Upcoming Movies",
+        title: "Upcoming",
         path: "/movie/upcoming",
     },
     {
