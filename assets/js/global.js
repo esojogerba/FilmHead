@@ -32,7 +32,7 @@ const getShowDetails = function (showId) {
     window.localStorage.setItem("showId", String(showId));
 };
 
-// Stores the genre selected from the dropdown into local storage for later use.
+// Stores the genre or list to create a media grid.
 const getMediaGrid = function (linkType, urlParam, pageName, mediaType) {
     window.localStorage.setItem("linkType", linkType);
     window.localStorage.setItem("urlParam", urlParam);
