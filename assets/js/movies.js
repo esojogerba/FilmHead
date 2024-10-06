@@ -176,15 +176,44 @@ const heroBanner = function ({ results: getMovieList }) {
     // Adds media page header.
     buildPageHeader();
 
-    // Fetch data for movie lists.
+    // Build media scroll for movie lists.
     for (const { title, path } of moviePageSections) {
         fetchDataFromAPI(
             `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&page=1`,
             buildMediaScroll,
             title,
-            path
+            path,
+            "list"
         );
     }
+
+    // Holds all the genres and their ID's.
+    let allGenres = {};
+
+    // Retrieve all movie genres from API.
+    fetchDataFromAPI(
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`,
+
+        // Callback function to store genres in genreList map.
+        function ({ genres }) {
+            // Iterates through each genre in the JSON file.
+            for (const { id, name } of genres) {
+                // Make a key value pair and store in the genreList map.
+                allGenres[id] = name;
+            }
+
+            // Build media scroll for genre lists.
+            for (const [key, value] of Object.entries(allGenres)) {
+                fetchDataFromAPI(
+                    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=1&with_genres=${key}`,
+                    buildMediaScroll,
+                    value,
+                    `with_genres=${key}`,
+                    "genre"
+                );
+            }
+        }
+    );
 };
 
 // Banner slider functionality.
@@ -299,7 +328,12 @@ const buildPageHeader = function () {
 };
 
 // Creates scrollable media lists.
-const buildMediaScroll = function ({ results: movieList }, title, path) {
+const buildMediaScroll = function (
+    { results: movieList },
+    title,
+    path,
+    linkType
+) {
     // Creates media-scroll <section>
     const mediaScrollElem = document.createElement("section");
     mediaScrollElem.classList.add("media-scroll");
@@ -313,7 +347,7 @@ const buildMediaScroll = function ({ results: movieList }, title, path) {
         <div class="media-scroll-title-wrapper">
 
             <h3 class="media-scroll-title">${title}</h3>
-            <a href="./media-grid.html" onclick='getMediaGrid("list", "${path}", "${title}", "movie")' class="view-more-link">View More</a>
+            <a href="./media-grid.html" onclick='getMediaGrid("${linkType}", "${path}", "${title}", "movie")' class="view-more-link">View More</a>
 
         </div>
 
