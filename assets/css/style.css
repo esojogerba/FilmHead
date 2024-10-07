@@ -196,27 +196,12 @@ ul {
     background-color: var(--clr-black-900);
     opacity: 0;
     pointer-events: none;
-    transition: var(--transition-short);
+    transition: 350ms ease;
 }
 
 .transition-1.is-active {
     opacity: 1;
     pointer-events: all;
-}
-
-.transition-2 {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    bottom: 0;
-    z-index: 999;
-    background-color: var(--clr-black-900);
-    transition: var(--transition-short);
-}
-
-.transition-2.is-active {
-    left: 0px;
 }
 
 /* Scrollbar */
