@@ -3,6 +3,32 @@ const addEventOnElements = function (elements, eventType, callback) {
     for (const elem of elements) elem.addEventListener(eventType, callback);
 };
 
+// Transitions
+window.onload = () => {
+    const transitionElement = document.querySelector(".transition");
+    const anchors = document.querySelectorAll("a");
+
+    setTimeout(() => {
+        transitionElement.classList.remove("is-active");
+    }, 250);
+
+    for (let i = 0; i < anchors.length; i++) {
+        const anchor = anchors[i];
+
+        anchor.addEventListener(click, (e) => {
+            e.preventDefault();
+
+            let target = e.target.href;
+
+            transitionElement.classList.add("is-active");
+
+            setTimeout(() => {
+                window.location.href = target;
+            }, 250);
+        });
+    }
+};
+
 // Toggle dropdown menu when button is clicked.
 function toggleDropdown() {
     document.querySelector(".dropdown-menu").classList.toggle("show-dropdown");
