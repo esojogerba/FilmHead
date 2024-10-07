@@ -1258,7 +1258,7 @@ h4 {
 
     .banner-heading {
         font-size: var(--fs-36);
-        -webkit-line-clamp: 1;
+        -webkit-line-clamp: 2;
     }
 
     .banner-text,
@@ -1320,6 +1320,16 @@ h4 {
 .banner-control-row .active {
     filter: brightness(1);
     box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.75);
+}
+
+@media (max-width: 40rem) {
+    .banner-control-row {
+        left: 20px;
+    }
+
+    .banner-control-item {
+        width: 80px;
+    }
 }
 
 /* Media Page Header */
