@@ -307,7 +307,10 @@ const buildPageHeader = function () {
         for (const [genreId, genreName] of Object.entries(genreList)) {
             // Creates the <a> link.
             const link = document.createElement("a");
-            link.setAttribute("href", "./media-grid.html");
+            link.setAttribute(
+                "href",
+                `./media-grid.html?linkType=genre&urlParam=with_genres=${genreId}&pageName=${genreName}&mediaType=tv`
+            );
             // OnClick attribute used to create a media list when a genre link is clicked.
             link.setAttribute(
                 "onClick",
@@ -346,7 +349,9 @@ const buildMediaScroll = function (
         <div class="media-scroll-title-wrapper">
 
             <h3 class="media-scroll-title">${title}</h3>
-            <a href="./media-grid.html" onclick='getMediaGrid("${linkType}", "${path}", "${title}", "tv")' class="view-more-link">View More</a>
+            <a href="./media-grid.html?linkType=${linkType}&urlParam=${path}&pageName=${title}&mediaType=tv"
+            onclick='getMediaGrid("${linkType}", "${path}", "${title}", "tv")' 
+            class="view-more-link">View More</a>
 
         </div>
 
