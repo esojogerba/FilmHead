@@ -60,7 +60,7 @@ export function createMediaCard(type, mediaData, genreList, page) {
             </p>
 
             <a
-                href="movie-details.html"
+                href="movie-details.html?movieId=${id}"
                 class="card-btn"
                 title="${title}"
                 onclick="getMovieDetails(${id})"
@@ -122,7 +122,7 @@ export function createMediaCard(type, mediaData, genreList, page) {
             </p>
 
             <a
-                href="show-details.html"
+                href="show-details.html?showId=${id}"
                 class="card-btn"
                 title="${name}"
                 onclick="getShowDetails(${id})"
@@ -180,8 +180,8 @@ export function createMediaCard(type, mediaData, genreList, page) {
             <a 
             href="${
                 page == "home"
-                    ? "/html/movie-details.html"
-                    : "movie-details.html"
+                    ? `/html/movie-details.html?movieId=${id}`
+                    : `movie-details.html?movieId=${id}`
             }"  
             class="card-btn" title="" onclick="getMovieDetails(${id})"></a>
         `;
@@ -236,7 +236,9 @@ export function createMediaCard(type, mediaData, genreList, page) {
 
             <a 
             href="${
-                page == "home" ? "/html/show-details.html" : "show-details.html"
+                page == "home"
+                    ? `/html/show-details.html?showId=${id}`
+                    : `show-details.html?showId=${id}`
             }" 
             class="card-btn" title="" onclick="getShowDetails(${id})"></a>
         `;

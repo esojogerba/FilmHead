@@ -123,7 +123,7 @@ const heroBanner = function ({ results: getShowList }) {
                 <div class="banner-buttons">
                     <a
                         class="btn"
-                        href="show-details.html"
+                        href="show-details.html?showId=${id}"
                         onclick="getShowDetails(${id})"
                     >
                         Details
