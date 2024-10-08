@@ -18,7 +18,7 @@ const moviePageSections = [
         path: "/trending/movie/week",
     },
     {
-        title: "Top Rated Movies",
+        title: "Top Rated",
         path: "/movie/top_rated",
     },
 ];
