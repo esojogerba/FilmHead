@@ -214,6 +214,8 @@ const heroBanner = function ({ results: getMovieList }) {
             }
         }
     );
+
+    document.dispatchEvent(new Event("moviesLoaded"));
 };
 
 // Banner slider functionality.
@@ -222,38 +224,59 @@ const addBannerSlide = function () {
     const sliderItems = document.querySelectorAll("[banner-slider-item]");
     const sliderControls = document.querySelectorAll("[banner-control-item]");
 
-    // Initially hold the first slider item and slider control.
-    // Will hold the current active slider item / slider control.
-    let currentSliderItem = sliderItems[0];
-    let currentSliderControl = sliderControls[0];
+    // Index and total number of items
+    let currentIndex = 0;
+    const totalItems = sliderItems.length;
+
+    // Start at the first item.
+    let currentSliderItem = sliderItems[currentIndex];
+    let currentSliderControl = sliderControls[currentIndex];
 
     // Sets the current slider item and control as active.
     currentSliderItem.classList.add("active");
     currentSliderControl.classList.add("active");
 
-    // After a slider item is clicked, it becomes the active one.
-    const sliderStart = function () {
-        // Removes the active class from the previously active slider item.
-        currentSliderItem.classList.remove("active");
-        // Removes the active class from the previously active slider control item.
-        currentSliderControl.classList.remove("active");
+    // Function to update the active slide
+    const updateSlide = (newIndex) => {
+        // Remove 'active' class from all items
+        sliderItems.forEach((item) => item.classList.remove("active"));
+        sliderControls.forEach((item) => item.classList.remove("active"));
 
-        // Adds the ".active" class to the slider item that was clicked.
-        // this == slider-control
-        sliderItems[
-            Number(this.getAttribute("banner-control-item"))
-        ].classList.add("active");
-        this.classList.add("active");
+        // Add 'active' class to the new items
+        currentIndex = newIndex;
+        sliderItems[currentIndex].classList.add("active");
+        sliderControls[currentIndex].classList.add("active");
 
-        // Sets the selected slider item as the current one.
-        currentSliderItem =
-            sliderItems[Number(this.getAttribute("banner-control-item"))];
-        // Sets the selected slider control item as the current one.
-        currentSliderControl = this;
+        // Update current slider item and control for future reference
+        currentSliderItem = sliderItems[currentIndex];
+        currentSliderControl = sliderControls[currentIndex];
     };
 
-    // When a slider item is clicked, runs sliderStart().
-    addEventOnElements(sliderControls, "click", sliderStart);
+    // Function to change the active slider and control items every 10 seconds
+    const changeSlide = () => {
+        let newIndex = (currentIndex + 1) % totalItems;
+        updateSlide(newIndex);
+    };
+
+    // Start the automatic slider interval
+    let autoSlideInterval = setInterval(changeSlide, 10000);
+
+    // Function to handle manual slider control click
+    const sliderStart = function () {
+        let clickedIndex = Number(this.getAttribute("banner-control-item"));
+
+        // Update the slide based on the clicked control
+        updateSlide(clickedIndex);
+
+        // Clear and reset the interval to continue automatic switching from this point
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(changeSlide, 10000);
+    };
+
+    // Attach the click event listener to each slider control
+    sliderControls.forEach((control) => {
+        control.addEventListener("click", sliderStart);
+    });
 };
 
 // Builds the page header.
