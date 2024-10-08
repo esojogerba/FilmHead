@@ -123,5 +123,8 @@ fetchDataFromAPI(fetchURL, function ({ results: mediaList, total_pages }) {
                         .appendChild(mediaCard);
                 }
             });
+
+            // Remove :focus from load-more btn
+            this.blur();
         });
 });
