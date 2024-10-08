@@ -12,21 +12,21 @@ window.onload = () => {
         transitionElement.classList.remove("is-active");
     }, 250);
 
-    for (let i = 0; i < anchors.length; i++) {
-        const anchor = anchors[i];
+    // for (let i = 0; i < anchors.length; i++) {
+    //     const anchor = anchors[i];
 
-        anchor.addEventListener(click, (e) => {
-            e.preventDefault();
+    //     anchor.addEventListener("click", (e) => {
+    //         e.preventDefault();
 
-            let target = e.target.href;
+    //         let target = e.target.href;
 
-            transitionElement.classList.add("is-active");
+    //         transitionElement.classList.add("is-active");
 
-            setTimeout(() => {
-                window.location.href = target;
-            }, 250);
-        });
-    }
+    //         setTimeout(() => {
+    //             window.location.href = target;
+    //         }, 250);
+    //     });
+    // }
 };
 
 // Toggle dropdown menu when button is clicked.
