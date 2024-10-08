@@ -335,6 +335,11 @@ ul {
     cursor: pointer;
 }
 
+.dropdown-btn span,
+.dropdown-btn img {
+    pointer-events: none; /* Prevents span and img from blocking the button's click */
+}
+
 .dropdown-btn:hover,
 .dropdown-btn:focus {
     background-color: var(--clr-white-900);
