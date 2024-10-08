@@ -10,23 +10,23 @@ window.onload = () => {
 
     setTimeout(() => {
         transitionElement.classList.remove("is-active");
-    }, 350);
+    }, 250);
 
-    // for (let i = 0; i < anchors.length; i++) {
-    //     const anchor = anchors[i];
+    for (let i = 0; i < anchors.length; i++) {
+        const anchor = anchors[i];
 
-    //     anchor.addEventListener("click", (e) => {
-    //         e.preventDefault();
+        anchor.addEventListener(click, (e) => {
+            e.preventDefault();
 
-    //         let target = e.target.href;
+            let target = e.target.href;
 
-    //         transitionElement.classList.add("is-active");
+            transitionElement.classList.add("is-active");
 
-    //         setTimeout(() => {
-    //             window.location.href = target;
-    //         }, 350);
-    //     });
-    // }
+            setTimeout(() => {
+                window.location.href = target;
+            }, 250);
+        });
+    }
 };
 
 // Toggle dropdown menu when button is clicked.
@@ -57,6 +57,23 @@ const getMovieDetails = function (movieId) {
 const getShowDetails = function (showId) {
     window.localStorage.setItem("showId", String(showId));
 };
+
+// If user right clicks on media details links, media id is stored.
+const params = new URLSearchParams(window.location.search);
+const movieId = params.get("movieId");
+const showId = params.get("showId");
+
+if (movieId) {
+    console.log("Movie ID:", movieId);
+    // Now you can save it to localStorage if needed
+    window.localStorage.setItem("movieId", movieId);
+}
+
+if (showId) {
+    console.log("Show ID:", showId);
+    // Now you can save it to localStorage if needed
+    window.localStorage.setItem("showId", showId);
+}
 
 // Stores the genre or list to create a media grid.
 const getMediaGrid = function (linkType, urlParam, pageName, mediaType) {
