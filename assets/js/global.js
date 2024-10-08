@@ -58,20 +58,16 @@ const getShowDetails = function (showId) {
     window.localStorage.setItem("showId", String(showId));
 };
 
-// If user right clicks on media details links, media id is stored.
+// If user opens media details links in a new tab, media id is stored.
 const params = new URLSearchParams(window.location.search);
 const movieId = params.get("movieId");
 const showId = params.get("showId");
 
 if (movieId) {
-    console.log("Movie ID:", movieId);
-    // Now you can save it to localStorage if needed
     window.localStorage.setItem("movieId", movieId);
 }
 
 if (showId) {
-    console.log("Show ID:", showId);
-    // Now you can save it to localStorage if needed
     window.localStorage.setItem("showId", showId);
 }
 
@@ -82,6 +78,25 @@ const getMediaGrid = function (linkType, urlParam, pageName, mediaType) {
     window.localStorage.setItem("pageName", pageName);
     window.localStorage.setItem("mediaType", mediaType);
 };
+
+// If user opens media grid links in a new tab, media details are stored.
+const linkType = params.get("linkType");
+const urlParam = params.get("urlParam");
+const pageName = params.get("pageName");
+const mediaType = params.get("mediaType");
+
+if (linkType) {
+    window.localStorage.setItem("linkType", linkType);
+}
+if (urlParam) {
+    window.localStorage.setItem("urlParam", urlParam);
+}
+if (pageName) {
+    window.localStorage.setItem("pageName", pageName);
+}
+if (mediaType) {
+    window.localStorage.setItem("mediaType", mediaType);
+}
 
 // Opens a pop up.
 const openPopUp = function (name) {
