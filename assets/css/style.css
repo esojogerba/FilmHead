@@ -1277,7 +1277,7 @@ h4 {
     }
 
     .banner-content {
-        bottom: 40%;
+        bottom: 35%;
         gap: 1rem;
     }
 
@@ -1297,6 +1297,21 @@ h4 {
     #add-svg {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 24rem) {
+    .banner-heading {
+        font-size: var(--fs-32);
+        -webkit-line-clamp: 2;
+    }
+
+    .banner-text,
+    .banner-genre,
+    .banner-content .meta-list,
+    .banner-content .meta-list .card-badge,
+    .banner-buttons a {
+        font-size: var(--fs-14);
     }
 }
 
