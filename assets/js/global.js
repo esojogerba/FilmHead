@@ -10,23 +10,7 @@ window.onload = () => {
 
     setTimeout(() => {
         transitionElement.classList.remove("is-active");
-    }, 250);
-
-    // for (let i = 0; i < anchors.length; i++) {
-    //     const anchor = anchors[i];
-
-    //     anchor.addEventListener("click", (e) => {
-    //         e.preventDefault();
-
-    //         let target = e.target.href;
-
-    //         transitionElement.classList.add("is-active");
-
-    //         setTimeout(() => {
-    //             window.location.href = target;
-    //         }, 250);
-    //     });
-    // }
+    }, 350);
 };
 
 // Toggle dropdown menu when button is clicked.
@@ -100,14 +84,24 @@ if (mediaType) {
 
 // Opens a pop up.
 const openPopUp = function (name) {
-    document.querySelector(".pop-up-overlay").classList.add("active");
-    document.querySelector(`${name}`).classList.add("active");
+    if (name == ".create-folder") {
+        document.querySelector(".second-overlay").classList.add("active");
+        document.querySelector(`${name}`).classList.add("active");
+    } else {
+        document.querySelector(".pop-up-overlay").classList.add("active");
+        document.querySelector(`${name}`).classList.add("active");
+    }
 };
 
 // Closes a pop up.
 const closePopUp = function (name) {
-    document.querySelector(".pop-up-overlay").classList.remove("active");
-    document.querySelector(`${name}`).classList.remove("active");
+    if (name == ".create-folder") {
+        document.querySelector(".second-overlay").classList.remove("active");
+        document.querySelector(`${name}`).classList.remove("active");
+    } else {
+        document.querySelector(".pop-up-overlay").classList.remove("active");
+        document.querySelector(`${name}`).classList.remove("active");
+    }
 };
 
 // Open filter drop down section.
