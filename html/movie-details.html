@@ -104,6 +104,7 @@
             <article page-content></article>
 
             <div class="pop-up-overlay"></div>
+            <div class="pop-up-overlay second-overlay"></div>
 
             <div class="add-to-folder">
                 <div class="add-to-folder-header">
@@ -122,6 +123,18 @@
                         placeholder="Search..."
                         search-field
                     />
+                    <a
+                        class="btn btn-text-icon"
+                        id="add-new-folder-btn"
+                        onclick="openPopUp('.create-folder')"
+                    >
+                        <svg class="material-icon" id="add-to-folder-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#add-icon"
+                            />
+                        </svg>
+                        <span>New Folder</span>
+                    </a>
                 </div>
                 <div class="add-to-folder-scroll">
                     <div class="add-to-folder-scroll-item">
@@ -171,6 +184,32 @@
                         <span>Add</span>
                     </a>
                 </div>
+            </div>
+
+            <div class="create-folder">
+                <div class="create-folder-header">
+                    <a
+                        class="pop-up-close-btn"
+                        onclick='closePopUp(".create-folder")'
+                        ><img
+                            id="pop-up-close-img"
+                            src="/assets/images/icon-close.svg"
+                            alt=""
+                    /></a>
+                    <svg class="material-icon" id="create-folder-svg">
+                        <use xlink:href="/assets/images/icons.svg#folder" />
+                    </svg>
+                    <h3 class="header-title">Create Folder</h3>
+                </div>
+
+                <input
+                    class="create-folder-input"
+                    type="text"
+                    placeholder="Name"
+                    autocomplete="off"
+                />
+
+                <a class="btn" onclick="">Done</a>
             </div>
         </main>
         <footer>

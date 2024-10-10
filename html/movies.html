@@ -106,6 +106,7 @@
             <article page-content></article>
 
             <div class="pop-up-overlay"></div>
+            <div class="pop-up-overlay second-overlay"></div>
 
             <div class="add-to-folder">
                 <div class="add-to-folder-header">
@@ -124,6 +125,18 @@
                         placeholder="Search..."
                         search-field
                     />
+                    <a
+                        class="btn btn-text-icon"
+                        id="add-new-folder-btn"
+                        onclick="openPopUp('.create-folder')"
+                    >
+                        <svg class="material-icon" id="add-to-folder-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#add-icon"
+                            />
+                        </svg>
+                        <span>New Folder</span>
+                    </a>
                 </div>
                 <div class="add-to-folder-scroll">
                     <div class="add-to-folder-scroll-item">
