@@ -2280,9 +2280,21 @@ h4 {
     max-width: 400px;
     width: 100%; /* Ensures responsiveness */
     border-radius: 6px;
-    z-index: 101;
     overflow-y: auto;
     padding: 1rem;
+    z-index: 101;
+}
+
+.add-to-folder.active::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.add-to-folder.active:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+    background-color: var(--clr-black-700);
+}
+
+.add-to-folder.active::-webkit-scrollbar-button {
+    width: 1px;
 }
 
 .add-to-folder-header {
@@ -2391,9 +2403,42 @@ h4 {
     aspect-ratio: 1;
 }
 
+#add-new-folder-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-black-500);
+    outline: 2px solid var(--clr-white-900);
+    font-size: var(--fs-14);
+    gap: 1rem;
+}
+
+#add-new-folder-btn:hover,
+#add-new-folder-btn:focus {
+    background-color: var(--clr-white-900);
+
+    #add-to-folder-svg,
+    #add-new-folder-svg {
+        fill: var(--clr-primary);
+    }
+}
+
+#add-new-folder-svg {
+    fill: var(--clr-primary-900);
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1;
+}
+
 @media (max-width: 43rem) {
     .add-to-folder.active {
         max-width: 90%; /* Adjust width for small screens */
+    }
+}
+
+@media (max-height: 46.5rem) {
+    .add-to-folder.active {
+        top: calc(50% + 70px); /* Center vertically */
+        max-height: 95%;
     }
 }
 
@@ -2656,6 +2701,7 @@ h4 {
         aspect-ratio: 1;
     }
 }
+
 /* =======================
  Filter Pop-Up
  ======================= */
