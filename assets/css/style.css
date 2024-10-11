@@ -209,11 +209,25 @@ ul {
 
 /* Spinner */
 .spinner {
-    width: 127.5px; /* Adjust size as needed */
-    height: 109.75px;
+    width: calc(510px * 0.25);
+    height: calc(439px * 0.25);
     background-size: cover;
     background-repeat: no-repeat;
     animation: spinner-frames 700ms steps(8) infinite;
+}
+
+@media (max-width: 46rem) {
+    .spinner {
+        width: calc(510px * 0.2);
+        height: calc(439px * 0.2);
+    }
+}
+
+@media (max-width: 30rem) {
+    .spinner {
+        width: calc(510px * 0.15);
+        height: calc(439px * 0.15);
+    }
 }
 
 /* Keyframes to change background images at each step */
