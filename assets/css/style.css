@@ -2613,6 +2613,13 @@ h4 {
     }
 }
 
+@media (max-height: 30rem) {
+    .create-folder.active {
+        top: calc(40% + 70px); /* Center vertically */
+        max-height: 80%;
+    }
+}
+
 /* =======================
  Delete Folder Pop-Up
  ======================= */
@@ -2701,6 +2708,13 @@ h4 {
     }
 }
 
+@media (max-height: 30rem) {
+    .delete-folder.active {
+        top: calc(40% + 70px); /* Center vertically */
+        max-height: 80%;
+    }
+}
+
 /* =======================
  Delete Item Pop-Up
  ======================= */
@@ -2778,18 +2792,34 @@ h4 {
 }
 
 @media (max-height: 51.5rem) {
+    .delete-item.active {
+        font-size: var(--fs-16);
+    }
+
     .delete-item-header {
         display: flex;
         flex-direction: column;
     }
+
     .delete-item-header h3 {
-        font-size: var(--fs-18);
+        font-size: var(--fs-24);
         font-weight: var(--fw-semi-bold);
     }
 
     .delete-svg {
         width: 20px;
         aspect-ratio: 1;
+    }
+
+    .delete-item.active .confirm-cancel-btns .btn {
+        font-size: var(--fs-16);
+    }
+}
+
+@media (max-height: 28rem) {
+    .delete-item.active {
+        top: calc(40% + 70px); /* Center vertically */
+        max-height: 80%;
     }
 }
 
@@ -2971,6 +3001,13 @@ h4 {
     .show-genres-scroll.active,
     .streaming-scroll.active {
         max-height: 180px; /* Limit height */
+    }
+}
+
+@media (max-height: 38rem) {
+    .filter-pop-up.active {
+        top: calc(45% + 70px); /* Center vertically */
+        max-height: 80%;
     }
 }
 
