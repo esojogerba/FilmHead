@@ -16,6 +16,9 @@ export function search() {
     searchModal.classList.add("search-modal");
     document.querySelector("main").appendChild(searchModal);
 
+    // Get the transition element (assuming you have a transition overlay in the DOM)
+    const transitionElement = document.querySelector(".transition");
+
     // Timeout variable for loading data.
     let searchTimeout;
 
@@ -23,15 +26,19 @@ export function search() {
     // Refreshes search every time a new character is added to input value.
     searchFields.forEach((element) => {
         element.addEventListener("input", function () {
-            // If search field is empty, remove active class.
+            // If search field is empty, remove active class and stop the transition overlay.
             if (!element.value.trim()) {
                 searchModal.classList.remove("active");
                 clearTimeout(searchTimeout);
+                transitionElement.classList.remove("is-active"); // Stop the transition
                 return;
             }
 
             // Reset timeout.
             clearTimeout(searchTimeout);
+
+            // Activate transition overlay when search starts
+            transitionElement.classList.add("is-active");
 
             // Set timeout to the time it takes to retrieve the results of the current search field input.
             searchTimeout = setTimeout(() => {
@@ -80,6 +87,9 @@ export function search() {
                                     .appendChild(mediaCard);
                             }
                         }
+
+                        // Deactivate the transition overlay once the search results are displayed
+                        transitionElement.classList.remove("is-active");
                     }
                 );
             }, 500);
