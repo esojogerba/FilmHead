@@ -197,11 +197,54 @@ ul {
     opacity: 0;
     pointer-events: none;
     transition: 350ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .transition-1.is-active {
     opacity: 1;
     pointer-events: all;
+}
+
+/* Spinner */
+.spinner {
+    width: 127.5px; /* Adjust size as needed */
+    height: 109.75px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: spinner-frames 700ms steps(8) infinite;
+}
+
+/* Keyframes to change background images at each step */
+@keyframes spinner-frames {
+    0% {
+        background-image: url("/assets/images/spinner/frame1.png");
+    }
+    12.5% {
+        background-image: url("/assets/images/spinner/frame2.png");
+    }
+    25% {
+        background-image: url("/assets/images/spinner/frame3.png");
+    }
+    37.5% {
+        background-image: url("/assets/images/spinner/frame4.png");
+    }
+    50% {
+        background-image: url("/assets/images/spinner/frame5.png");
+    }
+    62.5% {
+        background-image: url("/assets/images/spinner/frame6.png");
+    }
+    75% {
+        background-image: url("/assets/images/spinner/frame7.png");
+    }
+    87.5% {
+        background-image: url("/assets/images/spinner/frame8.png");
+    }
+    100% {
+        background-image: url("/assets/images/spinner/frame1.png");
+    } /* Loop back */
 }
 
 /* Scrollbar */
@@ -244,7 +287,7 @@ ul {
 .video-card {
     background-repeat: no-repeat;
     background-position: center;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-primary-dark);
     border-radius: 6px;
     overflow: hidden;
 }
