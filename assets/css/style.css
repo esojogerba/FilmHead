@@ -704,6 +704,13 @@ h4 {
     }
 }
 
+@media (max-height: 592px) {
+    .nav-links {
+        max-height: calc(100vh - 4.4rem);
+        overflow-y: auto;
+    }
+}
+
 /* =======================
  Footer
  ======================= */
