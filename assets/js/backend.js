@@ -9,7 +9,13 @@ function initializeLocalStorage() {
     console.log("Folders exists");
 }
 
+// Retrieve All Folders
+function getFolders() {
+    return JSON.parse(localStorage.getItem("folders"));
+}
+
 // Export functions to window.Backend
 window.Backend = {
     initializeLocalStorage,
+    getFolders,
 };
