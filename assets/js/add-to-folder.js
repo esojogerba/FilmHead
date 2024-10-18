@@ -4,14 +4,12 @@
 const main = document.querySelector("main");
 
 // Retrieve folders from localStorage
-var folders = window.Backend.getFolders();
+const folderList = window.Backend.getFolders();
 
-console.log(folders);
-
-buildPopUp();
+buildPopUp(folderList);
 
 // Build the Add To Folder pop up
-function buildPopUp() {
+function buildPopUp(folders) {
     // Create add-to-folder <div>
     const addToFolder = document.createElement("div");
     addToFolder.classList.add("add-to-folder");
@@ -88,3 +86,7 @@ function buildPopUp() {
     // Insert Add To Folder pop up into page
     main.appendChild(addToFolder);
 }
+
+window.addToFolderPopUp = {
+    buildPopUp,
+};
