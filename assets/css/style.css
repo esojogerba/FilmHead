@@ -2572,6 +2572,16 @@ h4 {
     font-weight: var(--fw-semi-bold);
 }
 
+.folder-name-error {
+    display: none;
+}
+
+.folder-name-error.active {
+    display: block;
+    font-size: var(--fs-16);
+    color: red;
+}
+
 .create-folder-input {
     width: 100%;
     max-width: 500px;
