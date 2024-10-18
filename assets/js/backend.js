@@ -21,7 +21,8 @@ function createFolder() {
 
     console.log(inputValue);
 
-    const folders = getFolders();
+    var folders = getFolders();
+
     if (folders.some((folder) => folder.name === inputValue)) {
         error.classList.add("active");
         throw new Error("Folder name already exists.");
@@ -39,6 +40,12 @@ function createFolder() {
     localStorage.setItem("folders", JSON.stringify(folders));
 
     closePopUp(".create-folder");
+
+    folders = getFolders();
+
+    document.querySelector(".add-to-folder").remove();
+    window.addToFolderPopUp.buildPopUp(folders);
+    openPopUp(".add-to-folder");
 }
 
 // Export functions to window.Backend
