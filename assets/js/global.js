@@ -103,6 +103,7 @@ const closePopUp = function (name) {
     if (name == ".create-folder") {
         document.querySelector(".second-overlay").classList.remove("active");
         document.querySelector(`${name}`).classList.remove("active");
+        // Toggle error message
         if (
             document
                 .querySelector(".folder-name-error")
@@ -112,6 +113,8 @@ const closePopUp = function (name) {
                 .querySelector(".folder-name-error")
                 .classList.remove("active");
         }
+        // Clear input
+        document.querySelector(".create-folder-input").value = "";
     } else {
         document.querySelector(".pop-up-overlay").classList.remove("active");
         document.querySelector(`${name}`).classList.remove("active");
