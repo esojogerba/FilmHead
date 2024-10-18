@@ -17,11 +17,13 @@ function getFolders() {
 // Create a New Folder
 function createFolder() {
     const inputValue = document.querySelector(".create-folder-input").value;
+    const error = document.querySelector(".folder-name-error");
 
     console.log(inputValue);
 
     const folders = getFolders();
     if (folders.some((folder) => folder.name === inputValue)) {
+        error.classList.add("active");
         throw new Error("Folder name already exists.");
     }
 
