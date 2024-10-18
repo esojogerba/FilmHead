@@ -15,18 +15,18 @@ function getFolders() {
 }
 
 // Create a New Folder
-function createFolder(name) {
-    const inputValue = document.getElementsByClassName(
-        "create-folder-input"
-    ).value;
+function createFolder() {
+    const inputValue = document.querySelector(".create-folder-input").value;
+
+    console.log(inputValue);
 
     const folders = getFolders();
-    if (folders.some((folder) => folder.name === name)) {
+    if (folders.some((folder) => folder.name === inputValue)) {
         throw new Error("Folder name already exists.");
     }
 
     const newFolder = {
-        name: name,
+        name: inputValue,
         entries: 0,
         percent_complete: "0%",
         poster_urls: [],
@@ -35,6 +35,8 @@ function createFolder(name) {
 
     folders.push(newFolder);
     localStorage.setItem("folders", JSON.stringify(folders));
+
+    closePopUp(".create-folder");
 }
 
 // Export functions to window.Backend
