@@ -66,21 +66,24 @@ function buildPopUp(folders) {
         </div>
     `;
 
-    for (const folder of folders) {
-        // Create folder list item
-        const addToFolderScrollItem = document.createElement("div");
-        addToFolderScrollItem.classList.add("add-to-folder-scroll-item");
+    // If folders is not empty, build folder list
+    if (folders) {
+        for (const folder of folders) {
+            // Create folder list item
+            const addToFolderScrollItem = document.createElement("div");
+            addToFolderScrollItem.classList.add("add-to-folder-scroll-item");
 
-        // Folder list item inner HTML
-        addToFolderScrollItem.innerHTML = `
-            <span>${folder.name}</span>
-            <a class="add-to-folder-scroll-btn" href=""></a>
-        `;
+            // Folder list item inner HTML
+            addToFolderScrollItem.innerHTML = `
+        <span>${folder.name}</span>
+        <a class="add-to-folder-scroll-btn" href=""></a>
+    `;
 
-        // Add list item to the list
-        addToFolder
-            .querySelector(".add-to-folder-scroll")
-            .appendChild(addToFolderScrollItem);
+            // Add list item to the list
+            addToFolder
+                .querySelector(".add-to-folder-scroll")
+                .appendChild(addToFolderScrollItem);
+        }
     }
 
     // Insert Add To Folder pop up into page
