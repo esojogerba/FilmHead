@@ -43,6 +43,4 @@ function buildPopUp() {
 
     // Insert createFolder pop up into page
     main.appendChild(createFolder);
-
-    console.log("Added");
 }
