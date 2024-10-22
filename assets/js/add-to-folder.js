@@ -75,9 +75,9 @@ function buildPopUp(folders) {
 
             // Folder list item inner HTML
             addToFolderScrollItem.innerHTML = `
-        <span>${folder.name}</span>
-        <a class="add-to-folder-scroll-btn" href=""></a>
-    `;
+            <span>${folder.name}</span>
+            <a class="add-to-folder-scroll-btn" href=""></a>
+            `;
 
             // Add list item to the list
             addToFolder
