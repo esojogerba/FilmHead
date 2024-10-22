@@ -37,6 +37,7 @@
         <script src="/assets/js/add-search.js" type="module" defer></script>
         <script src="/assets/js/movies.js" type="module" defer></script>
         <script src="/assets/js/add-to-folder.js" defer></script>
+        <script src="/assets/js/create-folder.js" defer></script>
     </head>
     <body>
         <header class="container primary-header">
@@ -111,34 +112,6 @@
 
             <div class="pop-up-overlay"></div>
             <div class="pop-up-overlay second-overlay"></div>
-
-            <div class="create-folder">
-                <div class="create-folder-header">
-                    <a
-                        class="pop-up-close-btn"
-                        onclick='closePopUp(".create-folder")'
-                        ><img
-                            id="pop-up-close-img"
-                            src="/assets/images/icon-close.svg"
-                            alt=""
-                    /></a>
-                    <svg class="material-icon" id="create-folder-svg">
-                        <use xlink:href="/assets/images/icons.svg#folder" />
-                    </svg>
-                    <h3 class="header-title">Create Folder</h3>
-                </div>
-
-                <h4 class="folder-name-error">Folder name already exists</h4>
-
-                <input
-                    class="create-folder-input"
-                    type="text"
-                    placeholder="Name"
-                    autocomplete="off"
-                />
-
-                <a class="btn" onclick="createFolder()">Done</a>
-            </div>
 
             <div class="delete-folder">
                 <div class="delete-folder-header">
