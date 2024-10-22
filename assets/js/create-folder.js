@@ -1,7 +1,9 @@
 "use strict";
 
-// Retrieves page-content <article> from movies page
-const main = document.querySelector("main");
+// Retrieves main from page
+main = document.querySelector("main");
+
+buildPopUp();
 
 // Build the Create Folder pop up
 function buildPopUp() {
@@ -38,4 +40,9 @@ function buildPopUp() {
 
         <a class="btn" onclick="createFolder()">Done</a>
     `;
+
+    // Insert createFolder pop up into page
+    main.appendChild(createFolder);
+
+    console.log("Added");
 }
