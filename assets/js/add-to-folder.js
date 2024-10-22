@@ -1,7 +1,7 @@
 "use strict";
 
-// Retrieves page-content <article> from movies page
-const main = document.querySelector("main");
+// Retrieves main from page
+var main = document.querySelector("main");
 
 // Retrieve folders from localStorage
 const folderList = window.Backend.getFolders();
