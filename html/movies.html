@@ -38,6 +38,7 @@
         <script src="/assets/js/movies.js" type="module" defer></script>
         <script src="/assets/js/add-to-folder.js" defer></script>
         <script src="/assets/js/create-folder.js" defer></script>
+        <script src="/assets/js/delete-folder.js" defer></script>
     </head>
     <body>
         <header class="container primary-header">
@@ -128,26 +129,6 @@
                 <div class="confirm-cancel-btns">
                     <a class="btn" onclick="">Confirm</a>
                     <a class="btn" onclick='closePopUp(".delete-folder")'
-                        >Cancel</a
-                    >
-                </div>
-            </div>
-
-            <div class="delete-item">
-                <div class="delete-item-header">
-                    <svg class="material-icon delete-svg">
-                        <use xlink:href="/assets/images/icons.svg#trash" />
-                    </svg>
-                    <h3 class="header-title">Remove from folder?</h3>
-                </div>
-
-                <p class="pop-up-body">
-                    Are you sure you want to remove this entry from the folder?
-                </p>
-
-                <div class="confirm-cancel-btns">
-                    <a class="btn" onclick="">Confirm</a>
-                    <a class="btn" onclick='closePopUp(".delete-item")'
                         >Cancel</a
                     >
                 </div>
