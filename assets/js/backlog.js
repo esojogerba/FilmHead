@@ -6,6 +6,8 @@ const pageContent = document.querySelector("[page-content]");
 // Retrieve folders from localStorage
 const folderList = window.Backend.getFolders();
 
+const imageBaseURL = "http://image.tmdb.org/t/p/";
+
 // Calls the build function
 buildBacklog();
 
@@ -47,38 +49,64 @@ function buildBacklog() {
         </div>
 
         <div class="backlog-grid">
-            <div class="folder">
+        </div>
+    `;
+
+    if (folderList) {
+        for (const folder of folderList) {
+            // Create folder
+            const newFolder = document.createElement("div");
+            newFolder.classList.add("folder");
+
+            // Add inner HTML for folder
+            // Uses template literals to inject folder data from localStorage into the HTML.
+            newFolder.innerHTML = `
                 <div class="folder-posters">
                     <figure class="poster-box folder-poster">
                         <img
-                            src="/assets/images/Blade Runner Poster.png"
-                            alt="Blade Runner"
+                            src="${
+                                folder.poster_urls &&
+                                folder.poster_urls[0] != null
+                                    ? imageBaseURL + "w342" + poster_path
+                                    : "#"
+                            }"
                             class="img-cover"
                             loading="lazy"
+                            onerror='this.style.display = "none"'
                         />
                     </figure>
                     <figure class="poster-box folder-poster">
                         <img
-                            src="/assets/images/Blade Runner Poster.png"
-                            alt="Blade Runner"
+                            src="${
+                                folder.poster_urls &&
+                                folder.poster_urls[1] != null
+                                    ? imageBaseURL + "w342" + poster_path
+                                    : "#"
+                            }"
                             class="img-cover"
                             loading="lazy"
+                            onerror='this.style.display = "none"'
                         />
                     </figure>
                     <figure class="poster-box folder-poster">
                         <img
-                            src="/assets/images/Blade Runner Poster.png"
-                            alt="Blade Runner"
+                            src="${
+                                folder.poster_urls &&
+                                folder.poster_urls[2] != null
+                                    ? imageBaseURL + "w342" + poster_path
+                                    : "#"
+                            }"
                             class="img-cover"
                             loading="lazy"
+                            onerror='this.style.display = "none"'
                         />
                     </figure>
                 </div>
 
                 <div class="folder-details">
-                    <h3 class="folder-title">Folder Name</h3>
+                    <h3 class="folder-title">${folder.name}</h3>
 
-                    <p class="folder-entry-count">15 Entries</p>
+                    <p class="folder-entry-count">${folder.entries}</p>
                 </div>
 
                 <a
@@ -99,7 +127,11 @@ function buildBacklog() {
                     title=""
                     onclick=""
                 ></a>
-            </div>
-        </div>
-    `;
+            `;
+
+            backlog.querySelector(".backlog-grid").appendChild(newFolder);
+        }
+    }
+
+    pageContent.appendChild(backlog);
 }
