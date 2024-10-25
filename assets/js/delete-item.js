@@ -18,7 +18,7 @@ function buildPopUp() {
             <svg class="material-icon delete-svg">
                 <use xlink:href="/assets/images/icons.svg#trash" />
             </svg>
-            <h3 class="header-title">Remove from folder?</h3>
+            <h3 class="header-title">Delete Item?</h3>
         </div>
 
         <p class="pop-up-body">
