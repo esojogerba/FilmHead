@@ -131,6 +131,9 @@ function buildBacklog() {
 
             backlog.querySelector(".backlog-grid").appendChild(newFolder);
         }
+    } else {
+        const backlogGrid = backlog.querySelector(".backlog-grid");
+        backlogGrid.style.minHeight = "500px";
     }
 
     pageContent.appendChild(backlog);
