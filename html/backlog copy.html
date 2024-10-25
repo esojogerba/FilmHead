@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Primary Meta Tags -->
+        <title>FilmHead</title>
+        <meta name="title" content="FilmHead" />
+        <meta
+            name="description"
+            content="FilmHead helps you keep track of your media backlog."
+        />
+
+        <!-- Icon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/assets/images/square-logo-clear.png"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS Link -->
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+        <!-- Javascript Links -->
+        <script src="/assets/js/nav.js" defer></script>
+        <script src="/assets/js/global.js" defer></script>
+        <script src="/assets/js/add-search.js" type="module" defer></script>
+    </head>
+    <body>
+        <header class="container primary-header">
+            <div>
+                <a href="../index.html" class="desktop-nav-logo">
+                    <img
+                        src="/assets/images/filmhead-nav-logo.svg"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div>
+                <a href="../index.html" class="mobile-nav-logo">
+                    <img
+                        src="/assets/images/FilmHead-logo.png"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div class="search-box-mobile">
+                <input
+                    class="search-field"
+                    type="search"
+                    placeholder="Search..."
+                    search-field
+                />
+            </div>
+
+            <button
+                class="mobile-nav-toggle"
+                aria-controls="primary-navigation"
+                aria-expanded="false"
+            >
+                <span class="sr-only">Menu</span>
+            </button>
+
+            <nav class="nav-links" id="nav-links" data-visible="false">
+                <ul role="list" class="nav-links-left">
+                    <li>
+                        <a href="movies.html">Movies</a>
+                    </li>
+                    <li><a href="shows.html">Shows</a></li>
+                    <li>
+                        <a class="current-page" href="backlog.html">Backlog</a>
+                    </li>
+                </ul>
+                <ul role="list" class="nav-links-right">
+                    <li class="search-box-desktop">
+                        <input
+                            class="search-field"
+                            type="search"
+                            placeholder="Search..."
+                            search-field
+                        />
+                    </li>
+                    <li>
+                        <a href="sign-up.html" id="nav-link-sign-up">Sign Up</a>
+                    </li>
+                    <li><a href="log-in.html">Log In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="transition transition-1 is-active">
+            <div class="spinner"></div>
+        </div>
+
+        <main>
+            <article page-content>
+                <section class="container">
+                    <div class="backlog-header">
+                        <svg class="material-icon" id="backlog-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#backlog"
+                            />
+                        </svg>
+                        <h1 id="backlog-title">Backlog</h1>
+                    </div>
+
+                    <div class="backlog-menu">
+                        <input
+                            class="backlog-search-field"
+                            type="search"
+                            placeholder="Search..."
+                        />
+
+                        <a
+                            class="btn-icon"
+                            onclick="openPopUp('.create-folder')"
+                            id="backlog-add-btn"
+                        >
+                            <svg class="material-icon" id="add-svg">
+                                <use
+                                    xlink:href="/assets/images/icons.svg#add-icon"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="backlog-grid">
+                        <div class="folder">
+                            <div class="folder-posters">
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                            </div>
+
+                            <div class="folder-details">
+                                <h3 class="folder-title">Folder Name</h3>
+
+                                <p class="folder-entry-count">15 Entries</p>
+                            </div>
+
+                            <a
+                                class="btn-icon"
+                                onclick="openPopUp('.delete-folder')"
+                                id="backlog-trash-btn"
+                            >
+                                <svg class="material-icon" id="trash-svg">
+                                    <use
+                                        xlink:href="/assets/images/icons.svg#trash"
+                                    />
+                                </svg>
+                            </a>
+
+                            <a
+                                href="/html/folder.html"
+                                class="folder-btn"
+                                title=""
+                                onclick=""
+                            ></a>
+                        </div>
+
+                        <div class="folder">
+                            <div class="folder-posters">
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                            </div>
+
+                            <div class="folder-details">
+                                <h3 class="folder-title">Folder Name</h3>
+
+                                <p class="folder-entry-count">15 Entries</p>
+                            </div>
+
+                            <a
+                                class="btn-icon"
+                                onclick="openPopUp('.delete-folder')"
+                                id="backlog-trash-btn"
+                            >
+                                <svg class="material-icon" id="trash-svg">
+                                    <use
+                                        xlink:href="/assets/images/icons.svg#trash"
+                                    />
+                                </svg>
+                            </a>
+
+                            <a
+                                href="/html/folder.html"
+                                class="folder-btn"
+                                title=""
+                                onclick=""
+                            ></a>
+                        </div>
+
+                        <div class="folder">
+                            <div class="folder-posters">
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                            </div>
+
+                            <div class="folder-details">
+                                <h3 class="folder-title">Folder Name</h3>
+
+                                <p class="folder-entry-count">15 Entries</p>
+                            </div>
+
+                            <a
+                                class="btn-icon"
+                                onclick="openPopUp('.delete-folder')"
+                                id="backlog-trash-btn"
+                            >
+                                <svg class="material-icon" id="trash-svg">
+                                    <use
+                                        xlink:href="/assets/images/icons.svg#trash"
+                                    />
+                                </svg>
+                            </a>
+
+                            <a
+                                href="/html/folder.html"
+                                class="folder-btn"
+                                title=""
+                                onclick=""
+                            ></a>
+                        </div>
+
+                        <div class="folder">
+                            <div class="folder-posters">
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                            </div>
+
+                            <div class="folder-details">
+                                <h3 class="folder-title">Folder Name</h3>
+
+                                <p class="folder-entry-count">15 Entries</p>
+                            </div>
+
+                            <a
+                                class="btn-icon"
+                                onclick="openPopUp('.delete-folder')"
+                                id="backlog-trash-btn"
+                            >
+                                <svg class="material-icon" id="trash-svg">
+                                    <use
+                                        xlink:href="/assets/images/icons.svg#trash"
+                                    />
+                                </svg>
+                            </a>
+
+                            <a
+                                href="/html/folder.html"
+                                class="folder-btn"
+                                title=""
+                                onclick=""
+                            ></a>
+                        </div>
+
+                        <div class="folder">
+                            <div class="folder-posters">
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                                <figure class="poster-box folder-poster">
+                                    <img
+                                        src="/assets/images/Blade Runner Poster.png"
+                                        alt="Blade Runner"
+                                        class="img-cover"
+                                        loading="lazy"
+                                    />
+                                </figure>
+                            </div>
+
+                            <div class="folder-details">
+                                <h3 class="folder-title">Folder Name</h3>
+
+                                <p class="folder-entry-count">15 Entries</p>
+                            </div>
+
+                            <a
+                                class="btn-icon"
+                                onclick="openPopUp('.delete-folder')"
+                                id="backlog-trash-btn"
+                            >
+                                <svg class="material-icon" id="trash-svg">
+                                    <use
+                                        xlink:href="/assets/images/icons.svg#trash"
+                                    />
+                                </svg>
+                            </a>
+
+                            <a
+                                href="/html/folder.html"
+                                class="folder-btn"
+                                title=""
+                                onclick=""
+                            ></a>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <div class="pop-up-overlay"></div>
+            <div class="pop-up-overlay second-overlay"></div>
+
+            <div class="add-to-folder">
+                <div class="add-to-folder-header">
+                    <a
+                        class="pop-up-close-btn"
+                        onclick='closePopUp(".add-to-folder")'
+                        ><img
+                            id="pop-up-close-img"
+                            src="/assets/images/icon-close.svg"
+                            alt=""
+                    /></a>
+                    <h3 class="header-title">Save To Folder</h3>
+                    <input
+                        class="add-to-folder-search"
+                        type="search"
+                        placeholder="Search..."
+                        search-field
+                    />
+                    <a
+                        class="btn btn-text-icon"
+                        id="add-new-folder-btn"
+                        onclick="openPopUp('.create-folder')"
+                    >
+                        <svg class="material-icon" id="add-to-folder-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#add-icon"
+                            />
+                        </svg>
+                        <span>New Folder</span>
+                    </a>
+                </div>
+                <div class="add-to-folder-scroll">
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 1</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 2</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 3</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 4</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 5</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 6</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 7</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                    <div class="add-to-folder-scroll-item">
+                        <span>Folder 8</span>
+                        <a class="add-to-folder-scroll-btn" href=""></a>
+                    </div>
+                </div>
+                <div class="add-to-folder-footer">
+                    <a
+                        class="btn btn-text-icon"
+                        id="add-to-folder-btn"
+                        onclick=""
+                    >
+                        <svg class="material-icon" id="add-to-folder-svg">
+                            <use
+                                xlink:href="/assets/images/icons.svg#add-icon"
+                            />
+                        </svg>
+                        <span>Add</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="create-folder">
+                <div class="create-folder-header">
+                    <a
+                        class="pop-up-close-btn"
+                        onclick='closePopUp(".create-folder")'
+                        ><img
+                            id="pop-up-close-img"
+                            src="/assets/images/icon-close.svg"
+                            alt=""
+                    /></a>
+                    <svg class="material-icon" id="create-folder-svg">
+                        <use xlink:href="/assets/images/icons.svg#folder" />
+                    </svg>
+                    <h3 class="header-title">Create Folder</h3>
+                </div>
+
+                <input
+                    class="create-folder-input"
+                    type="text"
+                    placeholder="Name"
+                    autocomplete="off"
+                />
+
+                <a class="btn" onclick="">Done</a>
+            </div>
+
+            <div class="delete-folder">
+                <div class="delete-folder-header">
+                    <svg class="material-icon delete-svg">
+                        <use xlink:href="/assets/images/icons.svg#trash" />
+                    </svg>
+                    <h3 class="header-title">Delete Folder?</h3>
+                </div>
+
+                <p class="pop-up-body">
+                    Are you sure you want to permanently delete this folder?
+                </p>
+
+                <div class="confirm-cancel-btns">
+                    <a class="btn" onclick="">Confirm</a>
+                    <a class="btn" onclick='closePopUp(".delete-folder")'
+                        >Cancel</a
+                    >
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="footer-flex">
+                    <div class="footer-logo">
+                        <a href="../index.html">
+                            <img
+                                src="/assets/images/filmhead-footer-logo.svg"
+                                alt="FilmHead footer logo"
+                                height="50px"
+                            />
+                        </a>
+                    </div>
+                    <div class="footer-github">
+                        <a
+                            href="https://github.com/esojogerba/FilmHead"
+                            id="github-link"
+                        >
+                            <svg
+                                class="material-icon"
+                                id="github-icon-svg"
+                                height="30px"
+                            >
+                                <use
+                                    xlink:href="/assets/images/icons.svg#github-logo"
+                                />
+                            </svg>
+                        </a>
+                        <p>&copy; 2023 FilmHead. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tmdb">
+                        <p>Powered by</p>
+                        <a href="https://www.themoviedb.org/">
+                            <img
+                                src="/assets/images/tmdb-logo.svg"
+                                alt="The Movie Database logo"
+                                height="20px"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"></div>
+        </footer>
+    </body>
+</html>
