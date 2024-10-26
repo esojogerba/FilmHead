@@ -16,13 +16,22 @@ function getFolders() {
 
 // Create a New Folder
 function createFolder() {
+    // Retrieve input and error messages
     const inputValue = document.querySelector(".create-folder-input").value;
     const error = document.querySelector(".folder-name-error");
+    const emptyError = document.querySelector("#empty-error");
 
     console.log(inputValue);
 
     var folders = getFolders();
 
+    // Prevent empty folder name
+    if (!inputValue) {
+        emptyError.classList.add("active");
+        throw new Error("Folder name already exists.");
+    }
+
+    // Check to see if folder name is already taken
     if (folders.some((folder) => folder.name === inputValue)) {
         error.classList.add("active");
         throw new Error("Folder name already exists.");
