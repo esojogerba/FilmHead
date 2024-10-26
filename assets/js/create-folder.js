@@ -30,6 +30,7 @@ function buildPopUp() {
         </div>
 
         <h4 class="folder-name-error">Folder name already exists</h4>
+        <h4 id="empty-error" class="folder-name-error">Invalid folder name</h4>
 
         <input
             class="create-folder-input"
