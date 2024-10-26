@@ -103,7 +103,7 @@ const closePopUp = function (name) {
     if (name == ".create-folder") {
         document.querySelector(".second-overlay").classList.remove("active");
         document.querySelector(`${name}`).classList.remove("active");
-        // Toggle error message
+        // Toggle duplicate name error message
         if (
             document
                 .querySelector(".folder-name-error")
@@ -112,6 +112,12 @@ const closePopUp = function (name) {
             document
                 .querySelector(".folder-name-error")
                 .classList.remove("active");
+        }
+        // Toggle invalid name error message
+        if (
+            document.querySelector("#empty-error").classList.contains("active")
+        ) {
+            document.querySelector("#empty-error").classList.remove("active");
         }
         // Clear input
         document.querySelector(".create-folder-input").value = "";
