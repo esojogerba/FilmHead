@@ -205,7 +205,7 @@ const heroBanner = function ({ results: getMovieList }) {
             // Build media scroll for genre lists.
             for (const [key, value] of Object.entries(allGenres)) {
                 fetchDataFromAPI(
-                    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=1&with_genres=${key}`,
+                    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=1&with_origin_country=US&with_genres=${key}`,
                     buildMediaScroll,
                     value,
                     `with_genres=${key}`,
