@@ -179,7 +179,7 @@ const heroBanner = function ({ results: getShowList }) {
     // Build media scroll for show lists.
     for (const { title, path } of showPageSections) {
         fetchDataFromAPI(
-            `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&page=1`,
+            `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&timezone=America/Edmonton&page=1`,
             buildMediaScroll,
             title,
             path,
@@ -205,7 +205,7 @@ const heroBanner = function ({ results: getShowList }) {
             // Build media scroll for genre lists.
             for (const [key, value] of Object.entries(allGenres)) {
                 fetchDataFromAPI(
-                    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&page=1&with_genres=${key}`,
+                    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=false&with_origin_country=US&page=1&with_genres=${key}`,
                     buildMediaScroll,
                     value,
                     `with_genres=${key}`,
