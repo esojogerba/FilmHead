@@ -59,7 +59,7 @@ function createFolder() {
     // Reload Add To Folder pop up with new folder if it was open
     if (addToFolder.classList.contains("active")) {
         document.querySelector(".add-to-folder").remove();
-        window.addToFolderPopUp.buildPopUp(folders);
+        window.addToFolderPopUp.buildAddToFolder(folders);
         openPopUp(".add-to-folder");
     }
 }
