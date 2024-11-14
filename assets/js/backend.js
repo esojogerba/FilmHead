@@ -14,6 +14,9 @@ function getFolders() {
     return JSON.parse(localStorage.getItem("folders"));
 }
 
+// Retrieve folders from localStorage
+var folderList = getFolders();
+
 // Create a new folder
 function createFolder() {
     // Retrieve input and error messages
@@ -32,7 +35,7 @@ function createFolder() {
     }
 
     // Check to see if folder name is already taken
-    if (folders.some((folder) => folder.name === inputValue)) {
+    if (folderList.some((folder) => folder.name === inputValue)) {
         error.classList.add("active");
         throw new Error("Folder name already exists.");
     }
@@ -47,19 +50,19 @@ function createFolder() {
     };
 
     // Add new folder to localStorage
-    folders.push(newFolder);
-    localStorage.setItem("folders", JSON.stringify(folders));
+    folderList.push(newFolder);
+    localStorage.setItem("folders", JSON.stringify(folderList));
 
     // Close create folder pop up after folder is created
     closePopUp(".create-folder");
 
     // Update folders variable
-    folders = getFolders();
+    folderList = getFolders();
 
     // Reload Add To Folder pop up with new folder if it was open
     if (addToFolder.classList.contains("active")) {
         document.querySelector(".add-to-folder").remove();
-        window.addToFolderPopUp.buildAddToFolder(folders);
+        window.addToFolderPopUp.buildAddToFolder(folderList);
         openPopUp(".add-to-folder");
     }
 }
@@ -69,4 +72,5 @@ window.Backend = {
     initializeLocalStorage,
     getFolders,
     createFolder,
+    folderList,
 };
