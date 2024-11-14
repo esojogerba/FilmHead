@@ -1,11 +1,8 @@
 // Retrieves main from page
 var main = document.querySelector("main");
 
-// Retrieve folders from localStorage
-let folderList = window.Backend.getFolders();
-
 // Build pop ups
-buildAddToFolder(folderList);
+buildAddToFolder(window.Backend.folderList);
 buildCreateFolder();
 buildDeleteFolder();
 buildDeleteItem();
