@@ -3,9 +3,6 @@
 // Retrieves page-content <article> from backlog page.
 const pageContent = document.querySelector("[page-content]");
 
-// Retrieve folders from localStorage
-const folderList = window.Backend.getFolders();
-
 const imageBaseURL = "http://image.tmdb.org/t/p/";
 
 // Calls the build function
@@ -52,8 +49,8 @@ function buildBacklog() {
         </div>
     `;
 
-    if (folderList) {
-        for (const folder of folderList) {
+    if (window.Backend.folderList) {
+        for (const folder of window.Backend.folderList) {
             // Create folder
             const newFolder = document.createElement("div");
             newFolder.classList.add("folder");
