@@ -31,10 +31,12 @@
         <link rel="stylesheet" href="/assets/css/style.css" />
 
         <!-- Javascript Links -->
+        <script src="assets/js/backend.js" defer></script>
         <script src="assets/js/nav.js" defer></script>
         <script src="assets/js/add-search.js" type="module" defer></script>
         <script src="assets/js/global.js" defer></script>
         <script src="assets/js/index.js" defer></script>
+        <script src="assets/js/pop-ups.js" defer></script>
     </head>
     <body>
         <header class="container primary-header">
@@ -214,112 +216,6 @@
 
             <div class="pop-up-overlay"></div>
             <div class="pop-up-overlay second-overlay"></div>
-
-            <div class="add-to-folder">
-                <div class="add-to-folder-header">
-                    <a
-                        class="pop-up-close-btn"
-                        onclick='closePopUp(".add-to-folder")'
-                        ><img
-                            id="pop-up-close-img"
-                            src="/assets/images/icon-close.svg"
-                            alt=""
-                    /></a>
-                    <h3 class="header-title">Save To Folder</h3>
-                    <input
-                        class="add-to-folder-search"
-                        type="search"
-                        placeholder="Search..."
-                        search-field
-                    />
-                    <a
-                        class="btn btn-text-icon"
-                        id="add-new-folder-btn"
-                        onclick="openPopUp('.create-folder')"
-                    >
-                        <svg class="material-icon" id="add-to-folder-svg">
-                            <use
-                                xlink:href="/assets/images/icons.svg#add-icon"
-                            />
-                        </svg>
-                        <span>New Folder</span>
-                    </a>
-                </div>
-                <div class="add-to-folder-scroll">
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 1</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 2</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 3</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 4</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 5</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 6</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 7</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                    <div class="add-to-folder-scroll-item">
-                        <span>Folder 8</span>
-                        <a class="add-to-folder-scroll-btn" href=""></a>
-                    </div>
-                </div>
-                <div class="add-to-folder-footer">
-                    <a
-                        class="btn btn-text-icon"
-                        id="add-to-folder-btn"
-                        onclick=""
-                    >
-                        <svg class="material-icon" id="add-to-folder-svg">
-                            <use
-                                xlink:href="/assets/images/icons.svg#add-icon"
-                            />
-                        </svg>
-                        <span>Add</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="create-folder">
-                <div class="create-folder-header">
-                    <a
-                        class="pop-up-close-btn"
-                        onclick='closePopUp(".create-folder")'
-                        ><img
-                            id="pop-up-close-img"
-                            src="/assets/images/icon-close.svg"
-                            alt=""
-                    /></a>
-                    <svg class="material-icon" id="create-folder-svg">
-                        <use xlink:href="/assets/images/icons.svg#folder" />
-                    </svg>
-                    <h3 class="header-title">Create Folder</h3>
-                </div>
-
-                <input
-                    class="create-folder-input"
-                    type="text"
-                    placeholder="Name"
-                    autocomplete="off"
-                />
-
-                <a class="btn" onclick="">Done</a>
-            </div>
         </main>
         <footer>
             <div class="container">
