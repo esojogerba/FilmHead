@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Primary Meta Tags -->
+        <title>FilmHead</title>
+        <meta name="title" content="FilmHead" />
+        <meta
+            name="description"
+            content="FilmHead helps you keep track of your media backlog."
+        />
+
+        <!-- Icon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/assets/images/square-logo-clear.png"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS Link -->
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+        <!-- Javascript Links -->
+        <script src="/assets/js/backend.js" defer></script>
+        <script src="/assets/js/nav.js" defer></script>
+        <script src="/assets/js/global.js" defer></script>
+        <script src="/assets/js/backlog.js" defer></script>
+        <script src="/assets/js/add-search.js" type="module" defer></script>
+        <script src="/assets/js/pop-ups.js" defer></script>
+    </head>
+    <body>
+        <header class="container primary-header">
+            <div>
+                <a href="../index.html" class="desktop-nav-logo">
+                    <img
+                        src="/assets/images/filmhead-nav-logo.svg"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div>
+                <a href="../index.html" class="mobile-nav-logo">
+                    <img
+                        src="/assets/images/FilmHead-logo.png"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div class="search-box-mobile">
+                <input
+                    class="search-field"
+                    type="search"
+                    placeholder="Search..."
+                    search-field
+                />
+            </div>
+
+            <button
+                class="mobile-nav-toggle"
+                aria-controls="primary-navigation"
+                aria-expanded="false"
+            >
+                <span class="sr-only">Menu</span>
+            </button>
+
+            <nav class="nav-links" id="nav-links" data-visible="false">
+                <ul role="list" class="nav-links-left">
+                    <li>
+                        <a href="movies.html">Movies</a>
+                    </li>
+                    <li><a href="shows.html">Shows</a></li>
+                    <li>
+                        <a class="current-page" href="backlog.html">Backlog</a>
+                    </li>
+                </ul>
+                <ul role="list" class="nav-links-right">
+                    <li class="search-box-desktop">
+                        <input
+                            class="search-field"
+                            type="search"
+                            placeholder="Search..."
+                            search-field
+                        />
+                    </li>
+                    <li>
+                        <a href="sign-up.html" id="nav-link-sign-up">Sign Up</a>
+                    </li>
+                    <li><a href="log-in.html">Log In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="transition transition-1 is-active">
+            <div class="spinner"></div>
+        </div>
+
+        <main>
+            <article page-content></article>
+
+            <div class="pop-up-overlay"></div>
+            <div class="pop-up-overlay second-overlay"></div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="footer-flex">
+                    <div class="footer-logo">
+                        <a href="../index.html">
+                            <img
+                                src="/assets/images/filmhead-footer-logo.svg"
+                                alt="FilmHead footer logo"
+                                height="50px"
+                            />
+                        </a>
+                    </div>
+                    <div class="footer-github">
+                        <a
+                            href="https://github.com/esojogerba/FilmHead"
+                            id="github-link"
+                        >
+                            <svg
+                                class="material-icon"
+                                id="github-icon-svg"
+                                height="30px"
+                            >
+                                <use
+                                    xlink:href="/assets/images/icons.svg#github-logo"
+                                />
+                            </svg>
+                        </a>
+                        <p>&copy; 2023 FilmHead. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tmdb">
+                        <p>Powered by</p>
+                        <a href="https://www.themoviedb.org/">
+                            <img
+                                src="/assets/images/tmdb-logo.svg"
+                                alt="The Movie Database logo"
+                                height="20px"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"></div>
+        </footer>
+    </body>
+</html>
