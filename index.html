@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Primary Meta Tags -->
+        <title>FilmHead</title>
+        <meta name="title" content="FilmHead" />
+        <meta
+            name="description"
+            content="FilmHead helps you keep track of your media backlog."
+        />
+
+        <!-- Icon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/FilmHead/assets/square-logo-clear-7be8e756.png"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS Link -->
+        
+
+        <!-- Javascript Links -->
+        <script src="assets/js/backend.js" defer></script>
+        <script src="assets/js/nav.js" defer></script>
+        
+        <script src="assets/js/global.js" defer></script>
+        <script src="assets/js/index.js" defer></script>
+        <script src="assets/js/pop-ups.js" defer></script>
+      <script type="module" crossorigin src="/FilmHead/assets/index-cf26bc55.js"></script>
+      <link rel="stylesheet" href="/FilmHead/assets/index-507145e7.css">
+    </head>
+    <body>
+        <header class="container primary-header">
+            <div>
+                <a href="index.html" class="desktop-nav-logo">
+                    <img
+                        src="/FilmHead/assets/filmhead-nav-logo-f44f4ffd.svg"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div>
+                <a href="index.html" class="mobile-nav-logo">
+                    <img
+                        src="/FilmHead/assets/FilmHead-logo-c6bb6af7.png"
+                        alt="FilmHead logo"
+                        id="nav-logo-img"
+                    />
+                </a>
+            </div>
+
+            <div class="search-box-mobile">
+                <input
+                    class="search-field"
+                    type="search"
+                    placeholder="Search..."
+                />
+            </div>
+
+            <button
+                class="mobile-nav-toggle"
+                aria-controls="primary-navigation"
+                aria-expanded="false"
+            >
+                <span class="sr-only">Menu</span>
+            </button>
+
+            <nav class="nav-links" id="nav-links" data-visible="false">
+                <ul role="list" class="nav-links-left">
+                    <li><a href="/html/movies.html">Movies</a></li>
+                    <li><a href="/html/shows.html">Shows</a></li>
+                    <li><a href="/html/backlog.html">Backlog</a></li>
+                </ul>
+                <ul role="list" class="nav-links-right">
+                    <li class="search-box-desktop">
+                        <input
+                            class="search-field"
+                            type="search"
+                            placeholder="Search..."
+                        />
+                    </li>
+                    <li>
+                        <a href="html/sign-up.html" id="nav-link-sign-up"
+                            >Sign Up</a
+                        >
+                    </li>
+                    <li><a href="html/log-in.html">Log In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="transition transition-1 is-active">
+            <div class="spinner"></div>
+        </div>
+
+        <main>
+            <section class="cta">
+                <h1 class="cta-heading">Nothing To Watch?</h1>
+                <h1 class="cta-heading">Not Anymore!</h1>
+                <p class="cta-p">
+                    Keep track of your media backlog so that you always have
+                    something to scratch your entertainment itch.
+                </p>
+                <button class="btn cta-btn" id="new-account-btn">
+                    Create An Account
+                </button>
+            </section>
+
+            <div class="container home-bg-circles">
+                <section class="features">
+                    <div class="features-columns">
+                        <div class="features-left-col">
+                            <h2 class="features-title">Organize</h2>
+                            <h2 class="features-title">& Conquer</h2>
+                        </div>
+                        <div class="features-right-col">
+                            <div class="features-row">
+                                <div class="features-card">
+                                    <div class="features-card-icon">
+                                        <svg
+                                            class="material-icon"
+                                            id="movies&shows-svg"
+                                        >
+                                            <use
+                                                xlink:href="/FilmHead/assets/icons-4230aa85.svg#shows"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="features-card-title">
+                                        Movies & Shows
+                                    </h3>
+                                    <p class="features-card-body">
+                                        Browse and stockpile thousands of your
+                                        favorite movies and tv shows.
+                                    </p>
+                                </div>
+                                <div class="features-card">
+                                    <div class="features-card-icon">
+                                        <svg
+                                            class="material-icon"
+                                            id="folders-svg"
+                                        >
+                                            <use
+                                                xlink:href="/FilmHead/assets/icons-4230aa85.svg#folders"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="features-card-title">Folders</h3>
+                                    <p class="features-card-body">
+                                        Create unlimited folders to organize and
+                                        categorize your backlog.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="features-row">
+                                <div class="features-card">
+                                    <div class="features-card-icon">
+                                        <svg
+                                            class="material-icon"
+                                            id="store-svg"
+                                        >
+                                            <use
+                                                xlink:href="/FilmHead/assets/icons-4230aa85.svg#store"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="features-card-title">Store</h3>
+                                    <p class="features-card-body">
+                                        Store all of your folders in your
+                                        account for quick and easy access.
+                                    </p>
+                                </div>
+                                <div class="features-card">
+                                    <div class="features-card-icon">
+                                        <svg
+                                            class="material-icon"
+                                            id="watch-svg"
+                                        >
+                                            <use
+                                                xlink:href="/FilmHead/assets/icons-4230aa85.svg#watch"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3 class="features-card-title">Watch</h3>
+                                    <p class="features-card-body">
+                                        View streaming availability and start
+                                        conquering your backlog today.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <img
+                    class="home-bg-circle-top"
+                    src="/FilmHead/assets/bg-circle-1-0ee2ded7.png"
+                    alt="background decorative circle"
+                />
+                <img
+                    class="home-bg-circle-bottom"
+                    src="/FilmHead/assets/bg-circle-2-01b25e1d.png"
+                    alt="background decorative circle"
+                />
+            </div>
+
+            <div class="pop-up-overlay"></div>
+            <div class="pop-up-overlay second-overlay"></div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="footer-flex">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <img
+                                src="/FilmHead/assets/filmhead-footer-logo-2917768e.svg"
+                                alt="FilmHead footer logo"
+                                height="50px"
+                            />
+                        </a>
+                    </div>
+                    <div class="footer-github">
+                        <a
+                            href="https://github.com/esojogerba/FilmHead"
+                            id="github-link"
+                        >
+                            <svg
+                                class="material-icon"
+                                id="github-icon-svg"
+                                height="30px"
+                            >
+                                <use
+                                    xlink:href="/FilmHead/assets/icons-4230aa85.svg#github-logo"
+                                />
+                            </svg>
+                        </a>
+                        <p>&copy; 2023 FilmHead. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tmdb">
+                        <p>Powered by</p>
+                        <a href="https://www.themoviedb.org/">
+                            <img
+                                src="/FilmHead/assets/tmdb-logo-8e7b30f7.svg"
+                                alt="The Movie Database logo"
+                                height="20px"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"></div>
+        </footer>
+    </body>
+</html>
